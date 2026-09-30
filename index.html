@@ -1,0 +1,1618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Victor Chitole</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f172a;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND ANIMATION
+========================================================= */
+
+.particles{
+    position:fixed;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    overflow:hidden;
+    pointer-events:none;
+}
+
+.particles i{
+    position:absolute;
+    font-size:110px;
+    color:rgba(56,189,248,0.12);
+    text-shadow:0 0 20px rgba(56,189,248,0.2);
+    animation:animate 20s linear infinite;
+}
+
+.particles i:nth-child(1){
+    left:10%;
+    animation-delay:0s;
+}
+
+.particles i:nth-child(2){
+    left:25%;
+    animation-delay:2s;
+}
+
+.particles i:nth-child(3){
+    left:40%;
+    animation-delay:4s;
+}
+
+.particles i:nth-child(4){
+    left:55%;
+    animation-delay:6s;
+}
+
+.particles i:nth-child(5){
+    left:70%;
+    animation-delay:8s;
+}
+
+.particles i:nth-child(6){
+    left:85%;
+    animation-delay:10s;
+}
+
+.particles i:nth-child(7){
+    left:35%;
+    animation-delay:12s;
+}
+
+.particles i:nth-child(8){
+    left:65%;
+    animation-delay:14s;
+}
+
+@keyframes animate{
+
+    0%{
+        transform:translateY(100vh) scale(0);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-100px) scale(1);
+        opacity:0;
+    }
+
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    padding:18px 8%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:rgba(15,23,42,.82);
+
+    backdrop-filter:blur(15px);
+
+    -webkit-backdrop-filter:blur(15px);
+
+    z-index:1000;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.1);
+}
+
+
+/* LOGO */
+
+.logo{
+    font-size:28px;
+    font-weight:800;
+    color:#38bdf8;
+
+    letter-spacing:-1px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.logo:hover{
+    transform:scale(1.04);
+}
+
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
+
+.nav-links{
+    display:flex;
+    align-items:center;
+
+    gap:30px;
+
+    list-style:none;
+}
+
+.nav-links li{
+    list-style:none;
+}
+
+.nav-links a{
+    position:relative;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-weight:500;
+
+    padding:8px 0;
+
+    transition:.3s;
+}
+
+
+/* Animated underline */
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:0;
+    height:2px;
+
+    background:#38bdf8;
+
+    transition:.3s ease;
+
+}
+
+.nav-links a:hover{
+    color:#38bdf8;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+
+/* =========================================================
+   HAMBURGER BUTTON
+========================================================= */
+
+.menu-toggle{
+
+    display:none;
+
+    width:45px;
+    height:45px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:
+        rgba(56,189,248,.10);
+
+    cursor:pointer;
+
+    align-items:center;
+    justify-content:center;
+
+    flex-direction:column;
+
+    gap:5px;
+
+    transition:.3s;
+
+    z-index:1100;
+}
+
+
+.menu-toggle span{
+
+    width:25px;
+    height:3px;
+
+    border-radius:10px;
+
+    background:#38bdf8;
+
+    transition:.35s ease;
+
+}
+
+
+.menu-toggle:hover{
+
+    background:
+        rgba(56,189,248,.20);
+
+    transform:scale(1.05);
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:120px 8%;
+
+    flex-wrap:wrap;
+
+    gap:50px;
+
+    position:relative;
+}
+
+
+.hero-text{
+
+    flex:1;
+
+    min-width:320px;
+
+}
+
+
+.tag{
+
+    display:inline-block;
+
+    padding:10px 18px;
+
+    background:#1e293b;
+
+    border-radius:30px;
+
+    margin-bottom:20px;
+
+    font-size:14px;
+
+    border:
+        1px solid rgba(56,189,248,.15);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.15);
+}
+
+
+.hero-text h1{
+
+    font-size:65px;
+
+    font-weight:800;
+
+    margin-bottom:15px;
+
+    letter-spacing:-2px;
+
+}
+
+
+.hero-text h2{
+
+    font-size:30px;
+
+    color:#38bdf8;
+
+    margin-bottom:20px;
+
+}
+
+
+#typing{
+
+    color:#38bdf8;
+
+}
+
+
+.hero-text p{
+
+    line-height:1.8;
+
+    color:#cbd5e1;
+
+    margin-bottom:30px;
+
+    max-width:650px;
+
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+}
+
+
+.btn,
+.btn-outline{
+
+    display:inline-block;
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    transition:.35s ease;
+
+}
+
+
+.btn{
+
+    background:
+        linear-gradient(
+            135deg,
+            #38bdf8,
+            #2563eb
+        );
+
+    color:white;
+
+    box-shadow:
+        0 10px 25px rgba(56,189,248,.25);
+}
+
+
+.btn:hover{
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(56,189,248,.4);
+}
+
+
+.btn-outline{
+
+    border:
+        2px solid #38bdf8;
+
+    color:#38bdf8;
+
+}
+
+
+.btn-outline:hover{
+
+    background:#38bdf8;
+
+    color:#0f172a;
+
+    transform:
+        translateY(-4px);
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.hero-image{
+
+    position:relative;
+
+    width:450px;
+
+    height:450px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+
+.hero-image img{
+
+    width:320px;
+
+    height:320px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:8px solid #1e293b;
+
+    z-index:10;
+
+    box-shadow:
+        0 0 40px rgba(56,189,248,.5);
+
+    animation:
+        profileFloat 5s ease-in-out infinite;
+}
+
+
+@keyframes profileFloat{
+
+    0%,
+    100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+}
+
+
+/* =========================================================
+   ROTATING RINGS
+========================================================= */
+
+.ring{
+
+    position:absolute;
+
+    border-radius:50%;
+
+}
+
+
+.ring1{
+
+    width:360px;
+    height:360px;
+
+    border:
+        3px dashed #38bdf8;
+
+    animation:
+        rotate 15s linear infinite;
+
+}
+
+
+.ring2{
+
+    width:420px;
+    height:420px;
+
+    border:
+        2px dashed #22c55e;
+
+    animation:
+        rotateReverse 20s linear infinite;
+
+}
+
+
+.ring3{
+
+    width:470px;
+    height:470px;
+
+    border:
+        1px solid rgba(255,255,255,.2);
+
+    animation:
+        pulse 4s infinite;
+
+}
+
+
+@keyframes rotate{
+
+    100%{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+@keyframes rotateReverse{
+
+    100%{
+        transform:rotate(-360deg);
+    }
+
+}
+
+
+@keyframes pulse{
+
+    50%{
+        transform:scale(1.04);
+    }
+
+}
+
+
+/* =========================================================
+   FLOATING TECH ICONS
+========================================================= */
+
+.tech{
+
+    position:absolute;
+
+    width:55px;
+    height:55px;
+
+    background:#1e293b;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:24px;
+
+    color:#38bdf8;
+
+    box-shadow:
+        0 0 20px rgba(56,189,248,.3);
+
+    animation:
+        float 4s infinite ease-in-out;
+
+    z-index:15;
+}
+
+
+.html{
+    top:40px;
+    left:40px;
+}
+
+.css{
+    top:70px;
+    right:20px;
+}
+
+.js{
+    bottom:70px;
+    left:10px;
+}
+
+.code{
+    bottom:30px;
+    right:40px;
+}
+
+
+@keyframes float{
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats{
+
+    padding:80px 8%;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+}
+
+
+.stat{
+
+    background:
+        linear-gradient(
+            145deg,
+            #1e293b,
+            #172033
+        );
+
+    padding:30px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    border:
+        1px solid rgba(255,255,255,.06);
+
+    transition:.4s;
+
+}
+
+
+.stat:hover{
+
+    transform:
+        translateY(-10px);
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.2);
+
+}
+
+
+.stat h2{
+
+    font-size:45px;
+
+    color:#38bdf8;
+
+}
+
+
+.stat p{
+
+    margin-top:10px;
+
+    color:#cbd5e1;
+
+}
+
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.scroll{
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:30px;
+
+    color:#38bdf8;
+
+    animation:
+        bounce 2s infinite;
+}
+
+
+@keyframes bounce{
+
+    50%{
+        transform:
+            translate(-50%,-10px);
+    }
+
+}
+
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+.whatsapp{
+
+    position:fixed;
+
+    bottom:25px;
+
+    right:25px;
+
+    width:65px;
+    height:65px;
+
+    background:#25D366;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:32px;
+
+    color:white;
+
+    text-decoration:none;
+
+    z-index:999;
+
+    box-shadow:
+        0 10px 30px rgba(37,211,102,.3);
+
+    animation:
+        pulse 2s infinite;
+
+    transition:.3s;
+}
+
+
+.whatsapp:hover{
+
+    transform:
+        scale(1.1);
+
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+@media(max-width:900px){
+
+    /* Show hamburger */
+
+    .menu-toggle{
+    
+        display:flex;
+
+    }
+
+
+    /* Hide desktop menu initially */
+
+    .nav-links{
+
+        position:absolute;
+
+        top:100%;
+
+        left:0;
+
+        width:100%;
+
+        padding:
+            12px 5% 22px;
+
+        background:
+            rgba(15,23,42,.98);
+
+        backdrop-filter:
+            blur(20px);
+
+        -webkit-backdrop-filter:
+            blur(20px);
+
+        border-bottom:
+            1px solid rgba(255,255,255,.1);
+
+        box-shadow:
+            0 20px 40px rgba(0,0,0,.3);
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:5px;
+
+        opacity:0;
+
+        visibility:hidden;
+
+        transform:
+            translateY(-20px);
+
+        transition:
+            opacity .35s ease,
+            transform .35s ease,
+            visibility .35s ease;
+
+    }
+
+
+    /* OPEN MENU */
+
+    .nav-links.active{
+
+        opacity:1;
+
+        visibility:visible;
+
+        transform:
+            translateY(0);
+
+    }
+
+
+    .nav-links li{
+
+        width:100%;
+
+    }
+
+
+    .nav-links a{
+
+        display:block;
+
+        width:100%;
+
+        padding:15px;
+
+        border-radius:10px;
+
+        text-align:left;
+
+    }
+
+
+    .nav-links a::after{
+
+        display:none;
+
+    }
+
+
+    .nav-links a:hover{
+
+        background:
+            rgba(56,189,248,.1);
+
+        padding-left:22px;
+
+    }
+
+
+    /* =====================================================
+       HAMBURGER → X
+    ===================================================== */
+
+    .menu-toggle.active span:nth-child(1){
+
+        transform:
+            translateY(8px)
+            rotate(45deg);
+
+    }
+
+
+    .menu-toggle.active span:nth-child(2){
+
+        opacity:0;
+
+        transform:
+            translateX(20px);
+
+    }
+
+
+    .menu-toggle.active span:nth-child(3){
+
+        transform:
+            translateY(-8px)
+            rotate(-45deg);
+
+    }
+
+
+    /* HERO */
+
+    .hero{
+
+        text-align:center;
+
+        justify-content:center;
+
+        padding-top:120px;
+
+    }
+
+
+    .hero-text h1{
+
+        font-size:48px;
+
+    }
+
+
+    .hero-text h2{
+
+        font-size:25px;
+
+    }
+
+
+    .hero-text p{
+
+        margin-left:auto;
+
+        margin-right:auto;
+
+    }
+
+
+    .buttons{
+
+        justify-content:center;
+
+    }
+
+
+    .hero-image{
+
+        width:180px;
+
+        height:180px;
+
+    }
+
+
+    .hero-image img{
+
+        width:180px;
+
+        height:180px;
+
+    }
+
+
+    .ring1{
+
+        width:280px;
+        height:280px;
+
+    }
+
+
+    .ring2{
+
+        width:320px;
+        height:320px;
+
+    }
+
+
+    .ring3{
+
+        width:360px;
+        height:360px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media(max-width:480px){
+
+    .navbar{
+
+        padding:
+            15px 5%;
+
+    }
+
+
+    .logo{
+
+        font-size:23px;
+
+    }
+
+
+    .hero{
+
+        padding:
+            110px 20px 80px;
+
+    }
+
+
+    .hero-text{
+
+        min-width:0;
+
+    }
+
+
+    .hero-text h1{
+
+        font-size:40px;
+
+    }
+
+
+    .hero-text h2{
+
+        font-size:21px;
+
+    }
+
+
+    .hero-text p{
+
+        font-size:14px;
+
+    }
+
+
+    .hero-image{
+
+        transform:
+            scale(.85);
+
+    }
+
+
+    .stats{
+
+        padding:
+            50px 20px;
+
+    }
+
+
+    .whatsapp{
+
+        width:58px;
+        height:58px;
+
+        right:18px;
+        bottom:18px;
+
+        font-size:28px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     FLOATING BACKGROUND ICONS
+========================================================= -->
+
+<div class="particles">
+
+    <i class="fab fa-html5"></i>
+
+    <i class="fab fa-css3-alt"></i>
+
+    <i class="fab fa-js"></i>
+
+    <i class="fab fa-react"></i>
+
+    <i class="fab fa-node-js"></i>
+
+    <i class="fab fa-github"></i>
+
+    <i class="fas fa-database"></i>
+
+    <i class="fas fa-laptop-code"></i>
+
+</div>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        My Portfolio
+    </div>
+
+
+    <!-- HAMBURGER BUTTON -->
+
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+    >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+
+    <!-- NAVIGATION -->
+
+    <ul class="nav-links" id="navLinks">
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="about.html">
+                About
+            </a>
+        </li>
+
+        <li>
+            <a href="services.html">
+                Services
+            </a>
+        </li>
+
+        <li>
+            <a href="projects.html">
+                Projects
+            </a>
+        </li>
+
+        <li>
+            <a href="contact.html">
+                Contact
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+
+    <div class="hero-text">
+
+        <div class="tag">
+            Available for New Projects
+        </div>
+
+
+        <h1>
+            Victor Chitole
+        </h1>
+
+
+        <h2>
+            I'm a
+            <span id="typing"></span>
+        </h2>
+
+
+        <p>
+
+            Transforming ideas into powerful digital experiences.
+            I specialize in web development, graphic design,
+            branding, IT support, and technology solutions that
+            help businesses stand out, operate efficiently,
+            and grow with confidence.
+
+        </p>
+
+
+        <div class="buttons">
+
+            <a
+                href="contact.html"
+                class="btn"
+            >
+                Hire Me
+            </a>
+
+
+            <a
+                href="projects.html"
+                class="btn-outline"
+            >
+                View Projects
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- HERO IMAGE -->
+
+    <div class="hero-image">
+
+
+        <div class="ring ring1"></div>
+
+        <div class="ring ring2"></div>
+
+        <div class="ring ring3"></div>
+
+
+        <!-- HTML -->
+
+        <div class="tech html">
+
+            <i class="fab fa-html5"></i>
+
+        </div>
+
+
+        <!-- CSS -->
+
+        <div class="tech css">
+
+            <i class="fab fa-css3-alt"></i>
+
+        </div>
+
+
+        <!-- JAVASCRIPT -->
+
+        <div class="tech js">
+
+            <i class="fab fa-js"></i>
+
+        </div>
+
+
+        <!-- CODE -->
+
+        <div class="tech code">
+
+            <i class="fas fa-code"></i>
+
+        </div>
+
+
+        <img
+            src="assets/images/CEO PIC.jpg"
+            alt="Victor Chitole"
+        >
+
+    </div>
+
+
+    <!-- SCROLL -->
+
+    <div class="scroll">
+
+        <i class="fas fa-angle-down"></i>
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================================================
+     STATS
+========================================================= -->
+
+<section class="stats">
+
+
+    <div class="stat">
+
+        <h2>
+            50+
+        </h2>
+
+        <p>
+            Projects Completed
+        </p>
+
+    </div>
+
+
+    <div class="stat">
+
+        <h2>
+            100+
+        </h2>
+
+        <p>
+            Happy Clients
+        </p>
+
+    </div>
+
+
+    <div class="stat">
+
+        <h2>
+            5+
+        </h2>
+
+        <p>
+            Years Experience
+        </p>
+
+    </div>
+
+
+    <div class="stat">
+
+        <h2>
+            24/7
+        </h2>
+
+        <p>
+            Support Available
+        </p>
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================================================
+     WHATSAPP
+========================================================= -->
+
+<a
+    href="https://wa.me/254700000000"
+    class="whatsapp"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with Victor on WhatsApp"
+>
+
+    <i class="fab fa-whatsapp"></i>
+
+</a>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+/* =========================================================
+   TYPING EFFECT
+========================================================= */
+
+const words = [
+
+    "Digital Solutions Provider",
+
+    "Web Developer",
+
+    "Graphic Designer",
+
+    "Branding Specialist",
+
+    "ICT Trainer",
+
+    "Tech Consultant"
+
+];
+
+
+let i = 0;
+
+let j = 0;
+
+let deleting = false;
+
+
+function type(){
+
+    const current = words[i];
+
+    document.getElementById("typing").textContent =
+        current.substring(0,j);
+
+
+    if(!deleting){
+
+        j++;
+
+
+        if(j > current.length){
+
+            deleting = true;
+
+            setTimeout(type,1200);
+
+            return;
+
+        }
+
+    }
+
+    else{
+
+        j--;
+
+
+        if(j === 0){
+
+            deleting = false;
+
+            i = (i + 1) % words.length;
+
+        }
+
+    }
+
+
+    setTimeout(
+        type,
+        deleting ? 50 : 120
+    );
+
+}
+
+
+type();
+
+
+
+/* =========================================================
+   MOBILE HAMBURGER MENU
+========================================================= */
+
+const menuToggle =
+    document.getElementById("menuToggle");
+
+const navLinks =
+    document.getElementById("navLinks");
+
+
+/* OPEN / CLOSE MENU */
+
+menuToggle.addEventListener("click", function(){
+
+    const isOpen =
+        menuToggle.classList.toggle("active");
+
+    navLinks.classList.toggle("active");
+
+    menuToggle.setAttribute(
+        "aria-expanded",
+        isOpen
+    );
+
+});
+
+
+/* =========================================================
+   CLOSE MENU AFTER CLICKING A LINK
+========================================================= */
+
+document
+    .querySelectorAll(".nav-links a")
+    .forEach(link => {
+
+        link.addEventListener("click", function(){
+
+            menuToggle.classList.remove("active");
+
+            navLinks.classList.remove("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        });
+
+    });
+
+
+
+/* =========================================================
+   CLOSE MENU WHEN CLICKING OUTSIDE
+========================================================= */
+
+document.addEventListener("click", function(event){
+
+    if(
+        !menuToggle.contains(event.target) &&
+        !navLinks.contains(event.target)
+    ){
+
+        menuToggle.classList.remove("active");
+
+        navLinks.classList.remove("active");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+    }
+
+});
+
+
+</script>
+
+
+</body>
+</html>

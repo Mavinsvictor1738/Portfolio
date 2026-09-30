@@ -1,0 +1,2893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+  name="description"
+  content="Victor Chitole — Professional portfolio of web development, graphic design, branding, printing, ICT training and digital technology projects."
+>
+
+<meta name="theme-color" content="#0b1220">
+
+<title>Projects | Victor Chitole</title>
+
+
+<!-- =========================================================
+     GOOGLE FONTS
+========================================================= -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+  rel="stylesheet"
+>
+
+
+<!-- =========================================================
+     FONT AWESOME
+========================================================= -->
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+>
+
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+
+  --bg:#f7f9fc;
+
+  --surface:#ffffff;
+
+  --surface-2:#f1f5f9;
+
+  --text:#0b1220;
+
+  --muted:#64748b;
+
+  --line:#e2e8f0;
+
+  --primary:#2563eb;
+
+  --primary-2:#06b6d4;
+
+  --dark:#0b1220;
+
+  --shadow:
+    0 20px 60px rgba(15,23,42,.08);
+
+  --radius:24px;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+
+  margin:0;
+
+  padding:0;
+
+  box-sizing:border-box;
+
+}
+
+
+html{
+
+  scroll-behavior:smooth;
+
+}
+
+
+body{
+
+  font-family:Inter,Arial,sans-serif;
+
+  color:var(--text);
+
+  background:var(--bg);
+
+  overflow-x:hidden;
+
+}
+
+
+a{
+
+  text-decoration:none;
+
+}
+
+
+button{
+
+  font:inherit;
+
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.bg-grid{
+
+  position:fixed;
+
+  inset:0;
+
+  z-index:-3;
+
+  pointer-events:none;
+
+  background-image:
+
+    linear-gradient(
+      rgba(37,99,235,.035) 1px,
+      transparent 1px
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(37,99,235,.035) 1px,
+      transparent 1px
+    );
+
+  background-size:55px 55px;
+
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.bg-glow{
+
+  position:fixed;
+
+  border-radius:50%;
+
+  filter:blur(90px);
+
+  z-index:-2;
+
+  pointer-events:none;
+
+  opacity:.25;
+
+}
+
+
+.glow-one{
+
+  width:300px;
+
+  height:300px;
+
+  background:#60a5fa;
+
+  left:-150px;
+
+  top:18%;
+
+}
+
+
+.glow-two{
+
+  width:350px;
+
+  height:350px;
+
+  background:#a78bfa;
+
+  right:-180px;
+
+  bottom:10%;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header{
+
+  position:sticky;
+
+  top:0;
+
+  z-index:1000;
+
+  background:rgba(255,255,255,.82);
+
+  backdrop-filter:blur(18px);
+
+  border-bottom:
+    1px solid rgba(226,232,240,.85);
+
+}
+
+
+.nav{
+
+  max-width:1250px;
+
+  margin:auto;
+
+  padding:15px 24px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:20px;
+
+}
+
+
+.brand{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+  color:var(--text);
+
+}
+
+
+.brand-mark{
+
+  width:42px;
+
+  height:42px;
+
+  border-radius:13px;
+
+  display:grid;
+
+  place-items:center;
+
+  color:#fff;
+
+  font-family:"Space Grotesk";
+
+  font-weight:700;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      #4f46e5
+    );
+
+  box-shadow:
+    0 10px 25px rgba(37,99,235,.25);
+
+}
+
+
+.brand-text strong{
+
+  display:block;
+
+  font-family:"Space Grotesk";
+
+  font-size:16px;
+
+}
+
+
+.brand-text span{
+
+  display:block;
+
+  color:var(--muted);
+
+  font-size:10px;
+
+  letter-spacing:1.3px;
+
+  margin-top:2px;
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.nav-links{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  list-style:none;
+
+}
+
+
+.nav-links a{
+
+  color:#475569;
+
+  font-size:13px;
+
+  font-weight:600;
+
+  padding:10px 14px;
+
+  border-radius:12px;
+
+  transition:.25s;
+
+}
+
+
+.nav-links a:hover,
+
+.nav-links a.active{
+
+  color:var(--primary);
+
+  background:#eff6ff;
+
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.menu-toggle{
+
+  display:none;
+
+  border:1px solid var(--line);
+
+  background:#fff;
+
+  color:var(--text);
+
+  width:44px;
+
+  height:44px;
+
+  border-radius:12px;
+
+  cursor:pointer;
+
+  font-size:18px;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+  max-width:1250px;
+
+  margin:auto;
+
+  padding:90px 24px 45px;
+
+  display:grid;
+
+  grid-template-columns:1.25fr .75fr;
+
+  gap:50px;
+
+  align-items:end;
+
+}
+
+
+.eyebrow{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:9px;
+
+  padding:8px 13px;
+
+  border-radius:999px;
+
+  background:#eff6ff;
+
+  color:var(--primary);
+
+  font-size:11px;
+
+  font-weight:800;
+
+  letter-spacing:1.6px;
+
+}
+
+
+.eyebrow i{
+
+  font-size:7px;
+
+}
+
+
+.hero h1{
+
+  font-family:"Space Grotesk";
+
+  font-size:
+    clamp(42px,6vw,78px);
+
+  line-height:.98;
+
+  letter-spacing:-3px;
+
+  margin:20px 0;
+
+  max-width:850px;
+
+}
+
+
+.gradient{
+
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb,
+      #06b6d4,
+      #7c3aed
+    );
+
+  background-size:200% auto;
+
+  -webkit-background-clip:text;
+
+  background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+
+  animation:
+    gradient 5s linear infinite;
+
+}
+
+
+@keyframes gradient{
+
+  to{
+
+    background-position:200% center;
+
+  }
+
+}
+
+
+.hero p{
+
+  max-width:720px;
+
+  color:var(--muted);
+
+  font-size:16px;
+
+  line-height:1.85;
+
+}
+
+
+/* =========================================================
+   HERO STATS
+========================================================= */
+
+.hero-meta{
+
+  display:flex;
+
+  justify-content:flex-end;
+
+  align-items:end;
+
+  gap:10px;
+
+  flex-wrap:wrap;
+
+}
+
+
+.meta-card{
+
+  min-width:145px;
+
+  padding:18px;
+
+  border:1px solid var(--line);
+
+  background:rgba(255,255,255,.75);
+
+  border-radius:18px;
+
+  box-shadow:
+    0 12px 30px rgba(15,23,42,.05);
+
+}
+
+
+.meta-card strong{
+
+  display:block;
+
+  font-family:"Space Grotesk";
+
+  font-size:25px;
+
+}
+
+
+.meta-card span{
+
+  display:block;
+
+  color:var(--muted);
+
+  font-size:11px;
+
+  margin-top:4px;
+
+}
+
+
+/* =========================================================
+   PORTFOLIO
+========================================================= */
+
+.portfolio{
+
+  max-width:1250px;
+
+  margin:auto;
+
+  padding:25px 24px 100px;
+
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.toolbar{
+
+  position:sticky;
+
+  top:74px;
+
+  z-index:50;
+
+  margin-bottom:28px;
+
+  padding:12px;
+
+  background:rgba(255,255,255,.82);
+
+  backdrop-filter:blur(18px);
+
+  border:1px solid var(--line);
+
+  border-radius:20px;
+
+  box-shadow:
+    0 12px 35px rgba(15,23,42,.05);
+
+}
+
+
+.filters{
+
+  display:flex;
+
+  gap:8px;
+
+  flex-wrap:wrap;
+
+}
+
+
+.filter-btn{
+
+  border:1px solid transparent;
+
+  background:transparent;
+
+  color:#64748b;
+
+  cursor:pointer;
+
+  padding:10px 14px;
+
+  border-radius:12px;
+
+  font-size:12px;
+
+  font-weight:700;
+
+  transition:.25s;
+
+}
+
+
+.filter-btn:hover{
+
+  background:#f1f5f9;
+
+  color:var(--text);
+
+}
+
+
+.filter-btn.active{
+
+  background:var(--dark);
+
+  color:#fff;
+
+  box-shadow:
+    0 8px 20px rgba(11,18,32,.18);
+
+}
+
+
+/* =========================================================
+   TOOLBAR BOTTOM
+========================================================= */
+
+.toolbar-bottom{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-top:10px;
+
+  padding:0 5px;
+
+}
+
+
+.result-label{
+
+  font-size:11px;
+
+  color:var(--muted);
+
+}
+
+
+.result-label strong{
+
+  color:var(--text);
+
+}
+
+
+/* =========================================================
+   VIEW SWITCH
+========================================================= */
+
+.view-switch{
+
+  display:flex;
+
+  gap:5px;
+
+}
+
+
+.view-btn{
+
+  width:31px;
+
+  height:31px;
+
+  border:1px solid var(--line);
+
+  border-radius:9px;
+
+  background:#fff;
+
+  color:#94a3b8;
+
+  cursor:pointer;
+
+}
+
+
+.view-btn.active{
+
+  color:var(--primary);
+
+  background:#eff6ff;
+
+  border-color:#bfdbfe;
+
+}
+
+
+/* =========================================================
+   PROJECT GRID
+========================================================= */
+
+.projects-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
+  gap:26px;
+
+}
+
+
+/* =========================================================
+   PROJECT CARD
+========================================================= */
+
+.project{
+
+  background:var(--surface);
+
+  border:1px solid var(--line);
+
+  border-radius:var(--radius);
+
+  overflow:hidden;
+
+  box-shadow:var(--shadow);
+
+  transition:
+    transform .4s,
+    box-shadow .4s,
+    opacity .3s;
+
+  animation:
+    cardIn .6s ease both;
+
+}
+
+
+.project:hover{
+
+  transform:translateY(-8px);
+
+  box-shadow:
+    0 28px 70px rgba(15,23,42,.13);
+
+}
+
+
+.project.hidden{
+
+  display:none;
+
+}
+
+
+@keyframes cardIn{
+
+  from{
+
+    opacity:0;
+
+    transform:translateY(25px);
+
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+  }
+
+}
+
+
+/* =========================================================
+   PROJECT MEDIA
+========================================================= */
+
+.project-media{
+
+  height:310px;
+
+  position:relative;
+
+  overflow:hidden;
+
+  background:#e2e8f0;
+
+}
+
+
+.project-media img{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  display:block;
+
+  transition:transform .7s;
+
+}
+
+
+.project:hover .project-media img{
+
+  transform:scale(1.06);
+
+}
+
+
+.media-shade{
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(11,18,32,.55),
+      transparent 55%
+    );
+
+  pointer-events:none;
+
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.badge{
+
+  position:absolute;
+
+  top:17px;
+
+  left:17px;
+
+  padding:8px 12px;
+
+  border-radius:999px;
+
+  color:#fff;
+
+  background:rgba(11,18,32,.72);
+
+  border:
+    1px solid rgba(255,255,255,.18);
+
+  backdrop-filter:blur(12px);
+
+  font-size:10px;
+
+  font-weight:800;
+
+  letter-spacing:.5px;
+
+}
+
+
+/* =========================================================
+   PROJECT ACTIONS
+========================================================= */
+
+.project-actions{
+
+  position:absolute;
+
+  inset:0;
+
+  display:grid;
+
+  place-items:center;
+
+  opacity:0;
+
+  transition:.35s;
+
+  background:rgba(11,18,32,.32);
+
+  backdrop-filter:blur(2px);
+
+}
+
+
+.project:hover .project-actions{
+
+  opacity:1;
+
+}
+
+
+.project-actions a{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:9px;
+
+  padding:13px 18px;
+
+  border-radius:999px;
+
+  background:#fff;
+
+  color:var(--text);
+
+  font-size:12px;
+
+  font-weight:800;
+
+  transform:translateY(12px);
+
+  transition:.35s;
+
+}
+
+
+.project:hover .project-actions a{
+
+  transform:translateY(0);
+
+}
+
+
+/* =========================================================
+   PROJECT BODY
+========================================================= */
+
+.project-body{
+
+  padding:25px;
+
+}
+
+
+.project-top{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:20px;
+
+  align-items:flex-start;
+
+}
+
+
+.project h2{
+
+  font-family:"Space Grotesk";
+
+  font-size:22px;
+
+  letter-spacing:-.5px;
+
+}
+
+
+.project-number{
+
+  font-family:"Space Grotesk";
+
+  font-size:14px;
+
+  color:#cbd5e1;
+
+  font-weight:700;
+
+}
+
+
+.project p{
+
+  color:var(--muted);
+
+  font-size:13px;
+
+  line-height:1.8;
+
+  margin:11px 0 22px;
+
+}
+
+
+/* =========================================================
+   PROJECT FOOTER
+========================================================= */
+
+.project-footer{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:12px;
+
+  padding-top:16px;
+
+  border-top:1px solid #eef2f7;
+
+}
+
+
+.tags{
+
+  display:flex;
+
+  gap:6px;
+
+  flex-wrap:wrap;
+
+}
+
+
+.tag{
+
+  font-size:10px;
+
+  font-weight:700;
+
+  color:#475569;
+
+  background:#f1f5f9;
+
+  padding:7px 9px;
+
+  border-radius:8px;
+
+}
+
+
+.project-link{
+
+  color:var(--primary);
+
+  font-size:12px;
+
+  font-weight:800;
+
+  white-space:nowrap;
+
+}
+
+
+.project-link i{
+
+  transition:.25s;
+
+}
+
+
+.project-link:hover i{
+
+  transform:translateX(4px);
+
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta{
+
+  margin-top:65px;
+
+  padding:40px;
+
+  border-radius:28px;
+
+  background:var(--dark);
+
+  color:#fff;
+
+  position:relative;
+
+  overflow:hidden;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:25px;
+
+}
+
+
+.cta::before,
+.cta::after{
+
+  content:"";
+
+  position:absolute;
+
+  border-radius:50%;
+
+  filter:blur(5px);
+
+  pointer-events:none;
+
+}
+
+
+.cta::before{
+
+  width:220px;
+
+  height:220px;
+
+  right:-60px;
+
+  top:-100px;
+
+  background:rgba(37,99,235,.45);
+
+}
+
+
+.cta::after{
+
+  width:180px;
+
+  height:180px;
+
+  left:30%;
+
+  bottom:-130px;
+
+  background:rgba(6,182,212,.25);
+
+}
+
+
+.cta-content{
+
+  position:relative;
+
+  z-index:1;
+
+}
+
+
+.cta small{
+
+  color:#93c5fd;
+
+  font-size:10px;
+
+  font-weight:800;
+
+  letter-spacing:2px;
+
+}
+
+
+.cta h2{
+
+  font-family:"Space Grotesk";
+
+  font-size:
+    clamp(24px,4vw,38px);
+
+  margin-top:8px;
+
+}
+
+
+.cta p{
+
+  color:#94a3b8;
+
+  font-size:13px;
+
+  margin-top:8px;
+
+}
+
+
+.cta a{
+
+  position:relative;
+
+  z-index:1;
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  white-space:nowrap;
+
+  padding:14px 20px;
+
+  border-radius:999px;
+
+  background:#fff;
+
+  color:var(--dark);
+
+  font-size:12px;
+
+  font-weight:800;
+
+  transition:.3s;
+
+}
+
+
+.cta a:hover{
+
+  transform:translateY(-3px);
+
+  box-shadow:
+    0 15px 35px rgba(0,0,0,.25);
+
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty{
+
+  display:none;
+
+  text-align:center;
+
+  padding:70px 20px;
+
+  border:
+    1px dashed #cbd5e1;
+
+  border-radius:24px;
+
+  background:#fff;
+
+}
+
+
+.empty i{
+
+  font-size:35px;
+
+  color:#94a3b8;
+
+}
+
+
+.empty h3{
+
+  margin:15px 0 7px;
+
+  font-family:"Space Grotesk";
+
+}
+
+
+.empty p{
+
+  color:var(--muted);
+
+  font-size:13px;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:850px){
+
+  .nav{
+
+    padding:12px 18px;
+
+  }
+
+
+  .menu-toggle{
+
+    display:block;
+
+  }
+
+
+  .nav-links{
+
+    position:absolute;
+
+    top:70px;
+
+    left:18px;
+
+    right:18px;
+
+    display:none;
+
+    flex-direction:column;
+
+    align-items:stretch;
+
+    padding:10px;
+
+    background:rgba(255,255,255,.97);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid var(--line);
+
+    border-radius:18px;
+
+    box-shadow:
+      0 20px 50px rgba(15,23,42,.12);
+
+  }
+
+
+  .nav-links.open{
+
+    display:flex;
+
+  }
+
+
+  .nav-links a{
+
+    display:block;
+
+    padding:13px 15px;
+
+  }
+
+
+  .hero{
+
+    grid-template-columns:1fr;
+
+    padding-top:65px;
+
+  }
+
+
+  .hero-meta{
+
+    justify-content:flex-start;
+
+  }
+
+
+  .projects-grid{
+
+    grid-template-columns:1fr;
+
+  }
+
+
+  .toolbar{
+
+    top:68px;
+
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media(max-width:560px){
+
+  .brand-text span{
+
+    display:none;
+
+  }
+
+
+  .hero,
+  .portfolio{
+
+    padding-left:17px;
+
+    padding-right:17px;
+
+  }
+
+
+  .hero h1{
+
+    font-size:45px;
+
+    letter-spacing:-2px;
+
+  }
+
+
+  .hero p{
+
+    font-size:14px;
+
+  }
+
+
+  .meta-card{
+
+    min-width:calc(50% - 5px);
+
+    padding:15px;
+
+  }
+
+
+  .project-media{
+
+    height:225px;
+
+  }
+
+
+  .project-body{
+
+    padding:21px;
+
+  }
+
+
+  .toolbar-bottom{
+
+    align-items:flex-start;
+
+    gap:10px;
+
+  }
+
+
+  .view-switch{
+
+    display:none;
+
+  }
+
+
+  .cta{
+
+    padding:28px 23px;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+  }
+
+
+  .filter-btn{
+
+    font-size:11px;
+
+    padding:9px 11px;
+
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+
+    animation:none!important;
+
+    transition:none!important;
+
+    scroll-behavior:auto!important;
+
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     BACKGROUND
+========================================================= -->
+
+<div class="bg-grid"></div>
+
+<div class="bg-glow glow-one"></div>
+
+<div class="bg-glow glow-two"></div>
+
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="site-header">
+
+  <nav
+    class="nav"
+    aria-label="Main navigation"
+  >
+
+
+    <!-- BRAND -->
+
+    <a
+      class="brand"
+      href="index.html"
+    >
+
+      <span class="brand-mark">
+        VC
+      </span>
+
+
+      <span class="brand-text">
+
+        <strong>
+          Victor Chitole
+        </strong>
+
+        <span>
+          CREATIVE TECHNOLOGY
+        </span>
+
+      </span>
+
+    </a>
+
+
+
+    <!-- MOBILE MENU BUTTON -->
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
+
+      <i class="fas fa-bars"></i>
+
+    </button>
+
+
+
+    <!-- NAVIGATION -->
+
+    <ul
+      class="nav-links"
+      id="navLinks"
+    >
+
+      <li>
+        <a href="index.html">
+          Home
+        </a>
+      </li>
+
+      <li>
+        <a href="about.html">
+          About
+        </a>
+      </li>
+
+      <li>
+        <a href="services.html">
+          Services
+        </a>
+      </li>
+
+      <li>
+        <a
+          class="active"
+          href="projects.html"
+        >
+          Projects
+        </a>
+      </li>
+
+      <li>
+        <a href="contact.html">
+          Contact
+        </a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main>
+
+
+  <!-- =======================================================
+       HERO
+  ======================================================== -->
+
+  <section class="hero">
+
+    <div>
+
+      <span class="eyebrow">
+
+        <i class="fas fa-circle"></i>
+
+        SELECTED WORK
+
+      </span>
+
+
+      <h1>
+
+        Ideas, designed.
+
+        <br>
+
+        <span class="gradient">
+          Digital experiences, built.
+        </span>
+
+      </h1>
+
+
+      <p>
+
+        A curated selection of my work across web development,
+        graphic design, branding, printing, digital content,
+        ICT training and technology. Every project is built with
+        clarity, creativity and practical results in mind.
+
+      </p>
+
+    </div>
+
+
+
+    <!-- HERO STATS -->
+
+    <div class="hero-meta">
+
+
+      <div class="meta-card">
+
+        <strong id="totalProjects">
+          05
+        </strong>
+
+        <span>
+          Featured Projects
+        </span>
+
+      </div>
+
+
+      <div class="meta-card">
+
+        <strong>
+          06+
+        </strong>
+
+        <span>
+          Creative Services
+        </span>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       PORTFOLIO
+  ======================================================== -->
+
+  <section
+    class="portfolio"
+    id="portfolio"
+  >
+
+
+    <!-- =====================================================
+         FILTER TOOLBAR
+    ====================================================== -->
+
+    <div class="toolbar">
+
+
+      <div
+        class="filters"
+        role="group"
+        aria-label="Project filters"
+      >
+
+
+        <button
+          class="filter-btn active"
+          data-filter="all"
+        >
+          All Work
+        </button>
+
+
+        <!-- COMBINED DESIGN CATEGORY -->
+
+        <button
+          class="filter-btn"
+          data-filter="graphic"
+        >
+          Graphic Design, Printing &amp; Branding
+        </button>
+
+
+        <!-- WEB -->
+
+        <button
+          class="filter-btn"
+          data-filter="web"
+        >
+          Web Development
+        </button>
+
+
+        <!-- CONTENT -->
+
+        <button
+          class="filter-btn"
+          data-filter="content"
+        >
+          Digital Content
+        </button>
+
+
+        <!-- ICT -->
+
+        <button
+          class="filter-btn"
+          data-filter="training"
+        >
+          ICT &amp; Tech Training
+        </button>
+
+
+      </div>
+
+
+
+      <!-- TOOLBAR BOTTOM -->
+
+      <div class="toolbar-bottom">
+
+
+        <span class="result-label">
+
+          Showing
+
+          <strong id="projectCount">
+            5
+          </strong>
+
+          projects
+
+        </span>
+
+
+        <div class="view-switch">
+
+
+          <button
+            class="view-btn active"
+            id="gridView"
+            aria-label="Grid view"
+          >
+
+            <i class="fas fa-grip"></i>
+
+          </button>
+
+
+          <button
+            class="view-btn"
+            id="listView"
+            aria-label="List view"
+          >
+
+            <i class="fas fa-list"></i>
+
+          </button>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         PROJECT GRID
+    ====================================================== -->
+
+    <div
+      class="projects-grid"
+      id="projectsGrid"
+    >
+
+
+
+      <!-- ===================================================
+           PROJECT 01
+           GRAPHIC DESIGN + PRINTING + BRANDING
+      ==================================================== -->
+
+      <article
+        class="project"
+        data-category="graphic"
+      >
+
+        <div class="project-media">
+
+
+          <img
+            src="images/poster1.jpg"
+            alt="Graphic Design, Printing and Branding project"
+            loading="lazy"
+          >
+
+
+          <div class="media-shade"></div>
+
+
+          <span class="badge">
+
+            GRAPHIC DESIGN • PRINTING • BRANDING
+
+          </span>
+
+
+          <div class="project-actions">
+
+
+            <a
+              href="https://drive.google.com/drive/folders/1w_s3uTPCyvXPgMgn_NtfFaoAQBfaaaag?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              View Project
+
+              <i class="fas fa-arrow-up-right-from-square"></i>
+
+            </a>
+
+
+          </div>
+
+        </div>
+
+
+
+        <div class="project-body">
+
+
+          <div class="project-top">
+
+
+            <h2>
+              Graphic Design, Printing &amp; Branding
+            </h2>
+
+
+            <span class="project-number">
+              01
+            </span>
+
+
+          </div>
+
+
+          <p>
+
+            Creative graphic design, professional printing and
+            complete branding solutions for businesses, churches,
+            schools, organizations and events.
+
+          </p>
+
+
+          <div class="project-footer">
+
+
+            <div class="tags">
+
+
+              <span class="tag">
+                Graphic Design
+              </span>
+
+
+              <span class="tag">
+                Printing
+              </span>
+
+
+              <span class="tag">
+                Branding
+              </span>
+
+
+            </div>
+
+
+            <a
+              class="project-link"
+              href="https://drive.google.com/drive/folders/1w_s3uTPCyvXPgMgn_NtfFaoAQBfaaaag?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              Explore
+
+              <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ===================================================
+           PROJECT 02
+           DIGITAL CONTENT
+      ==================================================== -->
+
+      <article
+        class="project"
+        data-category="content"
+      >
+
+        <div class="project-media">
+
+
+          <img
+            src="images/poster1.jpg"
+            alt="Digital content project"
+            loading="lazy"
+          >
+
+
+          <div class="media-shade"></div>
+
+
+          <span class="badge">
+            DIGITAL CONTENT
+          </span>
+
+
+          <div class="project-actions">
+
+
+            <a
+              href="https://youtu.be/defq4OKKs6U"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              Watch Video
+
+              <i class="fas fa-play"></i>
+
+            </a>
+
+
+          </div>
+
+        </div>
+
+
+
+        <div class="project-body">
+
+
+          <div class="project-top">
+
+
+            <h2>
+              Content Digitized
+            </h2>
+
+
+            <span class="project-number">
+              02
+            </span>
+
+
+          </div>
+
+
+          <p>
+
+            Video editing, content creation and multimedia
+            production services for modern businesses and
+            organizations.
+
+          </p>
+
+
+          <div class="project-footer">
+
+
+            <div class="tags">
+
+
+              <span class="tag">
+                Video
+              </span>
+
+
+              <span class="tag">
+                Media
+              </span>
+
+
+            </div>
+
+
+            <a
+              class="project-link"
+              href="https://youtu.be/defq4OKKs6U"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              Watch
+
+              <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ===================================================
+           PROJECT 03
+           MAVINSTECH WEBSITE
+      ==================================================== -->
+
+      <article
+        class="project"
+        data-category="web"
+      >
+
+        <div class="project-media">
+
+
+          <img
+            src="images/web1.jpg"
+            alt="Mavinstech Solution website"
+            loading="lazy"
+          >
+
+
+          <div class="media-shade"></div>
+
+
+          <span class="badge">
+            WEB DEVELOPMENT
+          </span>
+
+
+          <div class="project-actions">
+
+
+            <a
+              href="https://mavinsvictor1738.github.io/mavinstechsolution/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              Visit Website
+
+              <i class="fas fa-arrow-up-right-from-square"></i>
+
+            </a>
+
+
+          </div>
+
+        </div>
+
+
+
+        <div class="project-body">
+
+
+          <div class="project-top">
+
+
+            <h2>
+              Mavinstech Solution
+            </h2>
+
+
+            <span class="project-number">
+              03
+            </span>
+
+
+          </div>
+
+
+          <p>
+
+            A professional business website showcasing services,
+            projects, branding and company information.
+
+          </p>
+
+
+          <div class="project-footer">
+
+
+            <div class="tags">
+
+
+              <span class="tag">
+                HTML
+              </span>
+
+
+              <span class="tag">
+                CSS
+              </span>
+
+
+              <span class="tag">
+                JavaScript
+              </span>
+
+
+            </div>
+
+
+            <a
+              class="project-link"
+              href="https://mavinsvictor1738.github.io/mavinstechsolution/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              Live Site
+
+              <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ===================================================
+           PROJECT 04
+           TECH RESOLUTE
+      ==================================================== -->
+
+      <article
+        class="project"
+        data-category="web"
+      >
+
+        <div class="project-media">
+
+
+          <img
+            src="images/web2.jpg"
+            alt="Tech Resolute website"
+            loading="lazy"
+          >
+
+
+          <div class="media-shade"></div>
+
+
+          <span class="badge">
+            TEAM PROJECT
+          </span>
+
+
+          <div class="project-actions">
+
+
+            <a
+              href="https://tech-resolute.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              Visit Website
+
+              <i class="fas fa-arrow-up-right-from-square"></i>
+
+            </a>
+
+
+          </div>
+
+        </div>
+
+
+
+        <div class="project-body">
+
+
+          <div class="project-top">
+
+
+            <h2>
+              Tech Resolute
+            </h2>
+
+
+            <span class="project-number">
+              04
+            </span>
+
+
+          </div>
+
+
+          <p>
+
+            Collaborative responsive website developed using
+            modern web technologies and creative interface design.
+
+          </p>
+
+
+          <div class="project-footer">
+
+
+            <div class="tags">
+
+
+              <span class="tag">
+                Responsive
+              </span>
+
+
+              <span class="tag">
+                UI Design
+              </span>
+
+
+            </div>
+
+
+            <a
+              class="project-link"
+              href="https://tech-resolute.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              Live Site
+
+              <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ===================================================
+           PROJECT 05
+           ICT & TECH TRAINING
+      ==================================================== -->
+
+      <article
+        class="project"
+        data-category="training"
+      >
+
+        <div class="project-media">
+
+
+          <!--
+            Replace training1.jpg with your real
+            ICT / Smartboard / computer training photo.
+          -->
+
+          <img
+            src="images/training1.jpg"
+            alt="ICT and Technology Training by Victor Chitole"
+            loading="lazy"
+          >
+
+
+          <div class="media-shade"></div>
+
+
+          <span class="badge">
+            ICT &amp; TECH TRAINING
+          </span>
+
+
+          <div class="project-actions">
+
+
+            <a
+              href="https://wa.me/254740163974?text=Hello%20Victor%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20ICT%20and%20Tech%20Training."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              Enquire Now
+
+              <i class="fab fa-whatsapp"></i>
+
+            </a>
+
+
+          </div>
+
+        </div>
+
+
+
+        <div class="project-body">
+
+
+          <div class="project-top">
+
+
+            <h2>
+              ICT &amp; Tech Training
+            </h2>
+
+
+            <span class="project-number">
+              05
+            </span>
+
+
+          </div>
+
+
+          <p>
+
+            Practical technology training designed to build
+            digital skills through computer packages, smart
+            learning technologies, Smartboard training,
+            digital tools and technology-based learning.
+
+          </p>
+
+
+          <div class="project-footer">
+
+
+            <div class="tags">
+
+
+              <span class="tag">
+                ICT Training
+              </span>
+
+
+              <span class="tag">
+                Smartboards
+              </span>
+
+
+              <span class="tag">
+                Digital Skills
+              </span>
+
+
+            </div>
+
+
+            <a
+              class="project-link"
+              href="https://wa.me/254740163974?text=Hello%20Victor%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20ICT%20and%20Tech%20Training."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              Enquire
+
+              <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         EMPTY STATE
+    ====================================================== -->
+
+    <div
+      class="empty"
+      id="emptyState"
+    >
+
+      <i class="fas fa-folder-open"></i>
+
+
+      <h3>
+        No projects in this category yet
+      </h3>
+
+
+      <p>
+        More work is being prepared. Check back soon.
+      </p>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         CALL TO ACTION
+    ====================================================== -->
+
+    <div class="cta">
+
+
+      <div class="cta-content">
+
+
+        <small>
+          HAVE A PROJECT IN MIND?
+        </small>
+
+
+        <h2>
+          Let's build something remarkable.
+        </h2>
+
+
+        <p>
+
+          From concept to final delivery, let's turn your
+          idea into a professional digital experience.
+
+        </p>
+
+
+      </div>
+
+
+      <a
+        href="https://wa.me/254740163974"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        Start a Project
+
+        <i class="fab fa-whatsapp"></i>
+
+      </a>
+
+
+    </div>
+
+  </section>
+
+</main>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+const menuToggle =
+  document.getElementById("menuToggle");
+
+const navLinks =
+  document.getElementById("navLinks");
+
+
+menuToggle.addEventListener("click", () => {
+
+
+  const open =
+    navLinks.classList.toggle("open");
+
+
+  menuToggle.setAttribute(
+    "aria-expanded",
+    open
+  );
+
+
+  menuToggle.setAttribute(
+    "aria-label",
+    open
+      ? "Close menu"
+      : "Open menu"
+  );
+
+
+  menuToggle.innerHTML = open
+
+    ? '<i class="fas fa-xmark"></i>'
+
+    : '<i class="fas fa-bars"></i>';
+
+});
+
+
+
+/* =========================================================
+   CLOSE MOBILE MENU
+========================================================= */
+
+navLinks
+  .querySelectorAll("a")
+  .forEach(link => {
+
+
+    link.addEventListener("click", () => {
+
+
+      navLinks.classList.remove("open");
+
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+
+      menuToggle.setAttribute(
+        "aria-label",
+        "Open menu"
+      );
+
+
+      menuToggle.innerHTML =
+        '<i class="fas fa-bars"></i>';
+
+    });
+
+  });
+
+
+
+/* =========================================================
+   PROJECT FILTER SYSTEM
+========================================================= */
+
+const buttons =
+  document.querySelectorAll(".filter-btn");
+
+const projects =
+  document.querySelectorAll(".project");
+
+const count =
+  document.getElementById("projectCount");
+
+const empty =
+  document.getElementById("emptyState");
+
+
+buttons.forEach(button => {
+
+
+  button.addEventListener("click", () => {
+
+
+    /* REMOVE ACTIVE STATE */
+
+    buttons.forEach(btn => {
+
+      btn.classList.remove("active");
+
+    });
+
+
+    /* ADD ACTIVE STATE */
+
+    button.classList.add("active");
+
+
+    /* GET CATEGORY */
+
+    const filter =
+      button.dataset.filter;
+
+
+    let visible = 0;
+
+
+    /* LOOP THROUGH PROJECTS */
+
+    projects.forEach(project => {
+
+
+      const category =
+        project.dataset.category;
+
+
+      const show =
+        filter === "all" ||
+        category === filter;
+
+
+      if(show){
+
+
+        project.classList.remove(
+          "hidden"
+        );
+
+
+        /* RESTART ANIMATION */
+
+        project.style.animation =
+          "none";
+
+
+        void project.offsetWidth;
+
+
+        project.style.animation =
+          `cardIn .55s ease ${visible * .07}s both`;
+
+
+        visible++;
+
+
+      }else{
+
+
+        project.classList.add(
+          "hidden"
+        );
+
+      }
+
+    });
+
+
+    /* UPDATE RESULT COUNT */
+
+    count.textContent =
+      visible;
+
+
+    /* EMPTY STATE */
+
+    empty.style.display =
+      visible
+        ? "none"
+        : "block";
+
+
+  });
+
+});
+
+
+
+/* =========================================================
+   GRID / LIST VIEW
+========================================================= */
+
+const grid =
+  document.getElementById(
+    "projectsGrid"
+  );
+
+
+const gridView =
+  document.getElementById(
+    "gridView"
+  );
+
+
+const listView =
+  document.getElementById(
+    "listView"
+  );
+
+
+
+/* GRID */
+
+gridView.addEventListener(
+  "click",
+  function(){
+
+
+    grid.style.gridTemplateColumns =
+      "";
+
+
+    this.classList.add(
+      "active"
+    );
+
+
+    listView.classList.remove(
+      "active"
+    );
+
+
+  }
+);
+
+
+
+/* LIST */
+
+listView.addEventListener(
+  "click",
+  function(){
+
+
+    grid.style.gridTemplateColumns =
+      "1fr";
+
+
+    this.classList.add(
+      "active"
+    );
+
+
+    gridView.classList.remove(
+      "active"
+    );
+
+
+  }
+);
+
+
+
+/* =========================================================
+   INITIAL PROJECT COUNT
+========================================================= */
+
+count.textContent =
+  projects.length;
+
+
+</script>
+
+</body>
+</html>

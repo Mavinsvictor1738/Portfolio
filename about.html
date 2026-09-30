@@ -1,0 +1,3242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Victor Chitole | Mavinstech Solution</title>
+
+<meta name="description" content="Learn more about Victor Chitole, Founder of Mavinstech Solution, a creative technologist specializing in web development, graphic design, branding, printing, ICT training and digital transformation.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Inter",sans-serif;
+    background:#f8fafc;
+    color:#0f172a;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+}
+
+button{
+    font-family:inherit;
+}
+
+img{
+    max-width:100%;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#e2e8f0;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(#2563eb,#7c3aed);
+    border-radius:20px;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:76px;
+    z-index:9999;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 7%;
+
+    background:rgba(2,6,23,.82);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    transition:.35s ease;
+}
+
+.navbar.scrolled{
+    background:rgba(2,6,23,.96);
+    box-shadow:0 10px 40px rgba(0,0,0,.25);
+}
+
+
+/* LOGO */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    color:white;
+    font-size:21px;
+    font-weight:900;
+    letter-spacing:-.5px;
+}
+
+.logo-icon{
+    width:42px;
+    height:42px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:13px;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #06b6d4,
+        #7c3aed
+    );
+
+    box-shadow:
+        0 8px 25px rgba(37,99,235,.35);
+}
+
+.logo-icon i{
+    font-size:18px;
+}
+
+.logo-text span{
+    color:#38bdf8;
+}
+
+
+/* NAV LINKS */
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:30px;
+
+    list-style:none;
+}
+
+.nav-links a{
+    position:relative;
+
+    color:#cbd5e1;
+
+    font-size:14px;
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.nav-links a::after{
+    content:"";
+
+    position:absolute;
+    left:0;
+    bottom:-8px;
+
+    width:0;
+    height:2px;
+
+    background:#38bdf8;
+
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:#38bdf8;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+    width:100%;
+}
+
+
+/* NAV BUTTON */
+
+.nav-cta{
+    padding:10px 18px !important;
+
+    border-radius:50px;
+
+    color:white !important;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #4f46e5
+    );
+
+    box-shadow:
+        0 8px 25px rgba(37,99,235,.25);
+}
+
+.nav-cta::after{
+    display:none;
+}
+
+.nav-cta:hover{
+    transform:translateY(-2px);
+    box-shadow:
+        0 12px 30px rgba(37,99,235,.4);
+}
+
+
+/* MOBILE MENU BUTTON */
+
+.menu-toggle{
+    display:none;
+
+    width:44px;
+    height:44px;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    transition:.3s;
+}
+
+.menu-toggle:hover{
+    background:#2563eb;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+
+    padding:130px 7% 90px;
+
+    overflow:hidden;
+
+    color:white;
+
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(37,99,235,.35),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(124,58,237,.3),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #020617,
+            #0f172a 50%,
+            #172554
+        );
+}
+
+
+/* GRID */
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    opacity:.08;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.3) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.3) 1px,
+            transparent 1px
+        );
+
+    background-size:55px 55px;
+
+    mask-image:linear-gradient(
+        to bottom,
+        black,
+        transparent
+    );
+}
+
+
+/* ORBS */
+
+.orb{
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(80px);
+
+    pointer-events:none;
+
+    opacity:.2;
+
+    animation:orbFloat 8s ease-in-out infinite;
+}
+
+.orb-one{
+    width:350px;
+    height:350px;
+
+    left:-180px;
+    top:15%;
+
+    background:#2563eb;
+}
+
+.orb-two{
+    width:320px;
+    height:320px;
+
+    right:-150px;
+    bottom:5%;
+
+    background:#7c3aed;
+
+    animation-delay:-4s;
+}
+
+@keyframes orbFloat{
+
+    0%,100%{
+        transform:translate(0,0) scale(1);
+    }
+
+    50%{
+        transform:translate(30px,-30px) scale(1.1);
+    }
+}
+
+
+/* HERO CONTAINER */
+
+.hero-container{
+    position:relative;
+    z-index:5;
+
+    width:100%;
+    max-width:1250px;
+
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+
+/* HERO TEXT */
+
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    padding:10px 17px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.14);
+
+    backdrop-filter:blur(15px);
+
+    color:#dbeafe;
+
+    font-size:12px;
+    font-weight:700;
+
+    letter-spacing:.5px;
+}
+
+.badge-dot{
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:#22c55e;
+
+    box-shadow:
+        0 0 0 5px rgba(34,197,94,.12);
+
+    animation:blinkDot 1.8s infinite;
+}
+
+@keyframes blinkDot{
+
+    50%{
+        opacity:.4;
+        transform:scale(.7);
+    }
+}
+
+
+.hero h1{
+    margin-top:25px;
+
+    font-size:clamp(3.2rem,7vw,6rem);
+
+    line-height:1;
+
+    font-weight:900;
+
+    letter-spacing:-4px;
+}
+
+.gradient-text{
+    background:
+        linear-gradient(
+            90deg,
+            #60a5fa,
+            #22d3ee,
+            #a78bfa,
+            #60a5fa
+        );
+
+    background-size:300% auto;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    animation:gradientMove 5s linear infinite;
+}
+
+@keyframes gradientMove{
+
+    to{
+        background-position:300% center;
+    }
+}
+
+
+.hero-role{
+    margin-top:25px;
+
+    min-height:35px;
+
+    color:#93c5fd;
+
+    font-size:clamp(1.2rem,2.5vw,1.7rem);
+
+    font-weight:700;
+}
+
+.typing::after{
+    content:"|";
+
+    margin-left:4px;
+
+    color:#38bdf8;
+
+    animation:typingCursor 1s infinite;
+}
+
+@keyframes typingCursor{
+
+    50%{
+        opacity:0;
+    }
+}
+
+
+.hero-description{
+    max-width:700px;
+
+    margin-top:22px;
+
+    color:#cbd5e1;
+
+    font-size:17px;
+
+    line-height:1.9;
+}
+
+.hero-description strong{
+    color:white;
+}
+
+
+/* HERO BUTTONS */
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:14px;
+
+    margin-top:32px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+
+    padding:14px 24px;
+
+    border-radius:50px;
+
+    font-size:14px;
+    font-weight:800;
+
+    transition:.35s ease;
+}
+
+.btn-primary{
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #4f46e5
+        );
+
+    box-shadow:
+        0 12px 30px rgba(37,99,235,.3);
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 18px 40px rgba(37,99,235,.45);
+}
+
+.btn-outline{
+    color:white;
+
+    border:1px solid rgba(255,255,255,.3);
+
+    background:rgba(255,255,255,.07);
+
+    backdrop-filter:blur(10px);
+}
+
+.btn-outline:hover{
+    color:#0f172a;
+    background:white;
+
+    transform:translateY(-4px);
+}
+
+
+/* =========================================================
+   PROFILE CARD
+========================================================= */
+
+.profile-wrapper{
+    display:flex;
+    justify-content:center;
+
+    position:relative;
+}
+
+.profile-card{
+    position:relative;
+
+    width:min(430px,100%);
+
+    padding:12px;
+
+    border-radius:35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.18),
+            rgba(255,255,255,.05)
+        );
+
+    border:1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 35px 90px rgba(0,0,0,.35);
+
+    animation:profileFloat 6s ease-in-out infinite;
+}
+
+@keyframes profileFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-13px);
+    }
+}
+
+
+.profile-image-wrap{
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:27px;
+
+    aspect-ratio:1/1;
+}
+
+.profile-image-wrap::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37,99,235,.25),
+            transparent 50%,
+            rgba(124,58,237,.25)
+        );
+
+    pointer-events:none;
+}
+
+.profile-image{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+
+.profile-info{
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:20px;
+
+    padding:18px 12px 10px;
+}
+
+.profile-info h3{
+    font-size:17px;
+    font-weight:800;
+}
+
+.profile-info p{
+    margin-top:5px;
+
+    color:#94a3b8;
+
+    font-size:12px;
+}
+
+.profile-icon{
+    width:45px;
+    height:45px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:14px;
+
+    color:#60a5fa;
+
+    background:rgba(37,99,235,.15);
+}
+
+
+/* FLOATING BADGE */
+
+.profile-floating{
+    position:absolute;
+
+    left:-35px;
+    bottom:80px;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    padding:13px 16px;
+
+    border-radius:16px;
+
+    background:rgba(15,23,42,.9);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.3);
+
+    animation:badgeFloat 4s ease-in-out infinite;
+}
+
+@keyframes badgeFloat{
+
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+.profile-floating i{
+    color:#38bdf8;
+}
+
+.profile-floating span{
+    font-size:11px;
+    font-weight:700;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section{
+    padding:100px 6%;
+}
+
+.section-container{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-header{
+    max-width:750px;
+    margin:0 auto 55px;
+
+    text-align:center;
+}
+
+.section-label{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    color:#2563eb;
+
+    font-size:11px;
+    font-weight:800;
+
+    letter-spacing:2px;
+}
+
+.section-label::before{
+    content:"";
+
+    width:28px;
+    height:2px;
+
+    background:#2563eb;
+}
+
+.section-header h2{
+    margin-top:15px;
+
+    color:#0f172a;
+
+    font-size:clamp(2.2rem,5vw,3.5rem);
+
+    line-height:1.1;
+
+    font-weight:900;
+
+    letter-spacing:-2px;
+}
+
+.section-header p{
+    margin-top:18px;
+
+    color:#64748b;
+
+    line-height:1.8;
+
+    font-size:15px;
+}
+
+
+/* =========================================================
+   ABOUT INTRO
+========================================================= */
+
+.about-section{
+    background:white;
+}
+
+.about-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+.about-title{
+    color:#0f172a;
+
+    font-size:clamp(2rem,4vw,3rem);
+
+    font-weight:900;
+
+    line-height:1.15;
+
+    letter-spacing:-1.5px;
+}
+
+.about-text{
+    margin-top:20px;
+
+    color:#64748b;
+
+    font-size:15px;
+
+    line-height:1.9;
+}
+
+.about-text strong{
+    color:#334155;
+}
+
+
+/* MISSION BOX */
+
+.mission-box{
+    margin-top:28px;
+
+    padding:22px;
+
+    display:flex;
+
+    gap:17px;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eff6ff,
+            #f5f3ff
+        );
+
+    border:1px solid #dbeafe;
+}
+
+.mission-icon{
+    flex-shrink:0;
+
+    width:48px;
+    height:48px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:14px;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+}
+
+.mission-box h3{
+    font-size:16px;
+    font-weight:800;
+}
+
+.mission-box p{
+    margin-top:5px;
+
+    color:#64748b;
+
+    font-size:13px;
+
+    line-height:1.7;
+}
+
+
+/* STATS */
+
+.stats-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:16px;
+}
+
+.stat-card{
+    position:relative;
+
+    padding:27px;
+
+    border-radius:23px;
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+
+    overflow:hidden;
+
+    transition:.35s;
+}
+
+.stat-card::after{
+    content:"";
+
+    position:absolute;
+
+    width:90px;
+    height:90px;
+
+    right:-30px;
+    top:-30px;
+
+    border-radius:50%;
+
+    background:#dbeafe;
+
+    opacity:.5;
+}
+
+.stat-card:hover{
+    transform:translateY(-7px);
+
+    box-shadow:
+        0 20px 45px rgba(15,23,42,.1);
+}
+
+.stat-number{
+    position:relative;
+    z-index:2;
+
+    color:#2563eb;
+
+    font-size:38px;
+
+    font-weight:900;
+}
+
+.stat-card h3{
+    margin-top:7px;
+
+    font-size:14px;
+
+    font-weight:800;
+}
+
+.stat-card p{
+    margin-top:7px;
+
+    color:#64748b;
+
+    font-size:12px;
+
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   EXPERTISE
+========================================================= */
+
+.expertise-section{
+    background:#f8fafc;
+}
+
+.expertise-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:22px;
+}
+
+.expertise-card{
+    position:relative;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    background:white;
+
+    border:1px solid #e2e8f0;
+
+    box-shadow:
+        0 10px 35px rgba(15,23,42,.04);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+.expertise-card:hover{
+    transform:translateY(-10px);
+
+    box-shadow:
+        0 25px 55px rgba(15,23,42,.1);
+}
+
+.expertise-icon{
+    width:58px;
+    height:58px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:17px;
+
+    font-size:22px;
+
+    transition:.4s;
+}
+
+.expertise-card:hover .expertise-icon{
+    transform:
+        rotate(-5deg)
+        scale(1.08);
+}
+
+.blue{
+    color:#2563eb;
+    background:#dbeafe;
+}
+
+.purple{
+    color:#7c3aed;
+    background:#ede9fe;
+}
+
+.pink{
+    color:#db2777;
+    background:#fce7f3;
+}
+
+.orange{
+    color:#ea580c;
+    background:#ffedd5;
+}
+
+.cyan{
+    color:#0891b2;
+    background:#cffafe;
+}
+
+.green{
+    color:#16a34a;
+    background:#dcfce7;
+}
+
+.expertise-card h3{
+    margin-top:21px;
+
+    font-size:18px;
+
+    font-weight:800;
+}
+
+.expertise-card p{
+    margin-top:10px;
+
+    color:#64748b;
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+.card-link{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    margin-top:20px;
+
+    color:#2563eb;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    transition:.3s;
+}
+
+.card-link:hover{
+    gap:12px;
+}
+
+
+/* =========================================================
+   TECHNOLOGY STACK
+========================================================= */
+
+.tech-section{
+    background:white;
+}
+
+.tech-grid{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:18px;
+
+    max-width:950px;
+
+    margin:auto;
+}
+
+.tech-item{
+    min-width:120px;
+
+    padding:20px 18px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:10px;
+
+    border-radius:20px;
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+
+    color:#334155;
+
+    transition:.35s;
+}
+
+.tech-item:hover{
+    transform:translateY(-7px);
+
+    color:#2563eb;
+
+    border-color:#bfdbfe;
+
+    box-shadow:
+        0 15px 35px rgba(37,99,235,.1);
+}
+
+.tech-item i{
+    font-size:30px;
+}
+
+.tech-item span{
+    font-size:11px;
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   VALUES
+========================================================= */
+
+.values-section{
+    background:#f8fafc;
+}
+
+.values-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:22px;
+}
+
+.value-card{
+    padding:30px;
+
+    text-align:center;
+
+    background:white;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:25px;
+
+    transition:.35s;
+}
+
+.value-card:hover{
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 20px 45px rgba(15,23,42,.08);
+}
+
+.value-icon{
+    width:62px;
+    height:62px;
+
+    margin:auto;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:20px;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    font-size:22px;
+}
+
+.value-card h3{
+    margin-top:20px;
+
+    font-size:18px;
+
+    font-weight:800;
+}
+
+.value-card p{
+    margin-top:10px;
+
+    color:#64748b;
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta-section{
+    padding:0 6% 100px;
+
+    background:#f8fafc;
+}
+
+.cta{
+    position:relative;
+
+    overflow:hidden;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:55px;
+
+    border-radius:32px;
+
+    color:white;
+
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(59,130,246,.35),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #020617,
+            #172554
+        );
+
+    box-shadow:
+        0 30px 70px rgba(15,23,42,.2);
+}
+
+.cta::before{
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+    height:250px;
+
+    right:-100px;
+    bottom:-120px;
+
+    border-radius:50%;
+
+    background:#7c3aed;
+
+    filter:blur(80px);
+
+    opacity:.3;
+}
+
+.cta-content{
+    position:relative;
+    z-index:2;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:35px;
+}
+
+.cta-label{
+    color:#93c5fd;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+}
+
+.cta h2{
+    margin-top:10px;
+
+    font-size:clamp(2rem,4vw,3rem);
+
+    line-height:1.1;
+
+    font-weight:900;
+}
+
+.cta p{
+    max-width:600px;
+
+    margin-top:12px;
+
+    color:#cbd5e1;
+
+    font-size:14px;
+
+    line-height:1.7;
+}
+
+.cta-button{
+    flex-shrink:0;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:15px 24px;
+
+    border-radius:50px;
+
+    color:#1d4ed8;
+
+    background:white;
+
+    font-size:13px;
+
+    font-weight:900;
+
+    transition:.35s;
+}
+
+.cta-button:hover{
+    transform:translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.25);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+    padding:55px 6% 30px;
+
+    background:#020617;
+
+    color:#94a3b8;
+}
+
+.footer-container{
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:30px;
+}
+
+.footer-brand{
+    color:white;
+
+    font-size:18px;
+
+    font-weight:900;
+}
+
+.footer-brand span{
+    color:#38bdf8;
+}
+
+.footer p{
+    margin-top:7px;
+
+    font-size:12px;
+}
+
+.footer-social{
+    display:flex;
+
+    gap:10px;
+}
+
+.footer-social a{
+    width:40px;
+    height:40px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    color:#cbd5e1;
+
+    background:#0f172a;
+
+    border:1px solid #1e293b;
+
+    transition:.3s;
+}
+
+.footer-social a:hover{
+    color:white;
+
+    background:#2563eb;
+
+    transform:translateY(-4px);
+}
+
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+.whatsapp{
+    position:fixed;
+
+    right:25px;
+    bottom:25px;
+
+    width:60px;
+    height:60px;
+
+    display:grid;
+    place-items:center;
+
+    z-index:9000;
+
+    border-radius:50%;
+
+    color:white;
+
+    background:#25D366;
+
+    font-size:30px;
+
+    box-shadow:
+        0 12px 35px rgba(37,211,102,.35);
+
+    animation:whatsappPulse 2.5s infinite;
+
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    transform:scale(1.1);
+}
+
+@keyframes whatsappPulse{
+
+    0%,100%{
+        box-shadow:
+            0 12px 35px rgba(37,211,102,.35);
+    }
+
+    50%{
+        box-shadow:
+            0 12px 35px rgba(37,211,102,.35),
+            0 0 0 12px rgba(37,211,102,.08);
+    }
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal{
+    opacity:0;
+
+    transform:translateY(35px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.show{
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1000px){
+
+    .navbar{
+        padding:0 5%;
+    }
+
+    .hero{
+        padding-left:5%;
+        padding-right:5%;
+    }
+
+    .hero-container{
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        gap:50px;
+    }
+
+    .hero-description{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .profile-wrapper{
+        max-width:450px;
+        margin:auto;
+    }
+
+    .expertise-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+
+        gap:45px;
+    }
+
+    .values-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:800px){
+
+    .nav-links{
+        position:absolute;
+
+        top:76px;
+        left:0;
+
+        width:100%;
+
+        padding:20px;
+
+        display:none;
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:5px;
+
+        background:
+            rgba(2,6,23,.97);
+
+        border-bottom:
+            1px solid rgba(255,255,255,.1);
+
+        box-shadow:
+            0 20px 35px rgba(0,0,0,.2);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .nav-links li{
+        width:100%;
+    }
+
+    .nav-links a{
+        display:block;
+
+        padding:14px 15px;
+
+        border-radius:10px;
+    }
+
+    .nav-links a:hover{
+        background:rgba(255,255,255,.06);
+    }
+
+    .nav-links a::after{
+        display:none;
+    }
+
+    .nav-cta{
+        text-align:center;
+        margin-top:5px;
+    }
+
+    .menu-toggle{
+        display:grid;
+        place-items:center;
+    }
+
+    .hero h1{
+        letter-spacing:-2.5px;
+    }
+
+    .profile-floating{
+        left:5px;
+    }
+
+    .cta-content{
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .navbar{
+        height:70px;
+    }
+
+    .logo{
+        font-size:17px;
+    }
+
+    .logo-icon{
+        width:37px;
+        height:37px;
+    }
+
+    .hero{
+        min-height:auto;
+
+        padding:
+            120px 20px 75px;
+    }
+
+    .hero h1{
+        font-size:
+            clamp(3rem,16vw,4.5rem);
+    }
+
+    .hero-description{
+        font-size:14px;
+
+        line-height:1.8;
+    }
+
+    .hero-role{
+        font-size:17px;
+    }
+
+    .profile-card{
+        border-radius:25px;
+    }
+
+    .profile-floating{
+        bottom:65px;
+
+        padding:10px 12px;
+    }
+
+    .section{
+        padding:
+            75px 20px;
+    }
+
+    .section-header{
+        margin-bottom:40px;
+    }
+
+    .about-title{
+        font-size:2rem;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stat-card{
+        padding:20px;
+    }
+
+    .stat-number{
+        font-size:30px;
+    }
+
+    .expertise-grid{
+        grid-template-columns:1fr;
+    }
+
+    .values-grid{
+        grid-template-columns:1fr;
+    }
+
+    .tech-grid{
+        display:grid;
+
+        grid-template-columns:
+            repeat(3,1fr);
+    }
+
+    .tech-item{
+        min-width:0;
+
+        padding:16px 8px;
+    }
+
+    .tech-item i{
+        font-size:25px;
+    }
+
+    .tech-item span{
+        font-size:9px;
+    }
+
+    .cta-section{
+        padding:
+            0 20px 75px;
+    }
+
+    .cta{
+        padding:35px 25px;
+        border-radius:25px;
+    }
+
+    .cta-button{
+        width:100%;
+
+        justify-content:center;
+    }
+
+    .footer{
+        padding:
+            45px 20px 25px;
+    }
+
+    .footer-container{
+        flex-direction:column;
+
+        text-align:center;
+    }
+
+    .whatsapp{
+        width:55px;
+        height:55px;
+
+        right:18px;
+        bottom:18px;
+
+        font-size:27px;
+    }
+
+}
+
+
+@media(max-width:400px){
+
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
+
+    .tech-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+
+/* REDUCED MOTION */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+        transition-duration:.01ms !important;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav class="navbar" id="navbar">
+
+    <a href="index.html" class="logo">
+
+        <span class="logo-icon">
+            <i class="fas fa-code"></i>
+        </span>
+
+        <span class="logo-text">
+            Victor <span>Chitole</span>
+        </span>
+
+    </a>
+
+
+    <ul class="nav-links" id="navLinks">
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="about.html" class="active">
+                About
+            </a>
+        </li>
+
+        <li>
+            <a href="services.html">
+                Services
+            </a>
+        </li>
+
+        <li>
+            <a href="projects.html">
+                Projects
+            </a>
+        </li>
+
+        <li>
+            <a href="contact.html">
+                Contact
+            </a>
+        </li>
+
+        <li>
+            <a href="contact.html" class="nav-cta">
+                Let's Talk
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </li>
+
+    </ul>
+
+
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+    >
+        <i class="fas fa-bars"></i>
+    </button>
+
+</nav>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+    <div class="orb orb-one"></div>
+    <div class="orb orb-two"></div>
+
+
+    <div class="hero-container">
+
+
+        <!-- HERO CONTENT -->
+
+        <div class="hero-content reveal">
+
+            <span class="hero-badge">
+
+                <span class="badge-dot"></span>
+
+                Available for New Projects
+
+            </span>
+
+
+            <h1>
+
+                Victor
+                <span class="gradient-text">
+                    Chitole
+                </span>
+
+            </h1>
+
+
+            <div class="hero-role">
+
+                <span
+                    id="typing"
+                    class="typing"
+                ></span>
+
+            </div>
+
+
+            <p class="hero-description">
+
+                Founder of
+                <strong>Mavinstech Solution</strong>,
+                passionate about technology, creative design,
+                digital transformation and empowering people
+                through practical ICT solutions.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="assets/Victor-Chitole-CV.pdf"
+                    class="btn btn-primary"
+                    download
+                >
+
+                    <i class="fas fa-file-arrow-down"></i>
+
+                    Download CV
+
+                </a>
+
+
+                <a
+                    href="contact.html"
+                    class="btn btn-outline"
+                >
+
+                    <i class="fas fa-paper-plane"></i>
+
+                    Contact Me
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PROFILE -->
+
+        <div class="profile-wrapper reveal">
+
+            <div class="profile-card">
+
+                <div class="profile-image-wrap">
+
+                    <img
+                        src="assets/images/CEO PIC.jpg"
+                        alt="Victor Chitole"
+                        class="profile-image"
+                    >
+
+                </div>
+
+
+                <div class="profile-info">
+
+                    <div>
+
+                        <h3>
+                            Mavinstech Solution
+                        </h3>
+
+                        <p>
+                            Your Creative Tech Partner
+                        </p>
+
+                    </div>
+
+
+                    <div class="profile-icon">
+
+                        <i class="fas fa-code"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-floating">
+
+                <i class="fas fa-laptop-code"></i>
+
+                <span>
+                    Creative Technologist
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section class="section about-section">
+
+    <div class="section-container">
+
+
+        <div class="section-header reveal">
+
+            <span class="section-label">
+                ABOUT ME
+            </span>
+
+            <h2>
+
+                Building Digital Solutions
+                That
+                <span class="gradient-text">
+                    Create Impact
+                </span>
+
+            </h2>
+
+            <p>
+
+                I combine technology, creativity and practical
+                training to help individuals, businesses,
+                schools and organizations turn ideas into
+                professional digital solutions.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="about-grid">
+
+
+            <!-- STORY -->
+
+            <div class="reveal">
+
+                <h3 class="about-title">
+
+                    My Journey &
+                    <span class="gradient-text">
+                        Mission
+                    </span>
+
+                </h3>
+
+
+                <p class="about-text">
+
+                    As the Founder & CEO of
+                    <strong>Mavinstech Solution</strong>,
+                    I work across web development, graphic design,
+                    branding, printing, ICT training and digital
+                    transformation.
+
+                </p>
+
+
+                <p class="about-text">
+
+                    I also specialize in Smartboard training and
+                    Kolibri implementation, helping educators and
+                    learners use technology to improve teaching,
+                    learning and access to digital content.
+
+                </p>
+
+
+                <p class="about-text">
+
+                    My mission is to bridge technology and
+                    real-life needs while building a creative,
+                    tech-driven community that creates sustainable
+                    impact.
+
+                </p>
+
+
+                <div class="mission-box">
+
+                    <div class="mission-icon">
+
+                        <i class="fas fa-bullseye"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            My Mission
+                        </h3>
+
+                        <p>
+
+                            To use technology and creativity to
+                            create practical solutions, develop
+                            skills and empower people and
+                            organizations.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STATS -->
+
+            <div class="stats-grid reveal">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-number">
+                        100+
+                    </div>
+
+                    <h3>
+                        Creative Projects
+                    </h3>
+
+                    <p>
+                        Design, branding, printing
+                        & technology solutions.
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-number">
+                        50+
+                    </div>
+
+                    <h3>
+                        Happy Clients
+                    </h3>
+
+                    <p>
+                        Businesses, organizations
+                        & individuals.
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-number">
+                        100+
+                    </div>
+
+                    <h3>
+                        People Trained
+                    </h3>
+
+                    <p>
+                        ICT, Smartboards and
+                        digital skills.
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-number">
+                        24/7
+                    </div>
+
+                    <h3>
+                        Client Support
+                    </h3>
+
+                    <p>
+                        Reliable creative and
+                        technical support.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     EXPERTISE
+========================================================= -->
+
+<section class="section expertise-section">
+
+    <div class="section-container">
+
+
+        <div class="section-header reveal">
+
+            <span class="section-label">
+                WHAT I DO
+            </span>
+
+            <h2>
+                Core Expertise
+            </h2>
+
+            <p>
+
+                Professional services combining creativity,
+                technology and practical training.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="expertise-grid">
+
+
+            <!-- WEB -->
+
+            <article class="expertise-card reveal">
+
+                <div class="expertise-icon blue">
+
+                    <i class="fas fa-laptop-code"></i>
+
+                </div>
+
+                <h3>
+                    Web Development
+                </h3>
+
+                <p>
+
+                    Responsive websites, portfolios,
+                    business websites and modern web
+                    solutions designed for performance
+                    and usability.
+
+                </p>
+
+                <a href="services.html" class="card-link">
+
+                    Explore Service
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- GRAPHIC -->
+
+            <article class="expertise-card reveal">
+
+                <div class="expertise-icon purple">
+
+                    <i class="fas fa-palette"></i>
+
+                </div>
+
+                <h3>
+                    Graphic Design
+                </h3>
+
+                <p>
+
+                    Posters, flyers, social media graphics,
+                    invitations, certificates and creative
+                    visual designs.
+
+                </p>
+
+                <a href="services.html" class="card-link">
+
+                    Explore Service
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- BRANDING -->
+
+            <article class="expertise-card reveal">
+
+                <div class="expertise-icon pink">
+
+                    <i class="fas fa-wand-magic-sparkles"></i>
+
+                </div>
+
+                <h3>
+                    Branding
+                </h3>
+
+                <p>
+
+                    Logo design, brand identity, business
+                    materials and professional visual
+                    branding.
+
+                </p>
+
+                <a href="services.html" class="card-link">
+
+                    Explore Service
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- PRINTING -->
+
+            <article class="expertise-card reveal">
+
+                <div class="expertise-icon orange">
+
+                    <i class="fas fa-print"></i>
+
+                </div>
+
+                <h3>
+                    Printing
+                </h3>
+
+                <p>
+
+                    Banners, T-shirts, stickers,
+                    business cards, brochures and
+                    promotional materials.
+
+                </p>
+
+                <a href="services.html" class="card-link">
+
+                    Explore Service
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- TRAINING -->
+
+            <article class="expertise-card reveal">
+
+                <div class="expertise-icon cyan">
+
+                    <i class="fas fa-chalkboard-user"></i>
+
+                </div>
+
+                <h3>
+                    ICT & Training
+                </h3>
+
+                <p>
+
+                    Smartboard training, digital literacy,
+                    computer skills and practical technology
+                    workshops.
+
+                </p>
+
+                <a href="services.html" class="card-link">
+
+                    Explore Service
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- DIGITAL -->
+
+            <article class="expertise-card reveal">
+
+                <div class="expertise-icon green">
+
+                    <i class="fas fa-lightbulb"></i>
+
+                </div>
+
+                <h3>
+                    Digital Transformation
+                </h3>
+
+                <p>
+
+                    Kolibri implementation, digital content
+                    and technology solutions for organizations
+                    and learning environments.
+
+                </p>
+
+                <a href="services.html" class="card-link">
+
+                    Explore Service
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     TECHNOLOGY STACK
+========================================================= -->
+
+<section class="section tech-section">
+
+    <div class="section-container">
+
+
+        <div class="section-header reveal">
+
+            <span class="section-label">
+                TOOLS & TECHNOLOGY
+            </span>
+
+            <h2>
+                Technology Stack
+            </h2>
+
+            <p>
+
+                Technologies and digital tools I use
+                to transform ideas into practical solutions.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="tech-grid reveal">
+
+
+            <div class="tech-item">
+
+                <i class="fab fa-html5"></i>
+
+                <span>
+                    HTML5
+                </span>
+
+            </div>
+
+
+            <div class="tech-item">
+
+                <i class="fab fa-css3-alt"></i>
+
+                <span>
+                    CSS3
+                </span>
+
+            </div>
+
+
+            <div class="tech-item">
+
+                <i class="fab fa-js"></i>
+
+                <span>
+                    JavaScript
+                </span>
+
+            </div>
+
+
+            <div class="tech-item">
+
+                <i class="fab fa-react"></i>
+
+                <span>
+                    React
+                </span>
+
+            </div>
+
+
+            <div class="tech-item">
+
+                <i class="fab fa-wordpress"></i>
+
+                <span>
+                    WordPress
+                </span>
+
+            </div>
+
+
+            <div class="tech-item">
+
+                <i class="fab fa-github"></i>
+
+                <span>
+                    GitHub
+                </span>
+
+            </div>
+
+
+            <div class="tech-item">
+
+                <i class="fas fa-database"></i>
+
+                <span>
+                    Database
+                </span>
+
+            </div>
+
+
+            <div class="tech-item">
+
+                <i class="fas fa-layer-group"></i>
+
+                <span>
+                    Tailwind CSS
+                </span>
+
+            </div>
+
+
+            <div class="tech-item">
+
+                <i class="fas fa-chalkboard"></i>
+
+                <span>
+                    Smartboards
+                </span>
+
+            </div>
+
+
+            <div class="tech-item">
+
+                <i class="fas fa-graduation-cap"></i>
+
+                <span>
+                    Kolibri
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     VALUES
+========================================================= -->
+
+<section class="section values-section">
+
+    <div class="section-container">
+
+
+        <div class="section-header reveal">
+
+            <span class="section-label">
+                MY APPROACH
+            </span>
+
+            <h2>
+                What Drives My Work
+            </h2>
+
+            <p>
+
+                Every project is approached with creativity,
+                professionalism and a focus on real-world impact.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="values-grid">
+
+
+            <div class="value-card reveal">
+
+                <div class="value-icon">
+
+                    <i class="fas fa-lightbulb"></i>
+
+                </div>
+
+                <h3>
+                    Creativity
+                </h3>
+
+                <p>
+
+                    I turn ideas into unique visual,
+                    digital and technology experiences
+                    that stand out.
+
+                </p>
+
+            </div>
+
+
+            <div class="value-card reveal">
+
+                <div class="value-icon">
+
+                    <i class="fas fa-handshake"></i>
+
+                </div>
+
+                <h3>
+                    Reliability
+                </h3>
+
+                <p>
+
+                    I believe in clear communication,
+                    quality work and building long-term
+                    relationships with clients.
+
+                </p>
+
+            </div>
+
+
+            <div class="value-card reveal">
+
+                <div class="value-icon">
+
+                    <i class="fas fa-rocket"></i>
+
+                </div>
+
+                <h3>
+                    Innovation
+                </h3>
+
+                <p>
+
+                    I continuously explore new technologies
+                    and creative approaches to solve
+                    practical problems.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="cta-section">
+
+    <div class="cta reveal">
+
+        <div class="cta-content">
+
+
+            <div>
+
+                <span class="cta-label">
+                    HAVE A PROJECT IN MIND?
+                </span>
+
+                <h2>
+                    Let's Create Something
+                    <span class="gradient-text">
+                        Amazing.
+                    </span>
+                </h2>
+
+                <p>
+
+                    Let's turn your idea into a professional
+                    digital, branding, printing or ICT solution.
+
+                </p>
+
+            </div>
+
+
+            <a
+                href="https://wa.me/254740163974"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cta-button"
+            >
+
+                Start a Project
+
+                <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+
+        <div>
+
+            <div class="footer-brand">
+
+                Victor
+                <span>Chitole</span>
+
+            </div>
+
+            <p>
+                Mavinstech Solution — Your Creative Tech Partner
+            </p>
+
+            <p>
+                © 2026 Victor Chitole. All Rights Reserved.
+            </p>
+
+        </div>
+
+
+        <div class="footer-social">
+
+            <a
+                href="https://wa.me/254740163974"
+                target="_blank"
+                aria-label="WhatsApp"
+            >
+                <i class="fab fa-whatsapp"></i>
+            </a>
+
+
+            <a
+                href="mailto:mavinstechsolution@gmail.com"
+                aria-label="Email"
+            >
+                <i class="fas fa-envelope"></i>
+            </a>
+
+
+            <a
+                href="https://github.com/mavinsvictor1738"
+                target="_blank"
+                aria-label="GitHub"
+            >
+                <i class="fab fa-github"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     WHATSAPP
+========================================================= -->
+
+<a
+    href="https://wa.me/254740163974"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="whatsapp"
+    aria-label="Chat with Victor on WhatsApp"
+>
+
+    <i class="fab fa-whatsapp"></i>
+
+</a>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuToggle =
+    document.getElementById("menuToggle");
+
+const navLinks =
+    document.getElementById("navLinks");
+
+
+menuToggle.addEventListener("click", () => {
+
+    navLinks.classList.toggle("active");
+
+    const isOpen =
+        navLinks.classList.contains("active");
+
+    menuToggle.setAttribute(
+        "aria-expanded",
+        isOpen
+    );
+
+    menuToggle.innerHTML =
+        isOpen
+        ? '<i class="fas fa-xmark"></i>'
+        : '<i class="fas fa-bars"></i>';
+
+});
+
+
+/* CLOSE MOBILE MENU WHEN LINK IS CLICKED */
+
+document
+    .querySelectorAll(".nav-links a")
+    .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navLinks.classList.remove("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuToggle.innerHTML =
+                '<i class="fas fa-bars"></i>';
+
+        });
+
+    });
+
+
+
+/* =========================================================
+   NAVBAR SCROLL EFFECT
+========================================================= */
+
+const navbar =
+    document.getElementById("navbar");
+
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 40){
+
+        navbar.classList.add("scrolled");
+
+    }else{
+
+        navbar.classList.remove("scrolled");
+
+    }
+
+});
+
+
+
+/* =========================================================
+   TYPING EFFECT
+========================================================= */
+
+const roles = [
+
+    "Founder of Mavinstech Solution",
+
+    "Web Developer & Creative Designer",
+
+    "Branding & Printing Specialist",
+
+    "ICT & Smartboard Trainer",
+
+    "Digital Transformation Specialist"
+
+];
+
+
+let roleIndex = 0;
+
+let charIndex = 0;
+
+let deleting = false;
+
+
+const typing =
+    document.getElementById("typing");
+
+
+function typeRole(){
+
+    const current =
+        roles[roleIndex];
+
+
+    if(!deleting){
+
+        typing.textContent =
+            current.substring(
+                0,
+                charIndex + 1
+            );
+
+        charIndex++;
+
+
+        if(charIndex === current.length){
+
+            deleting = true;
+
+            setTimeout(
+                typeRole,
+                1600
+            );
+
+            return;
+        }
+
+
+    }else{
+
+        typing.textContent =
+            current.substring(
+                0,
+                charIndex - 1
+            );
+
+        charIndex--;
+
+
+        if(charIndex === 0){
+
+            deleting = false;
+
+            roleIndex =
+                (roleIndex + 1)
+                % roles.length;
+
+        }
+
+    }
+
+
+    setTimeout(
+        typeRole,
+        deleting ? 35 : 60
+    );
+
+}
+
+
+typeRole();
+
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+const observer =
+    new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target
+                        .classList
+                        .add("show");
+
+                    observer.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold:.12
+        }
+
+    );
+
+
+revealElements.forEach(element => {
+
+    observer.observe(element);
+
+});
+
+
+/* =========================================================
+   ACTIVE PAGE
+========================================================= */
+
+const currentPage =
+    window.location.pathname
+        .split("/")
+        .pop() || "index.html";
+
+
+document
+    .querySelectorAll(".nav-links a")
+    .forEach(link => {
+
+        const linkPage =
+            link.getAttribute("href");
+
+        if(linkPage === currentPage){
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+
+/* =========================================================
+   ESCAPE KEY CLOSES MENU
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if(event.key === "Escape"){
+
+            navLinks.classList.remove(
+                "active"
+            );
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuToggle.innerHTML =
+                '<i class="fas fa-bars"></i>';
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
