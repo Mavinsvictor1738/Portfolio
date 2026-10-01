@@ -1,713 +1,3490 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!-- =====================================================
+         BASIC SEO
+    ====================================================== -->
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Mavinstech Solution</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <!-- Font Awesome -->
+    <title>Contact |Victor Chitole</title>
+
+    <meta name="description"
+          content="Contact Victor Chitole for web development, graphic design, printing, branding, ICT training, digital marketing and technology solutions in Kilifi, Kenya.">
+
+    <meta name="keywords"
+          content="Victor Chitole, web development Kilifi, graphic design Kilifi, printing Kilifi, branding Kenya, ICT training Kilifi, Victor Chitole">
+
+    <meta name="author"
+          content="Victor Chitole">
+
+    <meta name="robots"
+          content="index, follow">
+
+    <meta name="theme-color"
+          content="#050505">
+
+
+    <!-- =====================================================
+         OPEN GRAPH
+    ====================================================== -->
+
+    <meta property="og:title"
+          content="Contact | Mavinstech Solution">
+
+    <meta property="og:description"
+          content="Let's build something great. Contact Mavinstech Solution for digital, creative and ICT solutions.">
+
+    <meta property="og:type"
+          content="website">
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
     <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer">
 
-    <!-- Your CSS -->
-    <link rel="stylesheet" href="contact.css">
 
-</head>
 <style>
-/* ===============================
-GOOGLE FONT
-==================================*/
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+
+/* =========================================================
+   VICTOR CHITOLE
+   PREMIUM CONTACT PAGE
+   SINGLE FILE VERSION
+   BLACK • WHITE • GREEN
+========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+
+    --black: #050505;
+    --black-soft: #090909;
+    --card: #101010;
+    --card-light: #151515;
+
+    --white: #ffffff;
+    --text: #f5f5f5;
+
+    --muted: #a1a1aa;
+    --muted-dark: #71717a;
+
+    --green: #22c55e;
+    --green-light: #4ade80;
+    --green-dark: #16a34a;
+
+    --green-soft: rgba(34, 197, 94, .12);
+    --green-border: rgba(34, 197, 94, .20);
+
+    --border: rgba(255,255,255,.09);
+    --border-light: rgba(255,255,255,.14);
+
+    --radius: 22px;
+
+    --transition: .3s cubic-bezier(.4,0,.2,1);
 }
 
-html{
-    scroll-behavior:smooth;
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    background:linear-gradient(135deg,#0f172a,#111827,#1e3a8a);
-    color:#fff;
-    overflow-x:hidden;
-    min-height:100vh;
-}
-/* ===============================
-BACKGROUND SHAPES
-==================================*/
 
-.shape{
-    position:fixed;
-    border-radius:50%;
-    filter:blur(80px);
-    z-index:-1;
+html {
+    scroll-behavior: smooth;
 }
 
-.shape1{
-    width:300px;
-    height:300px;
-    background:#2563eb;
-    top:-120px;
-    left:-80px;
+
+body {
+
+    min-height: 100vh;
+
+    font-family: "Inter", sans-serif;
+
+    background: var(--black);
+
+    color: var(--white);
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+
+    -webkit-font-smoothing: antialiased;
 }
 
-.shape2{
-    width:350px;
-    height:350px;
-    background:#9333ea;
-    right:-120px;
-    top:250px;
-}
 
-.shape3{
-    width:250px;
-    height:250px;
-    background:#06b6d4;
-    bottom:-100px;
-    left:40%;
-}
-
-/* ===============================
-BACK BUTTON
-==================================*/
-
-.back-home{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    color:#fff;
-    text-decoration:none;
-    margin:30px;
-    font-weight:600;
-}
-
-.back-home:hover{
-    color:#38bdf8;
-}
-
-/* ===============================
-CONTACT
-==================================*/
-
-#contact{
-    padding:70px 8%;
-}
-
-.contact-container{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
-}
-
-.tag{
-    display:inline-block;
-    background:#2563eb;
-    padding:8px 18px;
-    border-radius:40px;
-    font-size:14px;
-    margin-bottom:20px;
-}
-
-.contact-left h1{
-    font-size:45px;
-    margin-bottom:20px;
-}
-
-.contact-left p{
-    color:#d1d5db;
-    line-height:1.8;
-}
-
-.contact-info{
-    margin-top:40px;
-}
-
-.info-box{
-    display:flex;
-    align-items:center;
-    gap:18px;
-    margin-bottom:25px;
-}
-
-.icon{
-    width:60px;
-    height:60px;
-    background:#2563eb;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    border-radius:50%;
-    font-size:22px;
-}
-
-.social-links{
-    margin-top:40px;
-}
-
-.social-links a{
-    width:45px;
-    height:45px;
-    display:inline-flex;
-    justify-content:center;
-    align-items:center;
-    text-decoration:none;
-    color:#fff;
-    background:rgba(255,255,255,.08);
-    border-radius:50%;
-    margin-right:10px;
-    transition:.4s;
-}
-
-.social-links a:hover{
-    background:#2563eb;
-    transform:translateY(-6px);
-}
-
-/* ===============================
-FORM
-==================================*/
-
-.form-card{
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(15px);
-    border:1px solid rgba(255,255,255,.1);
-    padding:35px;
-    border-radius:20px;
-}
-
-.subtitle{
-    color:#d1d5db;
-    margin:10px 0 25px;
-}
-
-.input-group{
-    margin-bottom:20px;
-}
-
+body,
+button,
 input,
-textarea{
-    width:100%;
-    padding:16px;
-    border:none;
-    outline:none;
-    background:rgba(255,255,255,.08);
-    color:#fff;
-    border-radius:10px;
-    font-size:15px;
+textarea,
+select {
+    font-family: "Inter", sans-serif;
 }
 
-textarea{
-    resize:none;
-    min-height:150px;
+
+a {
+    color: inherit;
+    text-decoration: none;
 }
+
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+
+button {
+    border: 0;
+}
+
+
+img,
+iframe {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -10;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            circle at 12% 12%,
+            rgba(34,197,94,.08),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 70%,
+            rgba(34,197,94,.05),
+            transparent 30%
+        ),
+
+        var(--black);
+}
+
+
+.orb {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    opacity: .4;
+}
+
+
+.orb-one {
+
+    width: 350px;
+    height: 350px;
+
+    left: -120px;
+    top: -180px;
+
+    background: rgba(34,197,94,.12);
+}
+
+
+.orb-two {
+
+    width: 420px;
+    height: 420px;
+
+    right: -220px;
+    bottom: -200px;
+
+    background: rgba(34,197,94,.07);
+}
+
+
+.grid {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 50px 50px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black 0%,
+            transparent 90%
+        );
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.topbar {
+
+    width: min(1250px,92%);
+
+    margin: auto;
+
+    padding: 27px 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.logo {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.logo-mark {
+
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 12px;
+
+    background: var(--green);
+
+    color: #000;
+
+    font-family: "Poppins",sans-serif;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 25px rgba(34,197,94,.15);
+}
+
+
+.logo-text strong {
+
+    display: block;
+
+    font-family: "Poppins",sans-serif;
+
+    font-size: 17px;
+
+    line-height: 1.1;
+}
+
+
+.logo-text small {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+.back-home {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #d4d4d8;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+
+.back-home i {
+
+    transition: var(--transition);
+}
+
+
+.back-home:hover {
+
+    color: var(--green);
+}
+
+
+.back-home:hover i {
+
+    transform: translateX(-4px);
+}
+
+
+/* =========================================================
+   CONTACT SECTION
+========================================================= */
+
+.contact-section {
+
+    width: min(1250px,92%);
+
+    min-height: 720px;
+
+    margin: auto;
+
+    padding: 65px 0 100px;
+
+    display: grid;
+
+    grid-template-columns: .9fr 1.1fr;
+
+    gap: 90px;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   LEFT SIDE
+========================================================= */
+
+.eyebrow {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--green);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+}
+
+
+.eyebrow span {
+
+    width: 28px;
+
+    height: 2px;
+
+    background: var(--green);
+
+    border-radius: 5px;
+}
+
+
+.contact-intro h1 {
+
+    max-width: 650px;
+
+    margin-top: 20px;
+
+    font-family: "Poppins",sans-serif;
+
+    font-size: clamp(45px,5vw,70px);
+
+    line-height: 1.04;
+
+    letter-spacing: -3px;
+}
+
+
+.contact-intro h1 span {
+
+    display: block;
+
+    color: var(--green);
+}
+
+
+.intro-text {
+
+    max-width: 570px;
+
+    margin-top: 25px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CONTACT DETAILS
+========================================================= */
+
+.contact-details {
+
+    margin-top: 38px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 11px;
+}
+
+
+.contact-card {
+
+    width: 100%;
+
+    max-width: 550px;
+
+    min-height: 76px;
+
+    padding: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    background: rgba(255,255,255,.025);
+
+    transition: var(--transition);
+}
+
+
+.contact-card:hover {
+
+    transform: translateX(7px);
+
+    border-color: var(--green-border);
+
+    background: var(--green-soft);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.15);
+}
+
+
+.contact-icon {
+
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 12px;
+
+    background: var(--green-soft);
+
+    color: var(--green);
+
+    font-size: 17px;
+}
+
+
+.contact-card-content {
+
+    min-width: 0;
+}
+
+
+.contact-card small {
+
+    display: block;
+
+    color: var(--muted-dark);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+.contact-card strong {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: #e4e4e7;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    overflow-wrap: anywhere;
+}
+
+
+.card-arrow {
+
+    margin-left: auto;
+
+    flex-shrink: 0;
+
+    color: #52525b;
+
+    font-size: 11px;
+
+    transition: var(--transition);
+}
+
+
+.contact-card:hover .card-arrow {
+
+    color: var(--green);
+
+    transform: translate(2px,-2px);
+}
+
+
+/* =========================================================
+   AVAILABILITY
+========================================================= */
+
+.availability {
+
+    margin-top: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.status-dot {
+
+    width: 10px;
+    height: 10px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    box-shadow:
+
+        0 0 0 5px rgba(34,197,94,.09),
+
+        0 0 15px rgba(34,197,94,.45);
+
+    animation: pulse 2s infinite;
+}
+
+
+.availability strong {
+
+    display: block;
+
+    font-size: 12px;
+}
+
+
+.availability small {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--muted-dark);
+
+    font-size: 10px;
+}
+
+
+@keyframes pulse {
+
+    50% {
+
+        box-shadow:
+
+            0 0 0 9px rgba(34,197,94,.025),
+
+            0 0 20px rgba(34,197,94,.6);
+    }
+
+}
+
+
+/* =========================================================
+   SOCIALS
+========================================================= */
+
+.social-area {
+
+    margin-top: 32px;
+}
+
+
+.social-area > span {
+
+    color: var(--muted-dark);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+
+.social-links {
+
+    margin-top: 11px;
+
+    display: flex;
+
+    gap: 8px;
+}
+
+
+.social-links a {
+
+    width: 39px;
+    height: 39px;
+
+    display: grid;
+
+    place-items: center;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    color: #a1a1aa;
+
+    transition: var(--transition);
+}
+
+
+.social-links a:hover {
+
+    transform: translateY(-4px);
+
+    border-color: var(--green);
+
+    background: var(--green);
+
+    color: #000;
+
+    box-shadow:
+        0 8px 20px rgba(34,197,94,.15);
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.form-wrapper {
+
+    padding: 40px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 26px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.025)
+        );
+
+    box-shadow:
+
+        0 30px 80px rgba(0,0,0,.35);
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+}
+
+
+/* =========================================================
+   FORM HEADER
+========================================================= */
+
+.form-header {
+
+    margin-bottom: 31px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.form-number {
+
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 13px;
+
+    background: var(--green);
+
+    color: #000;
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+
+.form-header h2 {
+
+    font-family: "Poppins",sans-serif;
+
+    font-size: 23px;
+
+    line-height: 1.2;
+}
+
+
+.form-header p {
+
+    margin-top: 4px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 17px;
+}
+
+
+.field {
+
+    margin-bottom: 17px;
+}
+
+
+.field label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #d4d4d8;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+.input-box,
+.textarea-box {
+
+    position: relative;
+}
+
+
+.input-box i {
+
+    position: absolute;
+
+    left: 16px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #52525b;
+
+    font-size: 13px;
+
+    pointer-events: none;
+
+    transition: var(--transition);
+
+    z-index: 2;
+}
+
+
+.input-box input,
+.input-box select,
+.textarea-box textarea {
+
+    width: 100%;
+
+    border: 1px solid var(--border);
+
+    outline: none;
+
+    border-radius: 12px;
+
+    background: rgba(0,0,0,.32);
+
+    color: #fff;
+
+    font-size: 13px;
+
+    transition: var(--transition);
+}
+
+
+.input-box input,
+.input-box select {
+
+    height: 52px;
+
+    padding: 0 15px 0 45px;
+}
+
+
+.input-box select {
+
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    cursor: pointer;
+}
+
+
+.input-box select option {
+
+    background: #111;
+
+    color: #fff;
+}
+
+
+.textarea-box textarea {
+
+    min-height: 145px;
+
+    padding: 15px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+
+.input-box input:hover,
+.input-box select:hover,
+.textarea-box textarea:hover {
+
+    border-color: var(--border-light);
+}
+
+
+.input-box input:focus,
+.input-box select:focus,
+.textarea-box textarea:focus {
+
+    border-color: var(--green);
+
+    box-shadow:
+        0 0 0 3px rgba(34,197,94,.08);
+}
+
+
+.input-box:focus-within i {
+
+    color: var(--green);
+}
+
 
 input::placeholder,
-textarea::placeholder{
-    color:#cbd5e1;
+textarea::placeholder {
+
+    color: #52525b;
 }
 
-.send-btn{
-    width:100%;
-    border:none;
-    cursor:pointer;
-    padding:16px;
-    border-radius:10px;
-    background:#2563eb;
-    color:#fff;
-    font-size:17px;
-    font-weight:600;
-    transition:.4s;
-    position:relative;
+
+#counter {
+
+    position: absolute;
+
+    right: 13px;
+
+    bottom: 10px;
+
+    color: #52525b;
+
+    font-size: 9px;
+
+    pointer-events: none;
 }
 
-.send-btn:hover{
-    background:#1d4ed8;
+
+/* =========================================================
+   FORM ERRORS
+========================================================= */
+
+.field-error {
+
+    display: block;
+
+    min-height: 0;
+
+    margin-top: 5px;
+
+    color: #f87171;
+
+    font-size: 10px;
 }
 
-.loader{
-    display:none;
-    width:22px;
-    height:22px;
-    border:3px solid rgba(255,255,255,.4);
-    border-top:3px solid #fff;
-    border-radius:50%;
-    animation:spin 1s linear infinite;
-    margin:auto;
+
+.input-error {
+
+    border-color: #ef4444 !important;
+
+    box-shadow:
+        0 0 0 3px rgba(239,68,68,.07) !important;
 }
 
-.response-time{
-    text-align:center;
-    margin-top:15px;
-    color:#94a3b8;
-    font-size:14px;
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.submit-btn {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background: var(--green);
+
+    color: #000;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: var(--transition);
 }
 
-@keyframes spin{
-    100%{
-        transform:rotate(360deg);
+
+.submit-btn:hover:not(:disabled) {
+
+    transform: translateY(-2px);
+
+    background: var(--green-light);
+
+    box-shadow:
+        0 15px 30px rgba(34,197,94,.18);
+}
+
+
+.submit-btn:active:not(:disabled) {
+
+    transform: translateY(0);
+}
+
+
+.submit-btn:disabled {
+
+    cursor: not-allowed;
+
+    opacity: .75;
+}
+
+
+.button-content,
+.button-loading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.button-loading {
+
+    display: none;
+}
+
+
+.submit-btn.loading .button-content {
+
+    display: none;
+}
+
+
+.submit-btn.loading .button-loading {
+
+    display: flex;
+}
+
+
+.button-arrow {
+
+    position: absolute;
+
+    right: 18px;
+
+    transition: var(--transition);
+}
+
+
+.submit-btn:hover:not(:disabled) .button-arrow {
+
+    transform: translateX(4px);
+}
+
+
+.spinner {
+
+    width: 17px;
+    height: 17px;
+
+    border: 2px solid rgba(0,0,0,.25);
+
+    border-top-color: #000;
+
+    border-radius: 50%;
+
+    animation: spin .7s linear infinite;
+}
+
+
+@keyframes spin {
+
+    to {
+        transform: rotate(360deg);
     }
+
 }
 
-/* ===============================
-MAP
-==================================*/
 
-.map-section{
-    padding:60px 8%;
+/* =========================================================
+   PRIVACY
+========================================================= */
+
+.privacy-note {
+
+    margin-top: 13px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #52525b;
+
+    font-size: 9px;
+
+    text-align: center;
 }
 
-.map-section h2{
-    text-align:center;
-    margin-bottom:30px;
+
+/* =========================================================
+   QUICK WHATSAPP
+========================================================= */
+
+.quick-contact {
+
+    width: min(1250px,92%);
+
+    margin: 0 auto 100px;
+
+    padding: 43px;
+
+    border: 1px solid rgba(34,197,94,.16);
+
+    border-radius: 24px;
+
+    background:
+
+        linear-gradient(
+            110deg,
+            rgba(34,197,94,.13),
+            rgba(34,197,94,.025)
+        );
 }
 
-.map-container{
-    overflow:hidden;
-    border-radius:20px;
+
+.quick-content {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
 }
 
-iframe{
-    width:100%;
-    height:450px;
-    border:none;
+
+.quick-label {
+
+    color: var(--green);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
 }
 
-/* ===============================
-FOOTER
-==================================*/
 
-footer{
-    padding:40px;
-    text-align:center;
-    color:#cbd5e1;
+.quick-content h2 {
+
+    margin-top: 5px;
+
+    font-family: "Poppins",sans-serif;
+
+    font-size: 29px;
 }
 
-/* ===============================
-TOAST
-==================================*/
 
-#toast{
-    position:fixed;
-    right:25px;
-    bottom:30px;
-    background:#16a34a;
-    padding:18px 24px;
-    border-radius:12px;
-    display:flex;
-    gap:12px;
-    align-items:center;
-    transform:translateY(120px);
-    transition:.4s;
+.quick-content p {
+
+    max-width: 650px;
+
+    margin-top: 7px;
+
+    color: var(--muted);
+
+    font-size: 12px;
 }
 
-#toast.show{
-    transform:translateY(0);
+
+.whatsapp-btn {
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 15px 21px;
+
+    border-radius: 12px;
+
+    background: var(--green);
+
+    color: #000;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    transition: var(--transition);
 }
 
-/* ===============================
-WHATSAPP
-==================================*/
 
-.whatsapp{
-    position:fixed;
-    right:25px;
-    bottom:100px;
-    background:#25D366;
-    padding:12px 18px;
-    border-radius:40px;
-    display:flex;
-    align-items:center;
-    gap:12px;
-    text-decoration:none;
-    color:#fff;
-    font-weight:600;
-    box-shadow:0 10px 30px rgba(0,0,0,.3);
-    animation:bounce 2s infinite;
+.whatsapp-btn:hover {
+
+    transform: translateY(-3px);
+
+    background: var(--green-light);
+
+    box-shadow:
+        0 12px 25px rgba(34,197,94,.18);
 }
 
-.whatsapp img{
-    width:30px;
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.location-section {
+
+    width: min(1250px,92%);
+
+    margin: 0 auto 100px;
 }
 
-@keyframes bounce{
-    50%{
-        transform:translateY(-8px);
+
+.section-heading {
+
+    margin-bottom: 29px;
+
+    text-align: center;
+}
+
+
+.section-heading > span {
+
+    color: var(--green);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.section-heading h2 {
+
+    margin-top: 7px;
+
+    font-family: "Poppins",sans-serif;
+
+    font-size: 29px;
+}
+
+
+.section-heading p {
+
+    max-width: 600px;
+
+    margin: 8px auto;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+.map-container {
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    background: #111;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.25);
+}
+
+
+.map-container iframe {
+
+    width: 100%;
+
+    height: 420px;
+
+    display: block;
+
+    border: 0;
+
+    filter: grayscale(100%) invert(90%);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    width: min(1250px,92%);
+
+    margin: auto;
+
+    padding: 45px 0 30px;
+
+    border-top: 1px solid var(--border);
+}
+
+
+.footer-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.footer-brand p {
+
+    margin-top: 9px;
+
+    color: var(--muted-dark);
+
+    font-size: 11px;
+}
+
+
+.footer-info {
+
+    text-align: right;
+}
+
+
+.footer-info span {
+
+    display: block;
+
+    color: #52525b;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+.footer-info strong {
+
+    color: #d4d4d8;
+
+    font-size: 12px;
+}
+
+
+.footer-bottom {
+
+    margin-top: 32px;
+
+    padding-top: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-top: 1px solid var(--border);
+
+    color: #52525b;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    z-index: 2000;
+
+    min-width: 330px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px;
+
+    border: 1px solid rgba(34,197,94,.2);
+
+    border-radius: 15px;
+
+    background: #101010;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.55);
+
+    opacity: 0;
+
+    transform: translateY(150px);
+
+    pointer-events: none;
+
+    transition: .4s ease;
+}
+
+
+.toast.show {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+}
+
+
+.toast-icon {
+
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 10px;
+
+    background: var(--green);
+
+    color: #000;
+}
+
+
+.toast-content {
+
+    min-width: 0;
+}
+
+
+.toast strong {
+
+    display: block;
+
+    font-size: 12px;
+}
+
+
+.toast span {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--muted-dark);
+
+    font-size: 9px;
+}
+
+
+#closeToast {
+
+    margin-left: auto;
+
+    width: 30px;
+
+    height: 30px;
+
+    display: grid;
+
+    place-items: center;
+
+    border: 0;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #52525b;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+
+#closeToast:hover {
+
+    background: rgba(255,255,255,.05);
+
+    color: #fff;
+}
+
+
+/* =========================================================
+   FLOATING WHATSAPP
+========================================================= */
+
+.floating-whatsapp {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    z-index: 1500;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 13px 18px;
+
+    border-radius: 50px;
+
+    background: #25d366;
+
+    color: #fff;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.35);
+
+    transition: var(--transition);
+}
+
+
+.floating-whatsapp:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(37,211,102,.25);
+}
+
+
+.floating-whatsapp i {
+
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+
+    outline: 2px solid var(--green);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:950px) {
+
+    .contact-section {
+
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+
+        padding-top: 40px;
     }
+
+
+    .contact-intro h1 {
+
+        max-width: 700px;
+    }
+
+
+    .form-wrapper {
+
+        width: 100%;
+    }
+
+
+    .quick-content {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .whatsapp-btn {
+
+        width: 100%;
+
+        justify-content: center;
+    }
+
 }
 
-/* ===============================
-RESPONSIVE
-==================================*/
 
-@media(max-width:900px){
+/* =========================================================
+   MOBILE
+========================================================= */
 
-.contact-container{
-    grid-template-columns:1fr;
+@media(max-width:650px) {
+
+    .topbar {
+
+        width: 90%;
+
+        padding: 20px 0;
+    }
+
+
+    .logo-mark {
+
+        width: 39px;
+
+        height: 39px;
+
+        border-radius: 11px;
+
+        font-size: 18px;
+    }
+
+
+    .logo-text strong {
+
+        font-size: 15px;
+    }
+
+
+    .back-home span {
+
+        display: none;
+    }
+
+
+    .contact-section {
+
+        width: 90%;
+
+        padding: 35px 0 70px;
+
+        gap: 50px;
+    }
+
+
+    .contact-intro h1 {
+
+        margin-top: 18px;
+
+        font-size: 43px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .intro-text {
+
+        font-size: 13px;
+
+        line-height: 1.75;
+    }
+
+
+    .contact-card {
+
+        min-height: 70px;
+    }
+
+
+    .contact-card strong {
+
+        font-size: 12px;
+    }
+
+
+    .form-wrapper {
+
+        padding: 25px 18px;
+
+        border-radius: 20px;
+    }
+
+
+    .form-header {
+
+        align-items: flex-start;
+    }
+
+
+    .form-header h2 {
+
+        font-size: 20px;
+    }
+
+
+    .form-header p {
+
+        font-size: 10px;
+    }
+
+
+    .form-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+
+    .quick-contact {
+
+        width: 90%;
+
+        padding: 28px 22px;
+
+        margin-bottom: 70px;
+    }
+
+
+    .quick-content h2 {
+
+        font-size: 24px;
+    }
+
+
+    .quick-content p {
+
+        font-size: 11px;
+    }
+
+
+    .location-section {
+
+        width: 90%;
+
+        margin-bottom: 70px;
+    }
+
+
+    .section-heading h2 {
+
+        font-size: 25px;
+    }
+
+
+    .map-container iframe {
+
+        height: 320px;
+    }
+
+
+    footer {
+
+        width: 90%;
+    }
+
+
+    .footer-top {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 25px;
+    }
+
+
+    .footer-info {
+
+        text-align: left;
+    }
+
+
+    .footer-bottom {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+
+    .floating-whatsapp {
+
+        right: 18px;
+
+        bottom: 18px;
+
+        width: 52px;
+
+        height: 52px;
+
+        padding: 0;
+
+        justify-content: center;
+    }
+
+
+    .floating-whatsapp span {
+
+        display: none;
+    }
+
+
+    .toast {
+
+        left: 15px;
+
+        right: 15px;
+
+        bottom: 82px;
+
+        min-width: unset;
+    }
+
 }
 
-.contact-left h1{
-    font-size:35px;
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media(max-width:400px) {
+
+    .contact-intro h1 {
+
+        font-size: 37px;
+    }
+
+
+    .contact-card strong {
+
+        font-size: 11px;
+    }
+
+
+    .contact-icon {
+
+        width: 43px;
+
+        height: 43px;
+    }
+
+
+    .form-wrapper {
+
+        padding: 22px 15px;
+    }
+
 }
 
-.whatsapp span{
-    display:none;
-}
+
+/* =========================================================
+   REDUCE MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce) {
+
+    html {
+
+        scroll-behavior: auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: .01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: .01ms !important;
+    }
 
 }
+
 </style>
+
+</head>
+
+
 <body>
 
-<!-- =========================
-BACKGROUND SHAPES
-========================= -->
 
-<div class="shape shape1"></div>
-<div class="shape shape2"></div>
-<div class="shape shape3"></div>
+<!-- =====================================================
+     BACKGROUND
+====================================================== -->
 
-<!-- =========================
-BACK BUTTON
-========================= -->
+<div class="background" aria-hidden="true">
 
-<a href="index.html" class="back-home">
-<i class="fas fa-arrow-left"></i>
-Back Home
-</a>
+    <div class="orb orb-one"></div>
 
-<!-- =========================
-CONTACT SECTION
-========================= -->
+    <div class="orb orb-two"></div>
 
-<section id="contact">
-
-<div class="contact-container">
-
-<div class="contact-left">
-
-<span class="tag">
-Available for Freelance
-</span>
-
-<h1>
-Let's Build Something Amazing Together
-</h1>
-
-<p>
-
-Need a professional website, branding, printing, or digital solution?
-
-I'm always ready to help businesses grow through technology and creative design.
-
-</p>
-
-<div class="contact-info">
-
-<div class="info-box">
-
-<div class="icon">
-<i class="fas fa-envelope"></i>
-</div>
-
-<div>
-
-<h3>Email</h3>
-
-<p>
-victorchitole@gmail.com
-</p>
+    <div class="grid"></div>
 
 </div>
 
-</div>
 
-<div class="info-box">
+<!-- =====================================================
+     HEADER
+====================================================== -->
 
-<div class="icon">
-<i class="fas fa-phone"></i>
-</div>
+<header class="topbar">
 
-<div>
+    <a href="index.html"
+       class="logo"
+       aria-label="Victor Chitole Home">
 
-<h3>Phone</h3>
+        <span class="logo-mark">
+            VC
+        </span>
 
-<p>
-+254 740 163 974
-</p>
+        <span class="logo-text">
 
-</div>
+            <strong>
+               Victor
+            </strong>
 
-</div>
+            <small>
+               Chitole
+            </small>
 
-<div class="info-box">
+        </span>
 
-<div class="icon">
-<i class="fas fa-location-dot"></i>
-</div>
+    </a>
 
-<div>
 
-<h3>Location</h3>
+    <a href="index.html"
+       class="back-home"
+       aria-label="Return to homepage">
 
-<p>
-Kilifi, Kenya
-</p>
+        <i class="fa-solid fa-arrow-left"></i>
 
-</div>
+        <span>
+            Back Home
+        </span>
 
-</div>
+    </a>
 
-<div class="info-box">
+</header>
 
 
+<!-- =====================================================
+     MAIN
+====================================================== -->
 
-<div>
+<main>
 
-</div>
 
-</div>
+<!-- =====================================================
+     CONTACT SECTION
+====================================================== -->
 
-</div>
+<section class="contact-section">
 
-<!-- SOCIALS -->
 
-<div class="social-links">
+    <!-- LEFT -->
 
-<a href="#" title="Facebook">
-<i class="fab fa-facebook-f"></i>
-</a>
+    <div class="contact-intro">
 
-<a href="#" title="LinkedIn">
-<i class="fab fa-linkedin-in"></i>
-</a>
 
-<a href="#" title="Instagram">
-<i class="fab fa-instagram"></i>
-</a>
+        <div class="eyebrow">
 
-<a href="#" title="TikTok">
-<i class="fab fa-tiktok"></i>
-</a>
+            <span></span>
 
-<a href="#" title="GitHub">
-<i class="fab fa-github"></i>
-</a>
+            LET'S CONNECT
 
-</div>
+        </div>
 
-</div>
 
-<!-- =========================
-RIGHT SIDE
-========================= -->
+        <h1>
 
-<div class="contact-right">
+            Let's build
 
-<div class="form-card">
+            <span>
+                something great.
+            </span>
 
-<h2>Send Me a Message</h2>
+        </h1>
 
-<p class="subtitle">
 
-Fill in the form below and I'll get back to you as soon as possible.
+        <p class="intro-text">
 
-</p>
+            Have a project in mind, need professional branding,
+            a website, printing services or ICT support?
+            Tell me what you need and let's turn your idea
+            into reality.
 
-<form id="contact-form">
+        </p>
 
-<div class="input-group">
 
-<input
-type="text"
-name="from_name"
-placeholder="Your Name"
-required>
+        <!-- CONTACT DETAILS -->
 
-</div>
+        <div class="contact-details">
 
-<div class="input-group">
 
-<input
-type="email"
-name="reply_to"
-placeholder="Your Email"
-required>
+            <!-- EMAIL -->
 
-</div>
+            <a href="mailto:mavinstechsolution@gmail.com"
+               class="contact-card">
 
-<div class="input-group">
+                <div class="contact-icon">
 
-<input
-type="tel"
-name="phone"
-placeholder="Phone Number">
+                    <i class="fa-solid fa-envelope"></i>
 
-</div>
+                </div>
 
-<div class="input-group">
 
-<input
-type="text"
-name="subject"
-placeholder="Subject">
+                <div class="contact-card-content">
 
-</div>
+                    <small>
+                        Email Me
+                    </small>
 
-<div class="input-group">
+                    <strong>
+                       victorchitole@gmail.com
+                    </strong>
 
-<textarea
-name="message"
-placeholder="Write your message here..."
-required></textarea>
+                </div>
 
-</div>
 
-<button class="send-btn" type="submit">
+                <i class="fa-solid fa-arrow-up-right-from-square card-arrow"></i>
 
-<span class="btn-text">
+            </a>
 
-<i class="fas fa-paper-plane"></i>
 
-Send Message
+            <!-- PHONE -->
 
-</span>
+            <a href="tel:+254740163974"
+               class="contact-card">
 
-<div class="loader"></div>
+                <div class="contact-icon">
 
-</button>
+                    <i class="fa-solid fa-phone"></i>
 
-<p class="response-time">
+                </div>
 
- Usually replies within 10 minutes on WhatsApp.
 
-</p>
+                <div class="contact-card-content">
 
-</form>
+                    <small>
+                        Call / WhatsApp
+                    </small>
 
-</div>
+                    <strong>
+                        +254 740 163 974
+                    </strong>
 
-</div>
+                </div>
 
-</div>
+
+                <i class="fa-solid fa-arrow-up-right-from-square card-arrow"></i>
+
+            </a>
+
+
+            <!-- LOCATION -->
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                </div>
+
+
+                <div class="contact-card-content">
+
+                    <small>
+                        Based In
+                    </small>
+
+                    <strong>
+                        Kilifi, Kenya
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- AVAILABILITY -->
+
+        <div class="availability">
+
+            <span class="status-dot"></span>
+
+            <div>
+
+                <strong>
+                    Available for new projects
+                </strong>
+
+                <small>
+                    Usually responds quickly on WhatsApp.
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- SOCIAL -->
+
+        <div class="social-area">
+
+            <span>
+                Connect with me
+            </span>
+
+
+            <div class="social-links">
+
+
+                <!-- Replace # with your actual profiles -->
+
+                <a href="#"
+                   aria-label="Facebook"
+                   title="Facebook">
+
+                    <i class="fab fa-facebook-f"></i>
+
+                </a>
+
+
+                <a href="https://www.linkedin.com/in/victor-chitole-0505bb2b0/?isSelfProfile=true"
+                   aria-label="LinkedIn"
+                   title="LinkedIn">
+
+                    <i class="fab fa-linkedin-in"></i>
+
+                </a>
+
+
+                <a href="#"
+                   aria-label="Instagram"
+                   title="Instagram">
+
+                    <i class="fab fa-instagram"></i>
+
+                </a>
+
+
+                <a href="tiktok.com/@mavinstechsolution"
+                   aria-label="TikTok"
+                   title="TikTok">
+
+                    <i class="fab fa-tiktok"></i>
+
+                </a>
+
+
+                <a href="https://github.com/mavinsvictor1738"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="GitHub"
+                   title="GitHub">
+
+                    <i class="fab fa-github"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         RIGHT FORM
+    ================================================== -->
+
+    <div class="form-wrapper">
+
+
+        <div class="form-header">
+
+            <div class="form-number">
+                01
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Start a conversation
+                </h2>
+
+                <p>
+                    Fill in the details below and I'll get back to you.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <form id="contact-form"
+              novalidate>
+
+
+            <!-- NAME + EMAIL -->
+
+            <div class="form-grid">
+
+
+                <div class="field">
+
+                    <label for="name">
+                        Your Name
+                    </label>
+
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            autocomplete="name"
+                            placeholder="John Doe"
+                            maxlength="80"
+                            required>
+
+                    </div>
+
+
+                    <small class="field-error"
+                           id="name-error">
+                    </small>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            autocomplete="email"
+                            placeholder="john@example.com"
+                            maxlength="120"
+                            required>
+
+                    </div>
+
+
+                    <small class="field-error"
+                           id="email-error">
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHONE -->
+
+            <div class="field">
+
+                <label for="phone">
+                    Phone Number
+                </label>
+
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        autocomplete="tel"
+                        placeholder="+254 7XX XXX XXX"
+                        maxlength="25">
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE -->
+
+            <div class="field">
+
+                <label for="service">
+                    What can I help you with?
+                </label>
+
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+
+                    <select id="service"
+                            name="service">
+
+                        <option value="">
+                            Select a service
+                        </option>
+
+                        <option value="Web Development">
+                            Web Development
+                        </option>
+
+                        <option value="Graphic Design">
+                            Graphic Design
+                        </option>
+
+                        <option value="Printing & Branding">
+                            Printing & Branding
+                        </option>
+
+                        <option value="ICT Training">
+                            ICT Training
+                        </option>
+
+                        <option value="Digital Marketing">
+                            Digital Marketing
+                        </option>
+
+                        <option value="ICT Consultancy">
+                            ICT Consultancy
+                        </option>
+
+                        <option value="Cyber Services">
+                            Cyber Services
+                        </option>
+
+                        <option value="Other / General Inquiry">
+                            Other / General Inquiry
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- SUBJECT -->
+
+            <div class="field">
+
+                <label for="subject">
+                    Subject
+                </label>
+
+
+                <div class="input-box">
+
+                    <i class="fa-regular fa-bookmark"></i>
+
+
+                    <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        placeholder="How can I help you?"
+                        maxlength="120">
+
+                </div>
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div class="field">
+
+                <label for="message">
+                    Your Message
+                </label>
+
+
+                <div class="textarea-box">
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        maxlength="500"
+                        placeholder="Tell me about your project..."
+                        required></textarea>
+
+
+                    <span id="counter">
+                        0 / 500
+                    </span>
+
+                </div>
+
+
+                <small class="field-error"
+                       id="message-error">
+                </small>
+
+            </div>
+
+
+            <!-- SUBMIT -->
+
+            <button type="submit"
+                    class="submit-btn"
+                    id="submitButton">
+
+
+                <span class="button-content">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    Send Message
+
+                </span>
+
+
+                <span class="button-loading">
+
+                    <span class="spinner"></span>
+
+                    Preparing WhatsApp...
+
+                </span>
+
+
+                <i class="fa-solid fa-arrow-right button-arrow"></i>
+
+            </button>
+
+
+            <p class="privacy-note">
+
+                <i class="fa-solid fa-lock"></i>
+
+                Your information is only used to respond to your inquiry.
+
+            </p>
+
+        </form>
+
+    </div>
 
 </section>
 
-<!-- =========================
-GOOGLE MAP
-========================= -->
 
-<section class="map-section">
+<!-- =====================================================
+     QUICK CONTACT
+====================================================== -->
 
-<h2>Find Me</h2>
+<section class="quick-contact">
 
-<div class="map-container">
 
-<iframe
-src="https://www.google.com/maps?q=Kilifi%20Kenya&output=embed"
-allowfullscreen=""
-loading="lazy">
-</iframe>
+    <div class="quick-content">
 
-</div>
+
+        <div>
+
+            <span class="quick-label">
+                NEED A QUICK RESPONSE?
+            </span>
+
+
+            <h2>
+                Let's talk on WhatsApp.
+            </h2>
+
+
+            <p>
+
+                For urgent inquiries, project quotations or quick questions,
+                WhatsApp is the fastest way to reach me.
+
+            </p>
+
+        </div>
+
+
+        <a
+            href="https://wa.me/254740163974?text=Hello%20Victor%2C%20I%20visited%20your%20Mavinstech%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="whatsapp-btn">
+
+            <i class="fab fa-whatsapp"></i>
+
+            Chat on WhatsApp
+
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+    </div>
 
 </section>
+
+
+<!-- =====================================================
+     LOCATION
+====================================================== -->
+
+<section class="location-section">
+
+
+    <div class="section-heading">
+
+        <span>
+            LOCATION
+        </span>
+
+
+        <h2>
+            Based in Kilifi, Kenya
+        </h2>
+
+
+        <p>
+
+            Serving individuals, businesses, organizations and
+            communities with digital and creative solutions.
+
+        </p>
+
+    </div>
+
+
+    <div class="map-container">
+
+        <iframe
+            src="https://www.google.com/maps?q=Kilifi%2C%20Kenya&output=embed"
+            title="Mavinstech Solution location in Kilifi, Kenya"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
 
 <footer>
-    <h3>Victor Chitole</h3>
 
-    <p>CEO & Founder — Mavinstech Solution</p>
 
-    <p>
-        Building Digital Experiences • Empowering Through Technology
-    </p>
+    <div class="footer-top">
 
-    <p>
-        Web Development • Graphic Design • Printing & Branding • ICT Training
-    </p>
 
-    <p>
-        © 2026 Victor Chitole | Mavinstech Solution. All Rights Reserved.
-    </p>
+        <div class="footer-brand">
+
+            <a href="index.html"
+               class="logo">
+
+                <span class="logo-mark">
+                    V
+                </span>
+
+
+                <span class="logo-text">
+
+                    <strong>
+                      Victor
+                    </strong>
+
+                    <small>
+                       Chitole
+                    </small>
+
+                </span>
+
+            </a>
+
+
+            <p>
+                Your Creative Tech Partner.
+            </p>
+
+        </div>
+
+
+        <div class="footer-info">
+
+            <span>
+                Founder & CEO
+            </span>
+
+
+            <strong>
+               Mavinstech Solution
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+
+            © <span id="year">
+                2026
+            </span>
+
+           Victor Chitole.
+
+            All Rights Reserved.
+
+        </p>
+
+
+        <p>
+
+            Web Development • Branding • Printing • ICT Training
+
+        </p>
+
+    </div>
+
 </footer>
-<!-- =========================
-SUCCESS TOAST
-========================= -->
 
-<div id="toast">
 
-<i class="fas fa-circle-check"></i>
+<!-- =====================================================
+     SUCCESS TOAST
+====================================================== -->
 
-<span>
+<div id="toast"
+     class="toast"
+     role="status"
+     aria-live="polite"
+     aria-hidden="true">
 
-Message sent successfully!
 
-</span>
+    <div class="toast-icon">
+
+        <i class="fa-solid fa-check"></i>
+
+    </div>
+
+
+    <div class="toast-content">
+
+        <strong>
+            Message Ready!
+        </strong>
+
+        <span>
+            Your WhatsApp message has been prepared.
+        </span>
+
+    </div>
+
+
+    <button id="closeToast"
+            type="button"
+            aria-label="Close notification">
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </button>
 
 </div>
 
-<!-- =========================
-FLOATING WHATSAPP
-========================= -->
+
+<!-- =====================================================
+     FLOATING WHATSAPP
+====================================================== -->
 
 <a
+    href="https://wa.me/254740163974?text=Hello%20Victor%2C%20I%20visited%20your%20Mavinstech%20portfolio."
+    target="_blank"
+    rel="noopener noreferrer"
+    class="floating-whatsapp"
+    aria-label="Chat with Mavinstech Solution on WhatsApp">
 
-href="https://wa.me/254740163974?text=Hello%20Victor,%20I%20visited%20your%20portfolio."
+    <i class="fab fa-whatsapp"></i>
 
-class="whatsapp"
-
-target="_blank">
-
-<img
-
-src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
-
-alt="WhatsApp">
-
-<span>
-
-Chat with Me
-
-</span>
+    <span>
+        WhatsApp
+    </span>
 
 </a>
 
-<script>const form = document.getElementById("contact-form");
-const toast = document.getElementById("toast");
 
-form.addEventListener("submit", function(e){
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
 
-    e.preventDefault();
+<script>
 
-    const button = document.querySelector(".send-btn");
-    const text = button.querySelector(".btn-text");
-    const loader = button.querySelector(".loader");
+/* =========================================================
+   MAVINSTECH CONTACT PAGE
+========================================================= */
 
-    text.style.display = "none";
-    loader.style.display = "block";
 
-    setTimeout(()=>{
+/* =========================================================
+   ELEMENTS
+========================================================= */
 
-        loader.style.display="none";
-        text.style.display="block";
+const form =
+    document.getElementById("contact-form");
 
-        toast.classList.add("show");
+const nameInput =
+    document.getElementById("name");
 
-        form.reset();
+const emailInput =
+    document.getElementById("email");
 
-        setTimeout(()=>{
+const phoneInput =
+    document.getElementById("phone");
 
-            toast.classList.remove("show");
+const serviceInput =
+    document.getElementById("service");
 
-        },3000);
+const subjectInput =
+    document.getElementById("subject");
 
-    },1800);
+const messageInput =
+    document.getElementById("message");
 
-});
-src="contact.js"</script>
+const counter =
+    document.getElementById("counter");
+
+const submitButton =
+    document.getElementById("submitButton");
+
+const toast =
+    document.getElementById("toast");
+
+const closeToast =
+    document.getElementById("closeToast");
+
+const year =
+    document.getElementById("year");
+
+
+/* =========================================================
+   CONFIGURATION
+========================================================= */
+
+const WHATSAPP_NUMBER =
+    "254740163974";
+
+const MAX_MESSAGE_LENGTH =
+    500;
+
+
+/* =========================================================
+   YEAR
+========================================================= */
+
+if (year) {
+
+    year.textContent =
+        new Date().getFullYear();
+
+}
+
+
+/* =========================================================
+   MESSAGE COUNTER
+========================================================= */
+
+function updateCounter() {
+
+    const length =
+        messageInput.value.length;
+
+    counter.textContent =
+        `${length} / ${MAX_MESSAGE_LENGTH}`;
+
+}
+
+
+messageInput.addEventListener(
+    "input",
+    updateCounter
+);
+
+
+/* =========================================================
+   CLEAN TEXT
+========================================================= */
+
+function cleanText(value) {
+
+    return value
+        .trim()
+        .replace(/\s+/g, " ");
+
+}
+
+
+/* =========================================================
+   EMAIL VALIDATION
+========================================================= */
+
+function isValidEmail(email) {
+
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        .test(email);
+
+}
+
+
+/* =========================================================
+   ERROR DISPLAY
+========================================================= */
+
+function showError(
+    input,
+    errorId,
+    message
+) {
+
+    input.classList.add(
+        "input-error"
+    );
+
+
+    const errorElement =
+        document.getElementById(errorId);
+
+
+    if (errorElement) {
+
+        errorElement.textContent =
+            message;
+
+    }
+
+}
+
+
+function clearError(
+    input,
+    errorId
+) {
+
+    input.classList.remove(
+        "input-error"
+    );
+
+
+    const errorElement =
+        document.getElementById(errorId);
+
+
+    if (errorElement) {
+
+        errorElement.textContent =
+            "";
+
+    }
+
+}
+
+
+/* =========================================================
+   VALIDATE FORM
+========================================================= */
+
+function validateForm() {
+
+    let valid = true;
+
+
+    /* NAME */
+
+    const name =
+        cleanText(nameInput.value);
+
+
+    if (!name) {
+
+        showError(
+            nameInput,
+            "name-error",
+            "Please enter your name."
+        );
+
+        valid = false;
+
+    } else {
+
+        clearError(
+            nameInput,
+            "name-error"
+        );
+
+    }
+
+
+    /* EMAIL */
+
+    const email =
+        cleanText(emailInput.value);
+
+
+    if (!email) {
+
+        showError(
+            emailInput,
+            "email-error",
+            "Please enter your email address."
+        );
+
+        valid = false;
+
+    }
+
+    else if (
+        !isValidEmail(email)
+    ) {
+
+        showError(
+            emailInput,
+            "email-error",
+            "Please enter a valid email address."
+        );
+
+        valid = false;
+
+    }
+
+    else {
+
+        clearError(
+            emailInput,
+            "email-error"
+        );
+
+    }
+
+
+    /* MESSAGE */
+
+    const message =
+        cleanText(messageInput.value);
+
+
+    if (!message) {
+
+        showError(
+            messageInput,
+            "message-error",
+            "Please enter your message."
+        );
+
+        valid = false;
+
+    }
+
+    else {
+
+        clearError(
+            messageInput,
+            "message-error"
+        );
+
+    }
+
+
+    return valid;
+
+}
+
+
+/* =========================================================
+   CLEAR ERRORS WHILE TYPING
+========================================================= */
+
+nameInput.addEventListener(
+    "input",
+    () => {
+
+        if (nameInput.value.trim()) {
+
+            clearError(
+                nameInput,
+                "name-error"
+            );
+
+        }
+
+    }
+);
+
+
+emailInput.addEventListener(
+    "input",
+    () => {
+
+        if (emailInput.value.trim()) {
+
+            clearError(
+                emailInput,
+                "email-error"
+            );
+
+        }
+
+    }
+);
+
+
+messageInput.addEventListener(
+    "input",
+    () => {
+
+        if (messageInput.value.trim()) {
+
+            clearError(
+                messageInput,
+                "message-error"
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+let toastTimer;
+
+
+function showToast() {
+
+    clearTimeout(toastTimer);
+
+
+    toast.classList.add(
+        "show"
+    );
+
+
+    toast.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    toastTimer =
+        setTimeout(
+            hideToast,
+            5000
+        );
+
+}
+
+
+function hideToast() {
+
+    toast.classList.remove(
+        "show"
+    );
+
+
+    toast.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    clearTimeout(
+        toastTimer
+    );
+
+}
+
+
+closeToast.addEventListener(
+    "click",
+    hideToast
+);
+
+
+/* =========================================================
+   ESCAPE KEY
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    (event) => {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            hideToast();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   FORM SUBMISSION
+========================================================= */
+
+form.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        /* VALIDATE */
+
+        if (!validateForm()) {
+
+            const firstError =
+                document.querySelector(
+                    ".input-error"
+                );
+
+
+            if (firstError) {
+
+                firstError.focus();
+
+            }
+
+
+            return;
+
+        }
+
+
+        /* COLLECT DATA */
+
+        const name =
+            cleanText(
+                nameInput.value
+            );
+
+
+        const email =
+            cleanText(
+                emailInput.value
+            );
+
+
+        const phone =
+            cleanText(
+                phoneInput.value
+            );
+
+
+        const service =
+            cleanText(
+                serviceInput.value
+            );
+
+
+        const subject =
+            cleanText(
+                subjectInput.value
+            );
+
+
+        const message =
+            messageInput.value.trim();
+
+
+        /* BUTTON LOADING */
+
+        submitButton.classList.add(
+            "loading"
+        );
+
+
+        submitButton.disabled =
+            true;
+
+
+        /* WHATSAPP MESSAGE */
+
+        const whatsappMessage =
+
+`Hello Victor,
+
+I would like to make an inquiry through the Mavinstech Solution website.
+
+━━━━━━━━━━━━━━━━━━
+
+Name: ${name}
+
+Email: ${email}
+
+Phone: ${phone || "Not provided"}
+
+Service: ${service || "General Inquiry"}
+
+Subject: ${subject || "No subject"}
+
+━━━━━━━━━━━━━━━━━━
+
+Message:
+
+${message}
+
+━━━━━━━━━━━━━━━━━━
+
+Thank you.`;
+
+
+        /* WHATSAPP URL */
+
+        const whatsappURL =
+
+            `https://wa.me/${WHATSAPP_NUMBER}?text=` +
+
+            encodeURIComponent(
+                whatsappMessage
+            );
+
+
+        /* PREMIUM DELAY */
+
+        setTimeout(
+            () => {
+
+
+                submitButton.classList.remove(
+                    "loading"
+                );
+
+
+                submitButton.disabled =
+                    false;
+
+
+                /* SHOW TOAST */
+
+                showToast();
+
+
+                /* OPEN WHATSAPP */
+
+                const newWindow =
+                    window.open(
+                        whatsappURL,
+                        "_blank",
+                        "noopener,noreferrer"
+                    );
+
+
+                /*
+                   If browser blocks popup,
+                   use current window.
+                */
+
+                if (!newWindow) {
+
+                    window.location.href =
+                        whatsappURL;
+
+                }
+
+
+                /* RESET */
+
+                form.reset();
+
+
+                updateCounter();
+
+
+            },
+            700
+        );
+
+    }
+);
+
+
+/* =========================================================
+   MAXIMUM MESSAGE LENGTH
+========================================================= */
+
+messageInput.addEventListener(
+    "input",
+    () => {
+
+        if (
+            messageInput.value.length >
+            MAX_MESSAGE_LENGTH
+        ) {
+
+            messageInput.value =
+                messageInput.value.substring(
+                    0,
+                    MAX_MESSAGE_LENGTH
+                );
+
+        }
+
+
+        updateCounter();
+
+    }
+);
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+updateCounter();
+
+</script>
+
 
 </body>
 </html>
