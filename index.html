@@ -2,1146 +2,1307 @@
 <html lang="en">
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Victor Chitole</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-
-<style>
-
-/* =========================================================
-   GLOBAL
-========================================================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Inter',sans-serif;
-    scroll-behavior:smooth;
-}
-
-body{
-    background:#0f172a;
-    color:#fff;
-    overflow-x:hidden;
-}
-
-
-/* =========================================================
-   BACKGROUND ANIMATION
-========================================================= */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Victor Chitole | Digital Solutions Provider</title>
+
+    <meta name="description"
+          content="Victor Chitole - Web Developer, Graphic Designer, Branding Specialist, ICT Trainer and Tech Consultant.">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+    <style>
+
+        /* =========================================================
+           GLOBAL
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0f172a;
+            color: #ffffff;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+
+        /* =========================================================
+           BACKGROUND ANIMATION
+        ========================================================= */
+
+        .particles {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particles i {
+            position: absolute;
+            bottom: -150px;
+            font-size: 100px;
+            color: rgba(56, 189, 248, 0.08);
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+            animation: particlesFloat 20s linear infinite;
+        }
+
+        .particles i:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .particles i:nth-child(2) {
+            left: 25%;
+            animation-delay: 2s;
+        }
+
+        .particles i:nth-child(3) {
+            left: 40%;
+            animation-delay: 4s;
+        }
+
+        .particles i:nth-child(4) {
+            left: 55%;
+            animation-delay: 6s;
+        }
 
-.particles{
-    position:fixed;
-    width:100%;
-    height:100%;
-    z-index:-1;
-    overflow:hidden;
-    pointer-events:none;
-}
+        .particles i:nth-child(5) {
+            left: 70%;
+            animation-delay: 8s;
+        }
+
+        .particles i:nth-child(6) {
+            left: 85%;
+            animation-delay: 10s;
+        }
 
-.particles i{
-    position:absolute;
-    font-size:110px;
-    color:rgba(56,189,248,0.12);
-    text-shadow:0 0 20px rgba(56,189,248,0.2);
-    animation:animate 20s linear infinite;
-}
+        .particles i:nth-child(7) {
+            left: 35%;
+            animation-delay: 12s;
+        }
 
-.particles i:nth-child(1){
-    left:10%;
-    animation-delay:0s;
-}
+        .particles i:nth-child(8) {
+            left: 65%;
+            animation-delay: 14s;
+        }
 
-.particles i:nth-child(2){
-    left:25%;
-    animation-delay:2s;
-}
+        @keyframes particlesFloat {
 
-.particles i:nth-child(3){
-    left:40%;
-    animation-delay:4s;
-}
+            0% {
+                transform: translateY(0) scale(0.3);
+                opacity: 0;
+            }
 
-.particles i:nth-child(4){
-    left:55%;
-    animation-delay:6s;
-}
+            20% {
+                opacity: 1;
+            }
 
-.particles i:nth-child(5){
-    left:70%;
-    animation-delay:8s;
-}
+            100% {
+                transform: translateY(-120vh) scale(1);
+                opacity: 0;
+            }
+        }
 
-.particles i:nth-child(6){
-    left:85%;
-    animation-delay:10s;
-}
 
-.particles i:nth-child(7){
-    left:35%;
-    animation-delay:12s;
-}
+        /* =========================================================
+           NAVBAR
+        ========================================================= */
 
-.particles i:nth-child(8){
-    left:65%;
-    animation-delay:14s;
-}
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
 
-@keyframes animate{
+            padding: 18px 8%;
 
-    0%{
-        transform:translateY(100vh) scale(0);
-        opacity:0;
-    }
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-    20%{
-        opacity:1;
-    }
+            background: rgba(15, 23, 42, 0.86);
 
-    100%{
-        transform:translateY(-100px) scale(1);
-        opacity:0;
-    }
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
 
-}
+            z-index: 1000;
 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
 
-/* =========================================================
-   NAVBAR
-========================================================= */
 
-.navbar{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
+        /* =========================================================
+           LOGO
+        ========================================================= */
 
-    padding:18px 8%;
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: #38bdf8;
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+            letter-spacing: -1px;
 
-    background:rgba(15,23,42,.82);
+            cursor: pointer;
 
-    backdrop-filter:blur(15px);
+            transition: 0.3s;
 
-    -webkit-backdrop-filter:blur(15px);
+            text-decoration: none;
+        }
 
-    z-index:1000;
+        .logo:hover {
+            transform: scale(1.04);
+        }
 
-    border-bottom:
-        1px solid rgba(255,255,255,.1);
-}
 
+        /* =========================================================
+           DESKTOP NAVIGATION
+        ========================================================= */
 
-/* LOGO */
+        .nav-links {
+            display: flex;
+            align-items: center;
 
-.logo{
-    font-size:28px;
-    font-weight:800;
-    color:#38bdf8;
+            gap: 30px;
 
-    letter-spacing:-1px;
+            list-style: none;
+        }
 
-    cursor:pointer;
+        .nav-links li {
+            list-style: none;
+        }
 
-    transition:.3s;
-}
+        .nav-links a {
+            position: relative;
 
-.logo:hover{
-    transform:scale(1.04);
-}
+            text-decoration: none;
 
+            color: #ffffff;
 
-/* =========================================================
-   DESKTOP NAVIGATION
-========================================================= */
+            font-weight: 500;
 
-.nav-links{
-    display:flex;
-    align-items:center;
+            padding: 8px 0;
 
-    gap:30px;
+            transition: 0.3s;
+        }
 
-    list-style:none;
-}
+        .nav-links a::after {
+            content: "";
 
-.nav-links li{
-    list-style:none;
-}
+            position: absolute;
 
-.nav-links a{
-    position:relative;
+            left: 0;
+            bottom: 0;
 
-    text-decoration:none;
+            width: 0;
+            height: 2px;
 
-    color:#fff;
+            background: #38bdf8;
 
-    font-weight:500;
+            transition: 0.3s ease;
+        }
 
-    padding:8px 0;
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
 
-    transition:.3s;
-}
+        .nav-links a:hover::after {
+            width: 100%;
+        }
 
 
-/* Animated underline */
+        /* =========================================================
+           HAMBURGER
+        ========================================================= */
 
-.nav-links a::after{
+        .menu-toggle {
+            display: none;
 
-    content:"";
+            width: 45px;
+            height: 45px;
 
-    position:absolute;
+            border: none;
 
-    left:0;
-    bottom:0;
+            border-radius: 12px;
 
-    width:0;
-    height:2px;
+            background: rgba(56, 189, 248, 0.10);
 
-    background:#38bdf8;
+            cursor: pointer;
 
-    transition:.3s ease;
+            align-items: center;
+            justify-content: center;
 
-}
+            flex-direction: column;
 
-.nav-links a:hover{
-    color:#38bdf8;
-}
+            gap: 5px;
 
-.nav-links a:hover::after{
-    width:100%;
-}
+            transition: 0.3s;
 
+            z-index: 1100;
+        }
 
-/* =========================================================
-   HAMBURGER BUTTON
-========================================================= */
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
 
-.menu-toggle{
+            border-radius: 10px;
 
-    display:none;
+            background: #38bdf8;
 
-    width:45px;
-    height:45px;
+            transition: 0.35s ease;
+        }
 
-    border:none;
+        .menu-toggle:hover {
+            background: rgba(56, 189, 248, 0.20);
+            transform: scale(1.05);
+        }
 
-    border-radius:12px;
 
-    background:
-        rgba(56,189,248,.10);
+        /* =========================================================
+           HERO
+        ========================================================= */
 
-    cursor:pointer;
+        .hero {
+            min-height: 100vh;
 
-    align-items:center;
-    justify-content:center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
-    flex-direction:column;
+            padding: 130px 8% 80px;
 
-    gap:5px;
+            flex-wrap: wrap;
 
-    transition:.3s;
+            gap: 50px;
 
-    z-index:1100;
-}
+            position: relative;
+        }
 
 
-.menu-toggle span{
+        /* =========================================================
+           HERO TEXT
+        ========================================================= */
 
-    width:25px;
-    height:3px;
+        .hero-text {
+            flex: 1;
+            min-width: 320px;
+        }
 
-    border-radius:10px;
+        .tag {
+            display: inline-block;
 
-    background:#38bdf8;
+            padding: 10px 18px;
 
-    transition:.35s ease;
+            background: #1e293b;
 
-}
+            border-radius: 30px;
 
+            margin-bottom: 20px;
 
-.menu-toggle:hover{
+            font-size: 14px;
 
-    background:
-        rgba(56,189,248,.20);
+            border: 1px solid rgba(56, 189, 248, 0.15);
 
-    transform:scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
 
-}
+        .hero-text h1 {
+            font-size: 65px;
 
+            font-weight: 800;
 
-/* =========================================================
-   HERO
-========================================================= */
+            margin-bottom: 15px;
 
-.hero{
+            letter-spacing: -2px;
 
-    min-height:100vh;
+            line-height: 1.05;
+        }
 
-    display:flex;
+        .hero-text h2 {
+            font-size: 30px;
 
-    align-items:center;
+            color: #38bdf8;
 
-    justify-content:space-between;
+            margin-bottom: 20px;
 
-    padding:120px 8%;
+            line-height: 1.3;
+        }
 
-    flex-wrap:wrap;
+        #typing {
+            color: #38bdf8;
+        }
 
-    gap:50px;
+        .hero-text p {
+            line-height: 1.8;
 
-    position:relative;
-}
+            color: #cbd5e1;
 
+            margin-bottom: 30px;
 
-.hero-text{
+            max-width: 650px;
+        }
 
-    flex:1;
 
-    min-width:320px;
+        /* =========================================================
+           BUTTONS
+        ========================================================= */
 
-}
+        .buttons {
+            display: flex;
 
+            gap: 15px;
 
-.tag{
+            flex-wrap: wrap;
+        }
 
-    display:inline-block;
+        .btn,
+        .btn-outline {
+            display: inline-block;
 
-    padding:10px 18px;
+            padding: 15px 35px;
 
-    background:#1e293b;
+            border-radius: 50px;
 
-    border-radius:30px;
+            font-weight: 600;
 
-    margin-bottom:20px;
+            text-decoration: none;
 
-    font-size:14px;
+            transition: 0.35s ease;
+        }
 
-    border:
-        1px solid rgba(56,189,248,.15);
+        .btn {
+            background: linear-gradient(
+                135deg,
+                #38bdf8,
+                #2563eb
+            );
 
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.15);
-}
+            color: #ffffff;
 
+            box-shadow:
+                0 10px 25px rgba(56, 189, 248, 0.25);
+        }
 
-.hero-text h1{
+        .btn:hover {
+            transform: translateY(-4px);
 
-    font-size:65px;
+            box-shadow:
+                0 15px 35px rgba(56, 189, 248, 0.4);
+        }
 
-    font-weight:800;
+        .btn-outline {
+            border: 2px solid #38bdf8;
 
-    margin-bottom:15px;
+            color: #38bdf8;
+        }
 
-    letter-spacing:-2px;
+        .btn-outline:hover {
+            background: #38bdf8;
 
-}
+            color: #0f172a;
 
+            transform: translateY(-4px);
+        }
 
-.hero-text h2{
 
-    font-size:30px;
+        /* =========================================================
+           HERO IMAGE
+        ========================================================= */
 
-    color:#38bdf8;
+        .hero-image {
+            position: relative;
 
-    margin-bottom:20px;
+            width: 450px;
+            height: 450px;
 
-}
+            display: flex;
 
+            align-items: center;
+            justify-content: center;
 
-#typing{
+            flex-shrink: 0;
+        }
 
-    color:#38bdf8;
+        .hero-image img {
+            width: 320px;
+            height: 320px;
 
-}
+            object-fit: cover;
 
+            border-radius: 50%;
 
-.hero-text p{
+            border: 8px solid #1e293b;
 
-    line-height:1.8;
+            z-index: 10;
 
-    color:#cbd5e1;
+            box-shadow:
+                0 0 40px rgba(56, 189, 248, 0.5);
 
-    margin-bottom:30px;
+            animation:
+                profileFloat 5s ease-in-out infinite;
+        }
 
-    max-width:650px;
+        @keyframes profileFloat {
 
-}
+            0%,
+            100% {
+                transform: translateY(0);
+            }
 
+            50% {
+                transform: translateY(-12px);
+            }
+        }
 
-/* =========================================================
-   BUTTONS
-========================================================= */
 
-.buttons{
+        /* =========================================================
+           ROTATING RINGS
+        ========================================================= */
 
-    display:flex;
+        .ring {
+            position: absolute;
 
-    gap:15px;
+            border-radius: 50%;
 
-    flex-wrap:wrap;
-}
+            pointer-events: none;
+        }
 
+        .ring1 {
+            width: 360px;
+            height: 360px;
 
-.btn,
-.btn-outline{
+            border: 3px dashed #38bdf8;
 
-    display:inline-block;
+            animation:
+                rotate 15s linear infinite;
+        }
 
-    padding:15px 35px;
+        .ring2 {
+            width: 420px;
+            height: 420px;
 
-    border-radius:50px;
+            border: 2px dashed #22c55e;
 
-    font-weight:600;
+            animation:
+                rotateReverse 20s linear infinite;
+        }
 
-    text-decoration:none;
+        .ring3 {
+            width: 470px;
+            height: 470px;
 
-    transition:.35s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
 
-}
+            animation:
+                ringPulse 4s infinite;
+        }
 
+        @keyframes rotate {
 
-.btn{
+            100% {
+                transform: rotate(360deg);
+            }
+        }
 
-    background:
-        linear-gradient(
-            135deg,
-            #38bdf8,
-            #2563eb
-        );
+        @keyframes rotateReverse {
 
-    color:white;
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
 
-    box-shadow:
-        0 10px 25px rgba(56,189,248,.25);
-}
+        @keyframes ringPulse {
 
+            50% {
+                transform: scale(1.04);
+            }
+        }
 
-.btn:hover{
 
-    transform:
-        translateY(-4px);
+        /* =========================================================
+           FLOATING TECH ICONS
+        ========================================================= */
 
-    box-shadow:
-        0 15px 35px rgba(56,189,248,.4);
-}
+        .tech {
+            position: absolute;
 
+            width: 55px;
+            height: 55px;
 
-.btn-outline{
+            background: #1e293b;
 
-    border:
-        2px solid #38bdf8;
+            border-radius: 50%;
 
-    color:#38bdf8;
+            display: flex;
 
-}
+            justify-content: center;
+            align-items: center;
 
+            font-size: 24px;
 
-.btn-outline:hover{
+            color: #38bdf8;
 
-    background:#38bdf8;
+            box-shadow:
+                0 0 20px rgba(56, 189, 248, 0.3);
 
-    color:#0f172a;
+            animation:
+                float 4s infinite ease-in-out;
 
-    transform:
-        translateY(-4px);
-}
+            z-index: 15;
+        }
 
+        .html {
+            top: 40px;
+            left: 40px;
+        }
 
-/* =========================================================
-   HERO IMAGE
-========================================================= */
+        .css {
+            top: 70px;
+            right: 20px;
+        }
 
-.hero-image{
+        .js {
+            bottom: 70px;
+            left: 10px;
+        }
 
-    position:relative;
+        .code {
+            bottom: 30px;
+            right: 40px;
+        }
 
-    width:450px;
+        @keyframes float {
 
-    height:450px;
+            50% {
+                transform: translateY(-15px);
+            }
+        }
 
-    display:flex;
 
-    align-items:center;
+        /* =========================================================
+           STATS
+        ========================================================= */
 
-    justify-content:center;
-}
+        .stats {
+            padding: 80px 8%;
 
+            display: grid;
 
-.hero-image img{
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
 
-    width:320px;
+            gap: 25px;
+        }
 
-    height:320px;
+        .stat {
+            background:
+                linear-gradient(
+                    145deg,
+                    #1e293b,
+                    #172033
+                );
 
-    object-fit:cover;
+            padding: 30px;
 
-    border-radius:50%;
+            border-radius: 20px;
 
-    border:8px solid #1e293b;
+            text-align: center;
 
-    z-index:10;
+            border:
+                1px solid rgba(255, 255, 255, 0.06);
 
-    box-shadow:
-        0 0 40px rgba(56,189,248,.5);
+            transition: 0.4s;
+        }
 
-    animation:
-        profileFloat 5s ease-in-out infinite;
-}
+        .stat:hover {
+            transform: translateY(-10px);
 
+            box-shadow:
+                0 20px 40px rgba(0, 0, 0, 0.2);
+        }
 
-@keyframes profileFloat{
+        .stat h2 {
+            font-size: 45px;
 
-    0%,
-    100%{
-        transform:translateY(0);
-    }
+            color: #38bdf8;
+        }
 
-    50%{
-        transform:translateY(-12px);
-    }
+        .stat p {
+            margin-top: 10px;
 
-}
+            color: #cbd5e1;
+        }
 
 
-/* =========================================================
-   ROTATING RINGS
-========================================================= */
+        /* =========================================================
+           SCROLL
+        ========================================================= */
 
-.ring{
+        .scroll {
+            position: absolute;
 
-    position:absolute;
+            bottom: 20px;
 
-    border-radius:50%;
+            left: 50%;
 
-}
+            transform: translateX(-50%);
 
+            font-size: 30px;
 
-.ring1{
+            color: #38bdf8;
 
-    width:360px;
-    height:360px;
+            animation:
+                bounce 2s infinite;
+        }
 
-    border:
-        3px dashed #38bdf8;
+        @keyframes bounce {
 
-    animation:
-        rotate 15s linear infinite;
+            50% {
+                transform:
+                    translate(-50%, -10px);
+            }
+        }
 
-}
 
+        /* =========================================================
+           WHATSAPP
+        ========================================================= */
 
-.ring2{
+        .whatsapp {
+            position: fixed;
 
-    width:420px;
-    height:420px;
+            bottom: 25px;
+            right: 25px;
 
-    border:
-        2px dashed #22c55e;
+            width: 65px;
+            height: 65px;
 
-    animation:
-        rotateReverse 20s linear infinite;
+            background: #25D366;
 
-}
+            border-radius: 50%;
 
+            display: flex;
 
-.ring3{
+            align-items: center;
+            justify-content: center;
 
-    width:470px;
-    height:470px;
+            font-size: 32px;
 
-    border:
-        1px solid rgba(255,255,255,.2);
+            color: #ffffff;
 
-    animation:
-        pulse 4s infinite;
+            text-decoration: none;
 
-}
+            z-index: 999;
 
+            box-shadow:
+                0 10px 30px rgba(37, 211, 102, 0.3);
 
-@keyframes rotate{
+            animation:
+                whatsappPulse 2s infinite;
 
-    100%{
-        transform:rotate(360deg);
-    }
+            transition: 0.3s;
+        }
 
-}
+        .whatsapp:hover {
+            transform: scale(1.1);
+        }
 
+        @keyframes whatsappPulse {
 
-@keyframes rotateReverse{
+            0% {
+                box-shadow:
+                    0 0 0 0 rgba(37, 211, 102, 0.5);
+            }
 
-    100%{
-        transform:rotate(-360deg);
-    }
+            70% {
+                box-shadow:
+                    0 0 0 15px rgba(37, 211, 102, 0);
+            }
 
-}
+            100% {
+                box-shadow:
+                    0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
 
 
-@keyframes pulse{
+        /* =========================================================
+           TABLETS & MOBILE
+        ========================================================= */
 
-    50%{
-        transform:scale(1.04);
-    }
+        @media (max-width: 900px) {
 
-}
+            .navbar {
+                padding: 15px 6%;
+            }
 
+            .logo {
+                font-size: 24px;
+            }
 
-/* =========================================================
-   FLOATING TECH ICONS
-========================================================= */
 
-.tech{
+            /* HAMBURGER */
 
-    position:absolute;
+            .menu-toggle {
+                display: flex;
+            }
 
-    width:55px;
-    height:55px;
 
-    background:#1e293b;
+            /* MOBILE MENU */
 
-    border-radius:50%;
+            .nav-links {
+                position: absolute;
 
-    display:flex;
+                top: 100%;
+                left: 0;
 
-    justify-content:center;
+                width: 100%;
 
-    align-items:center;
+                padding: 15px 6% 25px;
 
-    font-size:24px;
+                background:
+                    rgba(15, 23, 42, 0.98);
 
-    color:#38bdf8;
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
 
-    box-shadow:
-        0 0 20px rgba(56,189,248,.3);
+                display: flex;
 
-    animation:
-        float 4s infinite ease-in-out;
+                flex-direction: column;
 
-    z-index:15;
-}
+                align-items: stretch;
 
+                gap: 5px;
 
-.html{
-    top:40px;
-    left:40px;
-}
+                opacity: 0;
 
-.css{
-    top:70px;
-    right:20px;
-}
+                visibility: hidden;
 
-.js{
-    bottom:70px;
-    left:10px;
-}
+                transform: translateY(-15px);
 
-.code{
-    bottom:30px;
-    right:40px;
-}
+                transition:
+                    opacity 0.3s ease,
+                    transform 0.3s ease,
+                    visibility 0.3s ease;
 
+                border-bottom:
+                    1px solid rgba(255, 255, 255, 0.1);
 
-@keyframes float{
+                box-shadow:
+                    0 20px 40px rgba(0, 0, 0, 0.3);
+            }
 
-    50%{
-        transform:translateY(-15px);
-    }
+            .nav-links.active {
+                opacity: 1;
 
-}
+                visibility: visible;
 
+                transform: translateY(0);
+            }
 
-/* =========================================================
-   STATS
-========================================================= */
+            .nav-links li {
+                width: 100%;
+            }
 
-.stats{
+            .nav-links a {
+                display: block;
 
-    padding:80px 8%;
+                width: 100%;
 
-    display:grid;
+                padding: 14px 16px;
 
-    grid-template-columns:
-        repeat(auto-fit,minmax(220px,1fr));
+                border-radius: 10px;
 
-    gap:25px;
-}
+                font-size: 16px;
+            }
 
+            .nav-links a:hover {
+                background:
+                    rgba(56, 189, 248, 0.1);
 
-.stat{
+                padding-left: 20px;
+            }
 
-    background:
-        linear-gradient(
-            145deg,
-            #1e293b,
-            #172033
-        );
+            .nav-links a::after {
+                display: none;
+            }
 
-    padding:30px;
 
-    border-radius:20px;
+            /* HAMBURGER → X */
 
-    text-align:center;
+            .menu-toggle.active span:nth-child(1) {
+                transform:
+                    translateY(8px)
+                    rotate(45deg);
+            }
 
-    border:
-        1px solid rgba(255,255,255,.06);
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
 
-    transition:.4s;
+            .menu-toggle.active span:nth-child(3) {
+                transform:
+                    translateY(-8px)
+                    rotate(-45deg);
+            }
 
-}
 
+            /* HERO */
 
-.stat:hover{
+            .hero {
+                min-height: auto;
 
-    transform:
-        translateY(-10px);
+                padding:
+                    120px 25px 80px;
 
-    box-shadow:
-        0 20px 40px rgba(0,0,0,.2);
+                display: flex;
 
-}
+                flex-direction: column;
 
+                justify-content: center;
 
-.stat h2{
+                align-items: center;
 
-    font-size:45px;
+                text-align: center;
 
-    color:#38bdf8;
+                gap: 70px;
+            }
 
-}
 
+            /* HERO TEXT */
 
-.stat p{
+            .hero-text {
+                width: 100%;
 
-    margin-top:10px;
+                min-width: 0;
+            }
 
-    color:#cbd5e1;
+            .tag {
+                font-size: 12px;
 
-}
+                padding:
+                    9px 15px;
 
+                margin-bottom: 18px;
+            }
 
-/* =========================================================
-   SCROLL
-========================================================= */
+            .hero-text h1 {
+                font-size:
+                    clamp(38px, 9vw, 52px);
 
-.scroll{
+                line-height: 1.1;
 
-    position:absolute;
+                letter-spacing: -1.5px;
+            }
 
-    bottom:20px;
+            .hero-text h2 {
+                font-size:
+                    clamp(21px, 5vw, 27px);
 
-    left:50%;
+                line-height: 1.3;
+            }
 
-    transform:translateX(-50%);
+            .hero-text p {
+                max-width: 600px;
 
-    font-size:30px;
+                margin:
+                    0 auto 28px;
 
-    color:#38bdf8;
+                font-size: 15px;
 
-    animation:
-        bounce 2s infinite;
-}
+                line-height: 1.7;
+            }
 
 
-@keyframes bounce{
+            /* BUTTONS */
 
-    50%{
-        transform:
-            translate(-50%,-10px);
-    }
+            .buttons {
+                justify-content: center;
 
-}
+                align-items: center;
 
+                gap: 12px;
+            }
 
-/* =========================================================
-   WHATSAPP
-========================================================= */
+            .btn,
+            .btn-outline {
+                padding:
+                    13px 25px;
 
-.whatsapp{
+                font-size: 14px;
+            }
 
-    position:fixed;
 
-    bottom:25px;
+            /* HERO IMAGE */
 
-    right:25px;
+            .hero-image {
+                width: 300px;
+                height: 300px;
 
-    width:65px;
-    height:65px;
+                flex-shrink: 0;
+            }
 
-    background:#25D366;
+            .hero-image img {
+                width: 190px;
+                height: 190px;
 
-    border-radius:50%;
+                border-width: 6px;
+            }
 
-    display:flex;
 
-    align-items:center;
+            /* RINGS */
 
-    justify-content:center;
+            .ring1 {
+                width: 220px;
+                height: 220px;
 
-    font-size:32px;
+                border-width: 2px;
+            }
 
-    color:white;
+            .ring2 {
+                width: 260px;
+                height: 260px;
 
-    text-decoration:none;
+                border-width: 2px;
+            }
 
-    z-index:999;
+            .ring3 {
+                width: 290px;
+                height: 290px;
+            }
 
-    box-shadow:
-        0 10px 30px rgba(37,211,102,.3);
 
-    animation:
-        pulse 2s infinite;
+            /* TECH ICONS */
 
-    transition:.3s;
-}
+            .tech {
+                width: 45px;
+                height: 45px;
 
+                font-size: 19px;
+            }
 
-.whatsapp:hover{
+            .html {
+                top: 20px;
+                left: 20px;
+            }
 
-    transform:
-        scale(1.1);
+            .css {
+                top: 30px;
+                right: 15px;
+            }
 
-}
+            .js {
+                bottom: 30px;
+                left: 15px;
+            }
 
+            .code {
+                bottom: 20px;
+                right: 25px;
+            }
 
-/* =========================================================
-   MOBILE NAVIGATION
-========================================================= */
 
-@media(max-width:900px){
+            /* STATS */
 
-    /* Show hamburger */
+            .stats {
+                padding:
+                    50px 25px;
 
-    .menu-toggle{
-    
-        display:flex;
+                grid-template-columns:
+                    repeat(2, 1fr);
 
-    }
+                gap: 15px;
+            }
 
+            .stat {
+                padding:
+                    22px 15px;
 
-    /* Hide desktop menu initially */
+                border-radius: 16px;
+            }
 
-    .nav-links{
+            .stat h2 {
+                font-size: 32px;
+            }
 
-        position:absolute;
+            .stat p {
+                font-size: 13px;
 
-        top:100%;
+                line-height: 1.4;
+            }
 
-        left:0;
 
-        width:100%;
+            /* HIDE SCROLL ON MOBILE */
 
-        padding:
-            12px 5% 22px;
+            .scroll {
+                display: none;
+            }
 
-        background:
-            rgba(15,23,42,.98);
 
-        backdrop-filter:
-            blur(20px);
+            /* WHATSAPP */
 
-        -webkit-backdrop-filter:
-            blur(20px);
+            .whatsapp {
+                width: 58px;
+                height: 58px;
 
-        border-bottom:
-            1px solid rgba(255,255,255,.1);
+                right: 18px;
+                bottom: 18px;
 
-        box-shadow:
-            0 20px 40px rgba(0,0,0,.3);
+                font-size: 27px;
+            }
+        }
 
-        display:flex;
 
-        flex-direction:column;
+        /* =========================================================
+           SMALL PHONES
+        ========================================================= */
 
-        align-items:stretch;
+        @media (max-width: 480px) {
 
-        gap:5px;
+            .navbar {
+                padding:
+                    14px 5%;
+            }
 
-        opacity:0;
+            .logo {
+                font-size: 21px;
+            }
 
-        visibility:hidden;
 
-        transform:
-            translateY(-20px);
+            /* HERO */
 
-        transition:
-            opacity .35s ease,
-            transform .35s ease,
-            visibility .35s ease;
+            .hero {
+                padding:
+                    105px 18px 65px;
 
-    }
+                gap: 55px;
+            }
 
 
-    /* OPEN MENU */
+            /* TEXT */
 
-    .nav-links.active{
+            .hero-text h1 {
+                font-size: 36px;
 
-        opacity:1;
+                line-height: 1.1;
+            }
 
-        visibility:visible;
+            .hero-text h2 {
+                font-size: 20px;
 
-        transform:
-            translateY(0);
+                line-height: 1.35;
+            }
 
-    }
+            .hero-text p {
+                font-size: 14px;
 
+                line-height: 1.7;
+            }
 
-    .nav-links li{
 
-        width:100%;
+            /* BUTTONS */
 
-    }
+            .buttons {
+                flex-direction: column;
 
+                width: 100%;
+            }
 
-    .nav-links a{
+            .btn,
+            .btn-outline {
+                width: 100%;
 
-        display:block;
+                max-width: 280px;
 
-        width:100%;
+                text-align: center;
 
-        padding:15px;
+                padding:
+                    13px 20px;
+            }
 
-        border-radius:10px;
 
-        text-align:left;
+            /* IMAGE */
 
-    }
+            .hero-image {
+                width: 260px;
+                height: 260px;
+            }
 
+            .hero-image img {
+                width: 165px;
+                height: 165px;
 
-    .nav-links a::after{
+                border-width: 5px;
+            }
 
-        display:none;
 
-    }
+            /* RINGS */
 
+            .ring1 {
+                width: 195px;
+                height: 195px;
+            }
 
-    .nav-links a:hover{
+            .ring2 {
+                width: 225px;
+                height: 225px;
+            }
 
-        background:
-            rgba(56,189,248,.1);
+            .ring3 {
+                width: 255px;
+                height: 255px;
+            }
 
-        padding-left:22px;
 
-    }
+            /* TECH ICONS */
 
+            .tech {
+                width: 40px;
+                height: 40px;
 
-    /* =====================================================
-       HAMBURGER → X
-    ===================================================== */
+                font-size: 17px;
+            }
 
-    .menu-toggle.active span:nth-child(1){
+            .html {
+                top: 15px;
+                left: 15px;
+            }
 
-        transform:
-            translateY(8px)
-            rotate(45deg);
+            .css {
+                top: 25px;
+                right: 10px;
+            }
 
-    }
+            .js {
+                bottom: 25px;
+                left: 10px;
+            }
 
+            .code {
+                bottom: 15px;
+                right: 15px;
+            }
 
-    .menu-toggle.active span:nth-child(2){
 
-        opacity:0;
+            /* STATS */
 
-        transform:
-            translateX(20px);
+            .stats {
+                padding:
+                    40px 18px;
 
-    }
+                grid-template-columns:
+                    1fr;
 
+                gap: 12px;
+            }
 
-    .menu-toggle.active span:nth-child(3){
+            .stat {
+                padding: 20px;
+            }
 
-        transform:
-            translateY(-8px)
-            rotate(-45deg);
+            .stat h2 {
+                font-size: 30px;
+            }
 
-    }
 
+            /* WHATSAPP */
 
-    /* HERO */
+            .whatsapp {
+                width: 54px;
+                height: 54px;
 
-    .hero{
+                right: 15px;
+                bottom: 15px;
 
-        text-align:center;
+                font-size: 25px;
+            }
+        }
 
-        justify-content:center;
 
-        padding-top:120px;
+        /* =========================================================
+           VERY SMALL PHONES
+        ========================================================= */
 
-    }
+        @media (max-width: 360px) {
 
+            .logo {
+                font-size: 19px;
+            }
 
-    .hero-text h1{
+            .menu-toggle {
+                width: 42px;
+                height: 42px;
+            }
 
-        font-size:48px;
+            .hero {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
 
-    }
+            .hero-text h1 {
+                font-size: 32px;
+            }
 
+            .hero-text h2 {
+                font-size: 18px;
+            }
 
-    .hero-text h2{
+            .hero-image {
+                transform: scale(0.92);
+            }
 
-        font-size:25px;
+            .stats {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
 
-    }
 
+        /* =========================================================
+           REDUCE MOTION FOR USERS WHO PREFER IT
+        ========================================================= */
 
-    .hero-text p{
+        @media (prefers-reduced-motion: reduce) {
 
-        margin-left:auto;
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
 
-        margin-right:auto;
-
-    }
-
-
-    .buttons{
-
-        justify-content:center;
-
-    }
-
-
-    .hero-image{
-
-        width:180px;
-
-        height:180px;
-
-    }
-
-
-    .hero-image img{
-
-        width:180px;
-
-        height:180px;
-
-    }
-
-
-    .ring1{
-
-        width:280px;
-        height:280px;
-
-    }
-
-
-    .ring2{
-
-        width:320px;
-        height:320px;
-
-    }
-
-
-    .ring3{
-
-        width:360px;
-        height:360px;
-
-    }
-
-}
-
-
-/* =========================================================
-   SMALL PHONES
-========================================================= */
-
-@media(max-width:480px){
-
-    .navbar{
-
-        padding:
-            15px 5%;
-
-    }
-
-
-    .logo{
-
-        font-size:23px;
-
-    }
-
-
-    .hero{
-
-        padding:
-            110px 20px 80px;
-
-    }
-
-
-    .hero-text{
-
-        min-width:0;
-
-    }
-
-
-    .hero-text h1{
-
-        font-size:40px;
-
-    }
-
-
-    .hero-text h2{
-
-        font-size:21px;
-
-    }
-
-
-    .hero-text p{
-
-        font-size:14px;
-
-    }
-
-
-    .hero-image{
-
-        transform:
-            scale(.85);
-
-    }
-
-
-    .stats{
-
-        padding:
-            50px 20px;
-
-    }
-
-
-    .whatsapp{
-
-        width:58px;
-        height:58px;
-
-        right:18px;
-        bottom:18px;
-
-        font-size:28px;
-
-    }
-
-}
-
-</style>
+    </style>
 
 </head>
 
@@ -1149,470 +1310,560 @@ body{
 <body>
 
 
-<!-- =========================================================
-     FLOATING BACKGROUND ICONS
-========================================================= -->
+    <!-- =========================================================
+         FLOATING BACKGROUND ICONS
+    ========================================================= -->
 
-<div class="particles">
+    <div class="particles">
 
-    <i class="fab fa-html5"></i>
+        <i class="fab fa-html5"></i>
 
-    <i class="fab fa-css3-alt"></i>
+        <i class="fab fa-css3-alt"></i>
 
-    <i class="fab fa-js"></i>
+        <i class="fab fa-js"></i>
 
-    <i class="fab fa-react"></i>
+        <i class="fab fa-react"></i>
 
-    <i class="fab fa-node-js"></i>
+        <i class="fab fa-node-js"></i>
 
-    <i class="fab fa-github"></i>
+        <i class="fab fa-github"></i>
 
-    <i class="fas fa-database"></i>
+        <i class="fas fa-database"></i>
 
-    <i class="fas fa-laptop-code"></i>
-
-</div>
-
-
-<!-- =========================================================
-     NAVBAR
-========================================================= -->
-
-<nav class="navbar">
-
-    <div class="logo">
-        My Portfolio
-    </div>
-
-
-    <!-- HAMBURGER BUTTON -->
-
-    <button
-        class="menu-toggle"
-        id="menuToggle"
-        aria-label="Open navigation menu"
-        aria-expanded="false"
-    >
-
-        <span></span>
-        <span></span>
-        <span></span>
-
-    </button>
-
-
-    <!-- NAVIGATION -->
-
-    <ul class="nav-links" id="navLinks">
-
-        <li>
-            <a href="index.html">
-                Home
-            </a>
-        </li>
-
-        <li>
-            <a href="about.html">
-                About
-            </a>
-        </li>
-
-        <li>
-            <a href="services.html">
-                Services
-            </a>
-        </li>
-
-        <li>
-            <a href="projects.html">
-                Projects
-            </a>
-        </li>
-
-        <li>
-            <a href="contact.html">
-                Contact
-            </a>
-        </li>
-
-    </ul>
-
-</nav>
-
-
-<!-- =========================================================
-     HERO
-========================================================= -->
-
-<section class="hero">
-
-
-    <div class="hero-text">
-
-        <div class="tag">
-            Available for New Projects
-        </div>
-
-
-        <h1>
-            Victor Chitole
-        </h1>
-
-
-        <h2>
-            I'm a
-            <span id="typing"></span>
-        </h2>
-
-
-        <p>
-
-            Transforming ideas into powerful digital experiences.
-            I specialize in web development, graphic design,
-            branding, IT support, and technology solutions that
-            help businesses stand out, operate efficiently,
-            and grow with confidence.
-
-        </p>
-
-
-        <div class="buttons">
-
-            <a
-                href="contact.html"
-                class="btn"
-            >
-                Hire Me
-            </a>
-
-
-            <a
-                href="projects.html"
-                class="btn-outline"
-            >
-                View Projects
-            </a>
-
-        </div>
+        <i class="fas fa-laptop-code"></i>
 
     </div>
 
 
-    <!-- HERO IMAGE -->
+    <!-- =========================================================
+         NAVBAR
+    ========================================================= -->
 
-    <div class="hero-image">
+    <nav class="navbar">
 
-
-        <div class="ring ring1"></div>
-
-        <div class="ring ring2"></div>
-
-        <div class="ring ring3"></div>
-
-
-        <!-- HTML -->
-
-        <div class="tech html">
-
-            <i class="fab fa-html5"></i>
-
-        </div>
+        <a href="index.html" class="logo">
+            My Portfolio
+        </a>
 
 
-        <!-- CSS -->
+        <!-- HAMBURGER BUTTON -->
 
-        <div class="tech css">
-
-            <i class="fab fa-css3-alt"></i>
-
-        </div>
-
-
-        <!-- JAVASCRIPT -->
-
-        <div class="tech js">
-
-            <i class="fab fa-js"></i>
-
-        </div>
-
-
-        <!-- CODE -->
-
-        <div class="tech code">
-
-            <i class="fas fa-code"></i>
-
-        </div>
-
-
-        <img
-            src="assets/images/CEO PIC.jpg"
-            alt="Victor Chitole"
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            type="button"
         >
 
-    </div>
+            <span></span>
+            <span></span>
+            <span></span>
 
+        </button>
 
-    <!-- SCROLL -->
 
-    <div class="scroll">
+        <!-- NAVIGATION -->
 
-        <i class="fas fa-angle-down"></i>
+        <ul class="nav-links" id="navLinks">
 
-    </div>
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
 
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
 
-</section>
+            <li>
+                <a href="services.html">
+                    Services
+                </a>
+            </li>
 
+            <li>
+                <a href="projects.html">
+                    Projects
+                </a>
+            </li>
 
-<!-- =========================================================
-     STATS
-========================================================= -->
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
 
-<section class="stats">
+        </ul>
 
+    </nav>
 
-    <div class="stat">
 
-        <h2>
-            50+
-        </h2>
+    <!-- =========================================================
+         HERO
+    ========================================================= -->
 
-        <p>
-            Projects Completed
-        </p>
+    <main>
 
-    </div>
+        <section class="hero">
 
+            <!-- HERO TEXT -->
 
-    <div class="stat">
+            <div class="hero-text">
 
-        <h2>
-            100+
-        </h2>
+                <div class="tag">
+                    <i class="fas fa-circle"
+                       style="font-size:8px;color:#22c55e;margin-right:6px;">
+                    </i>
 
-        <p>
-            Happy Clients
-        </p>
+                    Available for New Projects
+                </div>
 
-    </div>
 
+                <h1>
+                    Victor Chitole
+                </h1>
 
-    <div class="stat">
 
-        <h2>
-            5+
-        </h2>
+                <h2>
+                    I'm a
+                    <span id="typing"></span>
+                </h2>
 
-        <p>
-            Years Experience
-        </p>
 
-    </div>
+                <p>
+                    Transforming ideas into powerful digital experiences.
+                    I specialize in web development, graphic design,
+                    branding, IT support, and technology solutions that
+                    help businesses stand out, operate efficiently,
+                    and grow with confidence.
+                </p>
 
 
-    <div class="stat">
+                <div class="buttons">
 
-        <h2>
-            24/7
-        </h2>
+                    <a
+                        href="contact.html"
+                        class="btn"
+                    >
+                        <i class="fas fa-paper-plane"></i>
+                        Hire Me
+                    </a>
 
-        <p>
-            Support Available
-        </p>
 
-    </div>
+                    <a
+                        href="projects.html"
+                        class="btn-outline"
+                    >
+                        <i class="fas fa-folder-open"></i>
+                        View Projects
+                    </a>
 
+                </div>
 
-</section>
+            </div>
 
 
-<!-- =========================================================
-     WHATSAPP
-========================================================= -->
+            <!-- HERO IMAGE -->
 
-<a
-    href="https://wa.me/254700000000"
-    class="whatsapp"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Chat with Victor on WhatsApp"
->
+            <div class="hero-image">
 
-    <i class="fab fa-whatsapp"></i>
+                <div class="ring ring1"></div>
 
-</a>
+                <div class="ring ring2"></div>
 
+                <div class="ring ring3"></div>
 
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
 
-<script>
+                <!-- HTML -->
 
+                <div class="tech html">
 
-/* =========================================================
-   TYPING EFFECT
-========================================================= */
+                    <i class="fab fa-html5"></i>
 
-const words = [
+                </div>
 
-    "Digital Solutions Provider",
 
-    "Web Developer",
+                <!-- CSS -->
 
-    "Graphic Designer",
+                <div class="tech css">
 
-    "Branding Specialist",
+                    <i class="fab fa-css3-alt"></i>
 
-    "ICT Trainer",
+                </div>
 
-    "Tech Consultant"
 
-];
+                <!-- JAVASCRIPT -->
 
+                <div class="tech js">
 
-let i = 0;
+                    <i class="fab fa-js"></i>
 
-let j = 0;
+                </div>
 
-let deleting = false;
 
+                <!-- CODE -->
 
-function type(){
+                <div class="tech code">
 
-    const current = words[i];
+                    <i class="fas fa-code"></i>
 
-    document.getElementById("typing").textContent =
-        current.substring(0,j);
+                </div>
 
 
-    if(!deleting){
+                <!-- PROFILE IMAGE -->
 
-        j++;
+                <img
+                    src="assets/images/CEO PIC.jpg"
+                    alt="Victor Chitole - Digital Solutions Provider"
+                >
 
+            </div>
 
-        if(j > current.length){
 
-            deleting = true;
+            <!-- SCROLL -->
 
-            setTimeout(type,1200);
+            <div class="scroll">
 
-            return;
+                <i class="fas fa-angle-down"></i>
 
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             STATS
+        ====================================================== -->
+
+        <section class="stats">
+
+            <div class="stat">
+
+                <h2>
+                    50+
+                </h2>
+
+                <p>
+                    Projects Completed
+                </p>
+
+            </div>
+
+
+            <div class="stat">
+
+                <h2>
+                    100+
+                </h2>
+
+                <p>
+                    Happy Clients
+                </p>
+
+            </div>
+
+
+            <div class="stat">
+
+                <h2>
+                    5+
+                </h2>
+
+                <p>
+                    Years Experience
+                </p>
+
+            </div>
+
+
+            <div class="stat">
+
+                <h2>
+                    24/7
+                </h2>
+
+                <p>
+                    Support Available
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         WHATSAPP
+    ========================================================= -->
+
+    <a
+        href="https://wa.me/254740163974"
+        class="whatsapp"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with Victor on WhatsApp"
+    >
+
+        <i class="fab fa-whatsapp"></i>
+
+    </a>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================= -->
+
+    <script>
+
+        /* =====================================================
+           TYPING EFFECT
+        ===================================================== */
+
+        const words = [
+
+            "Digital Solutions Provider",
+
+            "Web Developer",
+
+            "Graphic Designer",
+
+            "Branding Specialist",
+
+            "ICT Trainer",
+
+            "Tech Consultant"
+
+        ];
+
+
+        let wordIndex = 0;
+
+        let charIndex = 0;
+
+        let deleting = false;
+
+
+        function type() {
+
+            const typingElement =
+                document.getElementById("typing");
+
+            const currentWord =
+                words[wordIndex];
+
+
+            if (!deleting) {
+
+                typingElement.textContent =
+                    currentWord.substring(
+                        0,
+                        charIndex + 1
+                    );
+
+                charIndex++;
+
+
+                if (
+                    charIndex ===
+                    currentWord.length
+                ) {
+
+                    deleting = true;
+
+                    setTimeout(type, 1500);
+
+                    return;
+                }
+
+            } else {
+
+                typingElement.textContent =
+                    currentWord.substring(
+                        0,
+                        charIndex - 1
+                    );
+
+                charIndex--;
+
+
+                if (charIndex === 0) {
+
+                    deleting = false;
+
+                    wordIndex =
+                        (wordIndex + 1) %
+                        words.length;
+                }
+            }
+
+
+            const speed =
+                deleting ? 50 : 100;
+
+
+            setTimeout(type, speed);
         }
 
-    }
 
-    else{
-
-        j--;
+        type();
 
 
-        if(j === 0){
+        /* =====================================================
+           MOBILE MENU
+        ===================================================== */
 
-            deleting = false;
+        const menuToggle =
+            document.getElementById("menuToggle");
 
-            i = (i + 1) % words.length;
-
-        }
-
-    }
-
-
-    setTimeout(
-        type,
-        deleting ? 50 : 120
-    );
-
-}
+        const navLinks =
+            document.getElementById("navLinks");
 
 
-type();
+        /* OPEN / CLOSE MENU */
 
+        menuToggle.addEventListener(
+            "click",
+            function () {
 
+                const isOpen =
+                    menuToggle.classList.toggle("active");
 
-/* =========================================================
-   MOBILE HAMBURGER MENU
-========================================================= */
+                navLinks.classList.toggle("active");
 
-const menuToggle =
-    document.getElementById("menuToggle");
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    isOpen
+                );
 
-const navLinks =
-    document.getElementById("navLinks");
-
-
-/* OPEN / CLOSE MENU */
-
-menuToggle.addEventListener("click", function(){
-
-    const isOpen =
-        menuToggle.classList.toggle("active");
-
-    navLinks.classList.toggle("active");
-
-    menuToggle.setAttribute(
-        "aria-expanded",
-        isOpen
-    );
-
-});
-
-
-/* =========================================================
-   CLOSE MENU AFTER CLICKING A LINK
-========================================================= */
-
-document
-    .querySelectorAll(".nav-links a")
-    .forEach(link => {
-
-        link.addEventListener("click", function(){
-
-            menuToggle.classList.remove("active");
-
-            navLinks.classList.remove("active");
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-        });
-
-    });
-
-
-
-/* =========================================================
-   CLOSE MENU WHEN CLICKING OUTSIDE
-========================================================= */
-
-document.addEventListener("click", function(event){
-
-    if(
-        !menuToggle.contains(event.target) &&
-        !navLinks.contains(event.target)
-    ){
-
-        menuToggle.classList.remove("active");
-
-        navLinks.classList.remove("active");
-
-        menuToggle.setAttribute(
-            "aria-expanded",
-            "false"
+            }
         );
 
-    }
 
-});
+        /* =====================================================
+           CLOSE MENU AFTER CLICKING LINK
+        ===================================================== */
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        menuToggle.classList.remove(
+                            "active"
+                        );
+
+                        navLinks.classList.remove(
+                            "active"
+                        );
+
+                        menuToggle.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
+                );
+
+            });
 
 
-</script>
+        /* =====================================================
+           CLOSE MENU WHEN CLICKING OUTSIDE
+        ===================================================== */
 
+        document.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    !menuToggle.contains(event.target) &&
+                    !navLinks.contains(event.target)
+                ) {
+
+                    menuToggle.classList.remove(
+                        "active"
+                    );
+
+                    navLinks.classList.remove(
+                        "active"
+                    );
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           CLOSE MENU WITH ESCAPE KEY
+        ===================================================== */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (event.key === "Escape") {
+
+                    menuToggle.classList.remove(
+                        "active"
+                    );
+
+                    navLinks.classList.remove(
+                        "active"
+                    );
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           PREVENT MOBILE MENU FROM STAYING OPEN
+           WHEN SCREEN IS RESIZED
+        ===================================================== */
+
+        window.addEventListener(
+            "resize",
+            function () {
+
+                if (window.innerWidth > 900) {
+
+                    menuToggle.classList.remove(
+                        "active"
+                    );
+
+                    navLinks.classList.remove(
+                        "active"
+                    );
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+                }
+
+            }
+        );
+
+    </script>
 
 </body>
 </html>
