@@ -3,2770 +3,1118 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description" content="Victor Chitole — professional web development, graphic design, branding, printing, ICT training and digital technology services.">
+<meta name="description" content="Explore Victor Chitole's services in web development, graphic design, branding, printing, ICT training, Smartboard teacher training, Kolibri and digital learning.">
+<meta name="theme-color" content="#080b09">
 
 <title>Services | Victor Chitole</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 <style>
-
-/* =========================================================
-   ROOT
-========================================================= */
-
 :root {
-    --bg: #050b16;
-    --bg2: #0a1425;
-    --card: rgba(12, 25, 45, 0.72);
-
-    --text: #f8fafc;
-    --muted: #9fb0c5;
-    --line: rgba(148, 163, 184, 0.15);
-
-    --blue: #38bdf8;
-    --cyan: #22d3ee;
-    --violet: #818cf8;
+    --bg: #080b09;
+    --bg2: #101511;
+    --card: #111712;
     --green: #22c55e;
-
-    --shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
+    --green-dark: #15803d;
+    --green-soft: rgba(34,197,94,.10);
+    --white: #f8fafc;
+    --muted: #a1aaa3;
+    --line: rgba(255,255,255,.10);
+    --shadow: 0 25px 70px rgba(0,0,0,.35);
 }
 
-/* =========================================================
-   RESET
-========================================================= */
+* { margin:0; padding:0; box-sizing:border-box; }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior:smooth; scroll-padding-top:90px; }
 
 body {
-    font-family: "Inter", sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    overflow-x: hidden;
+    font-family:"Inter",sans-serif;
+    background:var(--bg);
+    color:var(--white);
+    overflow-x:hidden;
 }
 
-body.menu-open,
-body.modal-open {
-    overflow: hidden;
-}
+body.menu-open, body.modal-open { overflow:hidden; }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
+a { color:inherit; text-decoration:none; }
+button { font:inherit; }
+img, video { max-width:100%; }
+button, a { -webkit-tap-highlight-color:transparent; }
 
-button {
-    font: inherit;
-}
-
-img {
-    max-width: 100%;
-}
-
-.container {
-    width: min(1180px, 92%);
-    margin: auto;
-}
-
-/* =========================================================
-   ANIMATED BACKGROUND
-========================================================= */
+.container { width:min(1180px,92%); margin:auto; }
 
 .background {
-    position: fixed;
-    inset: 0;
-    z-index: -10;
-    overflow: hidden;
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    pointer-events:none;
     background:
-        radial-gradient(
-            circle at 12% 8%,
-            rgba(56, 189, 248, 0.10),
-            transparent 25%
-        ),
-        radial-gradient(
-            circle at 88% 18%,
-            rgba(129, 140, 248, 0.10),
-            transparent 25%
-        ),
-        linear-gradient(
-            180deg,
-            #050b16,
-            #071221 65%,
-            #050b16
-        );
+        radial-gradient(circle at 10% 10%,rgba(34,197,94,.08),transparent 28%),
+        radial-gradient(circle at 90% 50%,rgba(34,197,94,.045),transparent 25%),
+        linear-gradient(180deg,#080b09,#0b100c 60%,#080b09);
 }
 
 .grid-bg {
-    position: absolute;
-    inset: 0;
-    opacity: 0.32;
-
+    position:absolute;
+    inset:0;
+    opacity:.15;
     background-image:
-        linear-gradient(
-            rgba(148, 163, 184, 0.05) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(148, 163, 184, 0.05) 1px,
-            transparent 1px
-        );
-
-    background-size: 52px 52px;
+        linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+    background-size:50px 50px;
 }
 
 .glow {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(90px);
-    animation: drift 12s ease-in-out infinite alternate;
+    position:absolute;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    filter:blur(100px);
+    background:rgba(34,197,94,.10);
 }
+.glow.one { left:-150px; top:15%; }
+.glow.two { right:-150px; top:55%; }
 
-.glow.one {
-    width: 300px;
-    height: 300px;
-    background: rgba(14, 165, 233, 0.13);
-    left: -120px;
-    top: 15%;
-}
-
-.glow.two {
-    width: 350px;
-    height: 350px;
-    background: rgba(99, 102, 241, 0.12);
-    right: -140px;
-    top: 50%;
-    animation-delay: 3s;
-}
-
-@keyframes drift {
-    to {
-        transform: translate(40px, -30px) scale(1.08);
-    }
-}
-
-/* =========================================================
-   NAVIGATION
-========================================================= */
-
+/* Navigation */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 78px;
-    z-index: 1000;
-
-    background: rgba(5, 11, 22, 0.72);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--line);
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:76px;
+    z-index:1000;
+    background:rgba(8,11,9,.90);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid var(--line);
 }
 
 .nav-inner {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    height:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
 .logo {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 25px;
-    font-weight: 700;
+    font:700 26px "Space Grotesk",sans-serif;
+    letter-spacing:-1px;
 }
-
-.logo b {
-    color: var(--blue);
-}
+.logo b { color:var(--green); }
 
 .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    list-style: none;
+    list-style:none;
+    display:flex;
+    align-items:center;
+    gap:27px;
 }
 
 .nav-links a {
-    font-size: 13px;
-    font-weight: 600;
-    color: #cbd5e1;
-    transition: 0.3s;
-    position: relative;
-    padding: 30px 0;
+    position:relative;
+    display:inline-block;
+    color:#c7cec9;
+    font-size:13px;
+    font-weight:600;
+    padding:28px 0;
+    transition:.25s;
 }
-
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 23px;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(
-        90deg,
-        var(--blue),
-        var(--violet)
-    );
-    transition: 0.3s;
-}
-
 .nav-links a:hover,
-.nav-links a.active {
-    color: #fff;
-}
+.nav-links a.active { color:var(--green); }
 
-.nav-links a:hover::after,
 .nav-links a.active::after {
-    width: 100%;
+    content:"";
+    position:absolute;
+    bottom:20px;
+    left:0;
+    width:100%;
+    height:2px;
+    background:var(--green);
 }
 
-.nav-cta {
-    padding: 10px 15px !important;
-    border: 1px solid rgba(56, 189, 248, 0.25);
-    border-radius: 10px;
-    background: rgba(56, 189, 248, 0.07);
+.nav-links .nav-cta {
+    padding:11px 16px;
+    border:1px solid rgba(34,197,94,.35);
+    border-radius:10px;
+    background:var(--green-soft);
+    color:#b8f7c9;
 }
-
-.nav-cta::after {
-    display: none;
-}
+.nav-links .nav-cta::after { display:none; }
 
 .menu-toggle {
-    display: none;
-    width: 45px;
-    height: 45px;
-
-    border: 1px solid var(--line);
-    border-radius: 12px;
-
-    background: rgba(255, 255, 255, 0.04);
-
-    cursor: pointer;
+    display:none;
+    width:44px;
+    height:44px;
+    border:1px solid var(--line);
+    border-radius:12px;
+    background:var(--card);
+    cursor:pointer;
 }
-
 .menu-toggle span {
-    display: block;
-    width: 21px;
-    height: 2px;
-    background: var(--blue);
-    margin: 4px auto;
-    transition: 0.3s;
+    display:block;
+    width:21px;
+    height:2px;
+    margin:4px auto;
+    background:var(--green);
+    transition:.25s;
 }
+.menu-toggle.open span:nth-child(1) { transform:translateY(6px) rotate(45deg); }
+.menu-toggle.open span:nth-child(2) { opacity:0; }
+.menu-toggle.open span:nth-child(3) { transform:translateY(-6px) rotate(-45deg); }
 
-.menu-toggle.open span:nth-child(1) {
-    transform: translateY(6px) rotate(45deg);
+/* Buttons and reusable text */
+.btn {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    padding:13px 18px;
+    border:1px solid transparent;
+    border-radius:11px;
+    font-size:13px;
+    font-weight:700;
+    cursor:pointer;
+    transition:transform .25s,background .25s,border-color .25s;
 }
+.btn:hover { transform:translateY(-3px); }
 
-.menu-toggle.open span:nth-child(2) {
-    opacity: 0;
+.btn-primary {
+    background:var(--green);
+    color:#061009;
+    box-shadow:0 10px 30px rgba(34,197,94,.12);
 }
+.btn-primary:hover { background:#4ade80; }
 
-.menu-toggle.open span:nth-child(3) {
-    transform: translateY(-6px) rotate(-45deg);
+.btn-secondary {
+    border-color:var(--line);
+    background:rgba(255,255,255,.035);
+    color:var(--white);
 }
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero {
-    padding: 145px 0 70px;
-    position: relative;
-}
-
-.hero-grid {
-    display: grid;
-    grid-template-columns: 1.08fr 0.92fr;
-    align-items: center;
-    gap: 70px;
+.btn-secondary:hover {
+    border-color:rgba(34,197,94,.5);
+    background:var(--green-soft);
 }
 
 .eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-
-    padding: 9px 14px;
-
-    border: 1px solid rgba(56, 189, 248, 0.2);
-    border-radius: 50px;
-
-    background: rgba(56, 189, 248, 0.06);
-
-    color: #bdefff;
-
-    font-size: 12px;
-    font-weight: 700;
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:9px 13px;
+    border:1px solid rgba(34,197,94,.25);
+    border-radius:50px;
+    background:var(--green-soft);
+    color:#bbf7d0;
+    font-size:11px;
+    font-weight:700;
 }
 
 .live-dot {
-    width: 8px;
-    height: 8px;
-
-    border-radius: 50%;
-
-    background: var(--green);
-
-    box-shadow: 0 0 14px var(--green);
-}
-
-.hero h1 {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: clamp(44px, 6.2vw, 78px);
-    line-height: 0.98;
-    letter-spacing: -3.5px;
-    margin: 23px 0 18px;
-}
-
-.gradient {
-    background: linear-gradient(
-        100deg,
-        #fff 10%,
-        #7dd3fc 50%,
-        #818cf8 90%
-    );
-
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.hero-title {
-    font-size: 21px;
-    color: var(--blue);
-    font-weight: 700;
-    margin-bottom: 18px;
-}
-
-.hero p {
-    max-width: 690px;
-    color: var(--muted);
-    line-height: 1.85;
-    font-size: 15px;
-}
-
-.actions {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 28px;
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 9px;
-
-    padding: 13px 18px;
-
-    border-radius: 13px;
-
-    font-size: 13px;
-    font-weight: 700;
-
-    border: 1px solid transparent;
-
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.btn-primary {
-    background: linear-gradient(
-        135deg,
-        #0ea5e9,
-        #6366f1
-    );
-
-    box-shadow: 0 15px 35px rgba(14, 165, 233, 0.16);
-}
-
-.btn-secondary {
-    background: rgba(255, 255, 255, 0.04);
-    border-color: var(--line);
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.25);
-}
-
-.meta {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-
-    margin-top: 25px;
-
-    color: #91a4b9;
-    font-size: 12px;
-}
-
-.meta i {
-    color: var(--blue);
-    margin-right: 6px;
-}
-
-/* =========================================================
-   PROFILE
-========================================================= */
-
-.profile-wrap {
-    position: relative;
-    max-width: 470px;
-    margin: auto;
-}
-
-.profile-card {
-    position: relative;
-
-    padding: 18px;
-
-    border-radius: 31px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(21, 43, 72, 0.88),
-            rgba(7, 19, 35, 0.7)
-        );
-
-    border: 1px solid rgba(148, 163, 184, 0.17);
-
-    box-shadow: var(--shadow);
-
-    overflow: hidden;
-}
-
-.profile-card::before {
-    content: "";
-
-    position: absolute;
-
-    inset: -60px;
-
-    background:
-        conic-gradient(
-            from 180deg,
-            transparent 65%,
-            rgba(56, 189, 248, 0.2),
-            transparent 80%
-        );
-
-    animation: spin 9s linear infinite;
-}
-
-.profile-inner {
-    position: relative;
-    z-index: 1;
-}
-
-.profile-img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-
-    display: block;
-
-    object-fit: cover;
-
-    border-radius: 23px;
-
-    border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.profile-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    gap: 15px;
-
-    padding: 18px 5px 3px;
-}
-
-.profile-info h3 {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 20px;
-}
-
-.profile-info p {
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 4px;
-}
-
-.available {
-    font-size: 10px;
-    font-weight: 800;
-
-    color: #86efac;
-
-    padding: 8px 10px;
-
-    border-radius: 999px;
-
-    background: rgba(34, 197, 94, 0.09);
-    border: 1px solid rgba(34, 197, 94, 0.2);
-
-    white-space: nowrap;
-}
-
-.tech-pill {
-    position: absolute;
-
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    padding: 9px 12px;
-
-    background: rgba(8, 20, 36, 0.9);
-
-    border: 1px solid var(--line);
-    border-radius: 12px;
-
-    color: #cfe4f7;
-
-    font-size: 11px;
-    font-weight: 700;
-
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-
-    animation: float 4s ease-in-out infinite;
-}
-
-.p1 {
-    top: 8%;
-    left: -8%;
-}
-
-.p2 {
-    top: 38%;
-    right: -9%;
-    animation-delay: 1s;
-}
-
-.p3 {
-    bottom: 10%;
-    left: -8%;
-    animation-delay: 2s;
-}
-
-.tech-pill i {
-    color: var(--blue);
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes float {
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-/* =========================================================
-   STATS
-========================================================= */
-
-.stats {
-    padding: 8px 0 78px;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
-}
-
-.stat {
-    padding: 22px;
-
-    border: 1px solid var(--line);
-    border-radius: 18px;
-
-    background: rgba(12, 25, 45, 0.58);
-
-    transition: 0.3s;
-}
-
-.stat:hover {
-    transform: translateY(-5px);
-    border-color: rgba(56, 189, 248, 0.28);
-}
-
-.stat strong {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 31px;
-}
-
-.stat span {
-    display: block;
-
-    color: var(--muted);
-
-    font-size: 11px;
-
-    margin-top: 5px;
-}
-
-/* =========================================================
-   SECTION
-========================================================= */
-
-.section {
-    padding: 90px 0;
-}
-
-.section-head {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-
-    gap: 30px;
-
-    margin-bottom: 38px;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--green);
+    box-shadow:0 0 12px var(--green);
 }
 
 .kicker {
-    font-size: 11px;
+    color:var(--green);
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+}
 
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
+.gradient {
+    color:var(--green);
+}
 
-    color: var(--blue);
+.section { padding:85px 0; }
 
-    font-weight: 800;
+.section-head {
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+    gap:30px;
+    margin-bottom:36px;
 }
 
 .section h2 {
-    font-family: "Space Grotesk", sans-serif;
-
-    font-size: clamp(32px, 4vw, 49px);
-
-    letter-spacing: -1.7px;
-
-    margin-top: 8px;
+    margin-top:9px;
+    font:700 clamp(30px,4vw,47px)/1.12 "Space Grotesk",sans-serif;
+    letter-spacing:-1.6px;
 }
 
-.section-head p {
-    max-width: 470px;
-
-    color: var(--muted);
-
-    font-size: 13px;
-
-    line-height: 1.75;
+.section-head > p {
+    max-width:460px;
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.8;
 }
 
-/* =========================================================
-   SERVICES
-========================================================= */
+/* Hero */
+.hero { padding:140px 0 60px; }
 
+.hero-grid {
+    display:grid;
+    grid-template-columns:1.08fr .92fr;
+    align-items:center;
+    gap:65px;
+}
+
+.hero h1 {
+    margin:23px 0 17px;
+    font:700 clamp(42px,5.8vw,74px)/1.02 "Space Grotesk",sans-serif;
+    letter-spacing:-3px;
+}
+
+.hero-title {
+    margin-bottom:17px;
+    color:var(--green);
+    font-size:17px;
+    font-weight:700;
+    line-height:1.7;
+}
+
+.hero p {
+    max-width:640px;
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.9;
+}
+
+.actions, .cta-actions, .modal-actions {
+    display:flex;
+    gap:11px;
+    flex-wrap:wrap;
+    margin-top:25px;
+}
+
+.meta {
+    display:flex;
+    gap:19px;
+    flex-wrap:wrap;
+    margin-top:24px;
+    color:var(--muted);
+    font-size:11px;
+}
+.meta i { color:var(--green); margin-right:5px; }
+
+.cv-access-note {
+    margin-top:12px;
+    color:var(--muted);
+    font-size:11px;
+    line-height:1.7;
+}
+.cv-access-note i { color:var(--green); margin-right:5px; }
+
+/* Profile */
+.profile-wrap {
+    position:relative;
+    max-width:440px;
+    width:100%;
+    margin:auto;
+}
+
+.profile-card {
+    padding:15px;
+    border:1px solid var(--line);
+    border-radius:25px;
+    background:linear-gradient(145deg,#172019,#0d120e);
+    box-shadow:var(--shadow);
+}
+
+.profile-img {
+    display:block;
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:17px;
+    background:#171d18;
+}
+
+.profile-info {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:17px 3px 4px;
+}
+.profile-info h3 { font:700 20px "Space Grotesk",sans-serif; }
+.profile-info p { margin-top:5px; color:var(--muted); font-size:11px; }
+
+.available {
+    padding:7px 9px;
+    border:1px solid rgba(34,197,94,.25);
+    border-radius:50px;
+    background:var(--green-soft);
+    color:#86efac;
+    font-size:9px;
+    font-weight:800;
+    white-space:nowrap;
+}
+
+.tech-pill {
+    position:absolute;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 12px;
+    border:1px solid var(--line);
+    border-radius:11px;
+    background:#101711;
+    box-shadow:0 12px 25px rgba(0,0,0,.3);
+    color:#e0e8e1;
+    font-size:10px;
+    font-weight:700;
+    animation:float 4s ease-in-out infinite;
+}
+.tech-pill i { color:var(--green); }
+.p1 { top:9%; left:-8%; }
+.p2 { top:43%; right:-8%; animation-delay:1s; }
+.p3 { bottom:9%; left:-8%; animation-delay:2s; }
+
+@keyframes float { 50% { transform:translateY(-8px); } }
+
+/* Statistics */
+.stats { padding:10px 0 45px; }
+.stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+
+.stat {
+    padding:22px;
+    border:1px solid var(--line);
+    border-radius:16px;
+    background:rgba(255,255,255,.025);
+    transition:.25s;
+}
+.stat:hover { transform:translateY(-4px); border-color:rgba(34,197,94,.35); }
+.stat strong { font:700 30px "Space Grotesk",sans-serif; }
+.stat span { display:block; margin-top:5px; color:var(--muted); font-size:11px; }
+
+/* Service cards */
 .service-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 17px;
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:17px;
 }
 
 .service-card {
-    position: relative;
-
-    min-height: 275px;
-
-    padding: 25px;
-
-    border: 1px solid var(--line);
-    border-radius: 23px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(15, 32, 56, 0.74),
-            rgba(8, 19, 34, 0.67)
-        );
-
-    overflow: hidden;
-
-    cursor: pointer;
-
-    transition: 0.4s;
+    position:relative;
+    min-height:265px;
+    padding:25px 24px 54px;
+    border:1px solid var(--line);
+    border-radius:19px;
+    background:linear-gradient(145deg,rgba(21,29,22,.95),rgba(12,17,13,.95));
+    cursor:pointer;
+    transition:transform .3s,border-color .3s,box-shadow .3s;
 }
-
-.service-card::before {
-    content: "";
-
-    position: absolute;
-
-    width: 180px;
-    height: 180px;
-
-    border-radius: 50%;
-
-    background: rgba(56, 189, 248, 0.1);
-
-    filter: blur(55px);
-
-    right: -80px;
-    top: -80px;
-
-    opacity: 0;
-
-    transition: 0.4s;
-}
-
 .service-card:hover {
-    transform: translateY(-9px);
-
-    border-color: rgba(56, 189, 248, 0.3);
-
-    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.25);
-}
-
-.service-card:hover::before {
-    opacity: 1;
+    transform:translateY(-7px);
+    border-color:rgba(34,197,94,.42);
+    box-shadow:0 18px 45px rgba(0,0,0,.24);
 }
 
 .icon {
-    width: 52px;
-    height: 52px;
-
-    display: grid;
-    place-items: center;
-
-    border-radius: 15px;
-
-    color: var(--blue);
-
-    font-size: 21px;
-
-    background: rgba(56, 189, 248, 0.08);
-
-    border: 1px solid rgba(56, 189, 248, 0.13);
-
-    margin-bottom: 25px;
+    display:grid;
+    place-items:center;
+    width:49px;
+    height:49px;
+    margin-bottom:23px;
+    border:1px solid rgba(34,197,94,.2);
+    border-radius:13px;
+    background:var(--green-soft);
+    color:var(--green);
+    font-size:20px;
 }
-
-.service-card h3 {
-    font-family: "Space Grotesk", sans-serif;
-
-    font-size: 18px;
-
-    margin-bottom: 10px;
-}
-
-.service-card p {
-    color: var(--muted);
-
-    font-size: 13px;
-
-    line-height: 1.72;
-}
+.service-card h3 { margin-bottom:10px; font:700 18px "Space Grotesk",sans-serif; }
+.service-card p { color:var(--muted); font-size:12px; line-height:1.8; }
 
 .learn {
-    position: absolute;
-
-    left: 25px;
-    bottom: 22px;
-
-    color: #7dd3fc;
-
-    font-size: 11px;
-
-    font-weight: 800;
-
-    display: flex;
-
-    gap: 7px;
-
-    align-items: center;
+    position:absolute;
+    bottom:21px;
+    left:24px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#86efac;
+    font-size:10px;
+    font-weight:800;
 }
+.learn i { transition:transform .25s; }
+.service-card:hover .learn i { transform:translateX(5px); }
 
-.service-card:hover .learn i {
-    transform: translateX(5px);
-}
-
-.learn i {
-    transition: 0.3s;
-}
-
-/* =========================================================
-   PROCESS
-========================================================= */
-
-.process {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-}
+/* Process */
+.process { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
 
 .step {
-    padding: 23px;
-
-    border: 1px solid var(--line);
-    border-radius: 20px;
-
-    background: rgba(255, 255, 255, 0.025);
+    padding:23px;
+    border:1px solid var(--line);
+    border-radius:17px;
+    background:rgba(255,255,255,.025);
 }
+.step-number { margin-bottom:22px; color:var(--green); font:700 11px "Space Grotesk",sans-serif; }
+.step h3 { margin-bottom:8px; font-size:15px; }
+.step p { color:var(--muted); font-size:11px; line-height:1.8; }
 
-.step-number {
-    font-family: "Space Grotesk", sans-serif;
-
-    font-size: 13px;
-
-    color: var(--blue);
-
-    margin-bottom: 24px;
-}
-
-.step h3 {
-    font-size: 16px;
-    margin-bottom: 8px;
-}
-
-.step p {
-    font-size: 12px;
-
-    color: var(--muted);
-
-    line-height: 1.7;
-}
-
-/* =========================================================
-   WHY
-========================================================= */
-
+/* Why me */
 .why-grid {
-    display: grid;
-
-    grid-template-columns: 0.8fr 1.2fr;
-
-    gap: 45px;
-
-    align-items: center;
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:35px;
+    align-items:center;
 }
 
 .why-card {
-    padding: 30px;
-
-    border: 1px solid var(--line);
-
-    border-radius: 25px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(56, 189, 248, 0.07),
-            rgba(129, 140, 248, 0.04)
-        );
+    padding:30px;
+    border:1px solid rgba(34,197,94,.2);
+    border-radius:21px;
+    background:linear-gradient(145deg,rgba(34,197,94,.07),rgba(255,255,255,.02));
 }
+.why-card h3 { margin:13px 0; font:700 26px/1.25 "Space Grotesk",sans-serif; }
+.why-card p { color:var(--muted); font-size:12px; line-height:1.9; }
 
-.why-card h3 {
-    font-family: "Space Grotesk", sans-serif;
-
-    font-size: 27px;
-
-    margin-bottom: 13px;
-}
-
-.why-card p {
-    color: var(--muted);
-
-    line-height: 1.8;
-
-    font-size: 13px;
-}
-
-.benefits {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 13px;
-}
-
+.benefits { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
 .benefit {
-    display: flex;
-
-    gap: 12px;
-
-    padding: 18px;
-
-    border: 1px solid var(--line);
-
-    border-radius: 17px;
-
-    background: rgba(255, 255, 255, 0.025);
+    display:flex;
+    gap:12px;
+    padding:17px;
+    border:1px solid var(--line);
+    border-radius:15px;
+    background:rgba(255,255,255,.025);
 }
+.benefit > i { margin-top:3px; color:var(--green); }
+.benefit h4 { margin-bottom:5px; font-size:12px; }
+.benefit p { color:var(--muted); font-size:10px; line-height:1.7; }
 
-.benefit i {
-    color: var(--blue);
-
-    margin-top: 2px;
-}
-
-.benefit h4 {
-    font-size: 13px;
-
-    margin-bottom: 5px;
-}
-
-.benefit p {
-    font-size: 11px;
-
-    color: var(--muted);
-
-    line-height: 1.6;
-}
-
-/* =========================================================
-   CTA
-========================================================= */
-
-.cta {
-    padding: 25px 0 90px;
-}
-
+/* CTA */
+.cta { padding:20px 0 85px; }
 .cta-box {
-    position: relative;
-
-    overflow: hidden;
-
-    padding: 50px;
-
-    border-radius: 30px;
-
-    border: 1px solid rgba(56, 189, 248, 0.2);
-
-    background:
-        linear-gradient(
-            120deg,
-            rgba(14, 116, 144, 0.18),
-            rgba(79, 70, 229, 0.15)
-        );
+    padding:45px;
+    border:1px solid rgba(34,197,94,.25);
+    border-radius:25px;
+    background:linear-gradient(115deg,rgba(34,197,94,.09),rgba(255,255,255,.025));
 }
-
-.cta-box::after {
-    content: "";
-
-    position: absolute;
-
-    width: 250px;
-    height: 250px;
-
-    border-radius: 50%;
-
-    right: -100px;
-    top: -130px;
-
-    background: rgba(56, 189, 248, 0.13);
-
-    filter: blur(30px);
-}
-
 .cta-box h2 {
-    font-family: "Space Grotesk", sans-serif;
-
-    font-size: clamp(28px, 4vw, 42px);
-
-    margin: 8px 0 10px;
+    max-width:760px;
+    margin:10px 0;
+    font:700 clamp(27px,4vw,41px)/1.2 "Space Grotesk",sans-serif;
 }
+.cta-box p { max-width:670px; color:var(--muted); font-size:12px; line-height:1.9; }
 
-.cta-box p {
-    max-width: 650px;
-
-    color: var(--muted);
-
-    line-height: 1.75;
-
-    font-size: 13px;
-}
-
-.cta-actions {
-    display: flex;
-
-    gap: 11px;
-
-    flex-wrap: wrap;
-
-    margin-top: 23px;
-}
-
-/* =========================================================
-   SERVICE MODAL
-========================================================= */
-
+/* Modal */
 .modal {
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 3000;
-
-    display: none;
-
-    place-items: center;
-
-    padding: 20px;
-
-    background: rgba(1, 5, 13, 0.82);
-
-    backdrop-filter: blur(12px);
+    position:fixed;
+    inset:0;
+    z-index:3000;
+    display:none;
+    place-items:center;
+    padding:18px;
+    background:rgba(0,0,0,.83);
+    backdrop-filter:blur(10px);
 }
-
-.modal.show {
-    display: grid;
-}
+.modal.show { display:grid; }
 
 .modal-box {
-    width: min(900px, 100%);
-
-    max-height: 90vh;
-
-    overflow-y: auto;
-
-    border-radius: 25px;
-
-    background: #091426;
-
-    border: 1px solid var(--line);
-
-    box-shadow: var(--shadow);
-
-    animation: modalIn 0.3s ease;
+    width:min(900px,100%);
+    max-height:92vh;
+    overflow-y:auto;
+    border:1px solid var(--line);
+    border-radius:21px;
+    background:#0d130e;
+    box-shadow:var(--shadow);
+    animation:modalIn .25s ease;
 }
-
 @keyframes modalIn {
-    from {
-        opacity: 0;
-        transform: translateY(18px) scale(0.98);
-    }
-
-    to {
-        opacity: 1;
-        transform: none;
-    }
+    from { opacity:0; transform:translateY(12px); }
+    to { opacity:1; transform:none; }
 }
 
 .modal-head {
-    position: sticky;
-
-    top: 0;
-
-    z-index: 10;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    padding: 21px 24px;
-
-    border-bottom: 1px solid var(--line);
-
-    background: rgba(9, 20, 38, 0.96);
-
-    backdrop-filter: blur(15px);
+    position:sticky;
+    top:0;
+    z-index:5;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    padding:19px 23px;
+    border-bottom:1px solid var(--line);
+    background:rgba(13,19,14,.97);
 }
-
-.modal-head h3 {
-    font-family: "Space Grotesk", sans-serif;
-
-    font-size: 22px;
-}
-
+.modal-head h3 { font:700 21px "Space Grotesk",sans-serif; }
 .close {
-    width: 39px;
-    height: 39px;
-
-    border-radius: 11px;
-
-    border: 1px solid var(--line);
-
-    background: rgba(255, 255, 255, 0.04);
-
-    color: #fff;
-
-    cursor: pointer;
-
-    transition: 0.3s;
+    flex-shrink:0;
+    width:38px;
+    height:38px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    background:#171d18;
+    color:white;
+    cursor:pointer;
 }
+.close:hover { color:var(--green); }
 
-.close:hover {
-    background: rgba(255, 255, 255, 0.1);
-
-    transform: rotate(90deg);
-}
-
-.modal-body {
-    padding: 25px;
-}
-
-.modal-intro {
-    color: var(--muted);
-
-    font-size: 14px;
-
-    line-height: 1.8;
-
-    margin-bottom: 22px;
-}
-
-.modal-sections {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 15px;
-
-    margin-bottom: 25px;
-}
+.modal-body { padding:24px; }
+.modal-intro { margin-bottom:20px; color:var(--muted); font-size:13px; line-height:1.9; }
+.modal-sections { display:grid; grid-template-columns:1fr 1fr; gap:13px; margin-bottom:24px; }
 
 .modal-section {
-    padding: 19px;
-
-    border: 1px solid var(--line);
-
-    border-radius: 17px;
-
-    background: rgba(255, 255, 255, 0.025);
+    padding:18px;
+    border:1px solid var(--line);
+    border-radius:14px;
+    background:rgba(255,255,255,.025);
 }
+.modal-section h4 { margin-bottom:12px; font-size:13px; }
+.modal-section h4 i { color:var(--green); margin-right:5px; }
+.modal-section ul { padding-left:17px; }
+.modal-section li { margin-bottom:6px; color:var(--muted); font-size:11px; line-height:1.7; }
 
-.modal-section h4 {
-    font-family: "Space Grotesk", sans-serif;
-
-    font-size: 14px;
-
-    margin-bottom: 12px;
-
-    color: #fff;
-}
-
-.modal-section ul {
-    padding-left: 18px;
-}
-
-.modal-section li {
-    color: var(--muted);
-
-    font-size: 12px;
-
-    line-height: 1.8;
-
-    margin-bottom: 4px;
-}
-
-.video-title,
-.gallery-title {
-    font-family: "Space Grotesk", sans-serif;
-
-    font-size: 15px;
-
-    margin-bottom: 12px;
-}
-
-.service-video {
-    width: 100%;
-
-    max-height: 430px;
-
-    display: block;
-
-    border-radius: 17px;
-
-    border: 1px solid var(--line);
-
-    background: #000;
-
-    margin-bottom: 25px;
-}
-
-.video-wrapper {
-    display: none;
-
-    margin-bottom: 25px;
-}
-
-.video-wrapper.show {
-    display: block;
-}
+.video-wrapper { display:none; margin-bottom:23px; }
+.video-wrapper.show { display:block; }
+.video-title, .gallery-title { margin-bottom:12px; font:600 14px "Space Grotesk",sans-serif; }
+.video-title i, .gallery-title i { color:var(--green); margin-right:6px; }
+.service-video { display:block; width:100%; max-height:420px; border:1px solid var(--line); border-radius:13px; background:#000; }
 
 .gallery {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 10px;
-
-    margin: 15px 0 22px;
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:10px;
+    margin-bottom:22px;
 }
-
 .gallery-item {
-    position: relative;
-
-    overflow: hidden;
-
-    border-radius: 13px;
-
-    border: 1px solid var(--line);
-
-    background: #020617;
-
-    cursor: pointer;
-
-    aspect-ratio: 16 / 10;
+    position:relative;
+    overflow:hidden;
+    aspect-ratio:16/10;
+    border:1px solid var(--line);
+    border-radius:11px;
+    background:#080b09;
+    cursor:pointer;
 }
-
 .gallery-item img {
-    width: 100%;
-
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-
-    transition: 0.4s;
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+    transition:transform .3s;
 }
-
-.gallery-item:hover img {
-    transform: scale(1.06);
-}
-
+.gallery-item:hover img { transform:scale(1.05); }
 .gallery-item::after {
-    content: "View";
-
-    position: absolute;
-
-    inset: 0;
-
-    display: grid;
-
-    place-items: center;
-
-    background: rgba(0, 0, 0, 0.45);
-
-    color: #fff;
-
-    font-size: 11px;
-
-    font-weight: 700;
-
-    opacity: 0;
-
-    transition: 0.3s;
+    content:"Open image";
+    position:absolute;
+    inset:0;
+    display:grid;
+    place-items:center;
+    background:rgba(0,0,0,.45);
+    color:white;
+    font-size:11px;
+    font-weight:700;
+    opacity:0;
+    transition:opacity .2s;
 }
-
-.gallery-item:hover::after {
-    opacity: 1;
-}
+.gallery-item:hover::after { opacity:1; }
 
 .note {
-    padding: 14px;
-
-    border-radius: 13px;
-
-    background: rgba(56, 189, 248, 0.06);
-
-    border: 1px solid rgba(56, 189, 248, 0.1);
-
-    color: #bdefff;
-
-    font-size: 11px;
-
-    line-height: 1.7;
-
-    margin-bottom: 20px;
+    margin:8px 0 18px;
+    padding:13px;
+    border:1px solid rgba(34,197,94,.17);
+    border-radius:11px;
+    background:var(--green-soft);
+    color:#c4e9ce;
+    font-size:10px;
+    line-height:1.8;
 }
+.note i { color:var(--green); margin-right:5px; }
+.modal-actions { margin-top:15px; }
 
-.modal-actions {
-    display: flex;
-
-    gap: 10px;
-
-    flex-wrap: wrap;
-}
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-    border-top: 1px solid var(--line);
-
-    padding: 35px 0;
-
-    color: var(--muted);
-
-    font-size: 12px;
-}
-
-.footer-inner {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    gap: 20px;
-}
-
-.footer-name {
-    color: #fff;
-
-    font-weight: 800;
-
-    margin-bottom: 5px;
-}
-
-.socials {
-    display: flex;
-
-    gap: 8px;
-}
-
+/* Footer and floating buttons */
+footer { padding:32px 0; border-top:1px solid var(--line); color:var(--muted); font-size:11px; }
+.footer-inner { display:flex; justify-content:space-between; align-items:center; gap:20px; }
+.footer-name { margin-bottom:7px; color:white; font-weight:800; font-size:14px; }
+.footer-copy { margin-top:7px; }
+.socials { display:flex; gap:8px; }
 .socials a {
-    width: 38px;
-    height: 38px;
-
-    display: grid;
-
-    place-items: center;
-
-    border-radius: 11px;
-
-    border: 1px solid var(--line);
-
-    transition: 0.3s;
+    display:grid;
+    place-items:center;
+    width:38px;
+    height:38px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    transition:.2s;
 }
+.socials a:hover { color:var(--green); border-color:var(--green); }
 
-.socials a:hover {
-    color: var(--blue);
-
-    border-color: rgba(56, 189, 248, 0.3);
-
-    transform: translateY(-3px);
+.back-home, .whatsapp {
+    position:fixed;
+    bottom:17px;
+    z-index:900;
+    display:grid;
+    place-items:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
 }
-
-/* =========================================================
-   FLOATING BUTTONS
-========================================================= */
-
 .back-home {
-    position: fixed;
-
-    left: 18px;
-    bottom: 18px;
-
-    z-index: 900;
-
-    padding: 10px 14px;
-
-    border-radius: 999px;
-
-    background: rgba(9, 20, 38, 0.88);
-
-    border: 1px solid var(--line);
-
-    font-size: 11px;
-
-    font-weight: 700;
-
-    backdrop-filter: blur(12px);
-
-    transition: 0.3s;
+    left:17px;
+    display:flex;
+    gap:7px;
+    padding:11px 14px;
+    border:1px solid var(--line);
+    border-radius:50px;
+    background:#111711;
+    font-size:10px;
+    font-weight:700;
 }
-
-.back-home:hover {
-    transform: translateY(-3px);
-}
-
 .whatsapp {
-    position: fixed;
-
-    right: 18px;
-    bottom: 18px;
-
-    z-index: 900;
-
-    width: 57px;
-    height: 57px;
-
-    border-radius: 50%;
-
-    display: grid;
-
-    place-items: center;
-
-    background: #25d366;
-
-    color: #fff;
-
-    font-size: 27px;
-
-    box-shadow:
-        0 12px 35px rgba(37, 211, 102, 0.25);
-
-    transition: 0.3s;
+    right:17px;
+    width:54px;
+    height:54px;
+    border-radius:50%;
+    background:#25d366;
+    color:#fff;
+    font-size:26px;
+    transition:transform .2s;
 }
+.whatsapp:hover { transform:scale(1.07); }
 
-.whatsapp:hover {
-    transform: scale(1.08);
-}
+.reveal { opacity:0; transform:translateY(18px); transition:opacity .65s ease,transform .65s ease; }
+.reveal.show { opacity:1; transform:none; }
 
-/* =========================================================
-   REVEAL
-========================================================= */
-
-.reveal {
-    opacity: 0;
-
-    transform: translateY(22px);
-
-    transition: 0.75s ease;
-}
-
-.reveal.show {
-    opacity: 1;
-
-    transform: none;
-}
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media (max-width: 950px) {
-
-    .menu-toggle {
-        display: block;
-    }
-
+/* Responsive */
+@media (max-width:950px) {
+    .menu-toggle { display:block; }
     .nav-links {
-        position: absolute;
-
-        top: 78px;
-        left: 0;
-
-        width: 100%;
-
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-        gap: 0;
-
-        padding: 12px 4%;
-
-        background: rgba(5, 11, 22, 0.98);
-
-        border-bottom: 1px solid var(--line);
-
-        opacity: 0;
-
-        visibility: hidden;
-
-        transform: translateY(-12px);
-
-        transition: 0.3s;
+        position:absolute;
+        top:76px;
+        left:0;
+        width:100%;
+        display:flex;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        padding:12px 4% 20px;
+        background:rgba(8,11,9,.98);
+        border-bottom:1px solid var(--line);
+        opacity:0;
+        visibility:hidden;
+        transform:translateY(-8px);
+        transition:.25s;
     }
-
-    .nav-links.open {
-        opacity: 1;
-
-        visibility: visible;
-
-        transform: none;
-    }
-
-    .nav-links a {
-        display: block;
-
-        padding: 14px 10px;
-    }
-
-    .nav-links a::after {
-        display: none;
-    }
-
-    .nav-cta {
-        margin: 4px 0 8px;
-    }
-
-    .hero-grid,
-    .why-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero {
-        text-align: center;
-    }
-
-    .hero p {
-        margin: auto;
-    }
-
-    .actions,
-    .meta {
-        justify-content: center;
-    }
-
-    .profile-wrap {
-        margin-top: 20px;
-    }
-
-    .service-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .process {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .nav-links.open { opacity:1; visibility:visible; transform:none; }
+    .nav-links a { display:block; padding:14px 10px; }
+    .nav-links a.active::after { display:none; }
+    .nav-links .nav-cta { margin-top:5px; }
+    .hero-grid, .why-grid { grid-template-columns:1fr; }
+    .hero { text-align:center; }
+    .hero p { margin:auto; }
+    .actions, .meta { justify-content:center; }
+    .profile-wrap { margin-top:20px; }
+    .service-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .process { grid-template-columns:repeat(2,1fr); }
 }
 
-@media (max-width: 700px) {
-
-    .modal-sections {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery {
-        grid-template-columns: repeat(2, 1fr);
-    }
+@media (max-width:700px) {
+    .section-head { display:block; }
+    .section-head > p { margin-top:13px; }
+    .stats-grid { grid-template-columns:repeat(2,1fr); }
+    .modal-sections { grid-template-columns:1fr; }
+    .gallery { grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
 
-@media (max-width: 620px) {
-
-    .hero {
-        padding-top: 125px;
-    }
-
-    .hero h1 {
-        letter-spacing: -2.5px;
-    }
-
-    .hero-title {
-        font-size: 18px;
-    }
-
-    .profile-wrap {
-        max-width: 390px;
-    }
-
-    .tech-pill {
-        display: none;
-    }
-
-    .stats-grid,
-    .service-grid,
-    .process {
-        grid-template-columns: 1fr;
-    }
-
-    .section {
-        padding: 70px 0;
-    }
-
-    .section-head {
-        display: block;
-    }
-
-    .section-head p {
-        margin-top: 12px;
-    }
-
-    .benefits {
-        grid-template-columns: 1fr;
-    }
-
-    .cta-box {
-        padding: 32px 23px;
-    }
-
-    .gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-item {
-        aspect-ratio: 16 / 10;
-    }
-
-    .footer-inner {
-        flex-direction: column;
-
-        text-align: center;
-    }
-
-    .back-home {
-        left: 10px;
-        bottom: 10px;
-    }
-
-    .whatsapp {
-        right: 12px;
-        bottom: 12px;
-    }
-
-    .modal {
-        padding: 10px;
-    }
-
-    .modal-box {
-        max-height: 94vh;
-
-        border-radius: 20px;
-    }
-
-    .modal-body {
-        padding: 18px;
-    }
-
-    .modal-head {
-        padding: 17px 18px;
-    }
-
-    .modal-actions .btn {
-        width: 100%;
-    }
+@media (max-width:560px) {
+    .hero { padding-top:120px; }
+    .hero h1 { letter-spacing:-2px; }
+    .hero-title { font-size:15px; }
+    .tech-pill { display:none; }
+    .service-grid, .process, .benefits { grid-template-columns:1fr; }
+    .section { padding:65px 0; }
+    .cta-box { padding:28px 21px; }
+    .stats-grid { gap:9px; }
+    .stat { padding:17px; }
+    .stat strong { font-size:25px; }
+    .footer-inner { flex-direction:column; text-align:center; }
+    .modal { padding:8px; }
+    .modal-box { max-height:95vh; }
+    .modal-body { padding:17px; }
+    .modal-head { padding:15px 17px; }
+    .modal-actions .btn { width:100%; }
+    .gallery { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .back-home { left:9px; bottom:9px; }
+    .whatsapp { right:10px; bottom:10px; }
 }
 
+@media (prefers-reduced-motion:reduce) {
+    *, *::before, *::after {
+        scroll-behavior:auto !important;
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+    }
+    .reveal { opacity:1; transform:none; }
+}
 </style>
 </head>
 
 <body>
-
-<!-- =====================================================
-     BACKGROUND
-====================================================== -->
-
-<div class="background">
+<div class="background" aria-hidden="true">
     <div class="grid-bg"></div>
     <div class="glow one"></div>
     <div class="glow two"></div>
 </div>
 
-<!-- =====================================================
-     NAVIGATION
-====================================================== -->
-
 <header class="navbar">
-
     <div class="container nav-inner">
+        <a href="index.html" class="logo">Victor<b>.</b></a>
 
-        <a href="index.html" class="logo">
-            Victor<b>.</b>
-        </a>
-
-        <button
-            class="menu-toggle"
-            id="menuToggle"
-            aria-label="Toggle navigation"
-            aria-expanded="false"
-        >
-            <span></span>
-            <span></span>
-            <span></span>
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Toggle navigation" aria-expanded="false"
+                aria-controls="navLinks">
+            <span></span><span></span><span></span>
         </button>
 
         <ul class="nav-links" id="navLinks">
-
-            <li>
-                <a href="index.html">Home</a>
-            </li>
-
-            <li>
-                <a href="about.html">About</a>
-            </li>
-
-            <li>
-                <a href="services.html" class="active">Services</a>
-            </li>
-
-            <li>
-                <a href="projects.html">Projects</a>
-            </li>
-
-            <li>
-                <a href="contact.html" class="nav-cta">
-                    Let's Talk
-                </a>
-            </li>
-
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html" class="active" aria-current="page">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html" class="nav-cta">Let's Talk</a></li>
         </ul>
-
     </div>
-
 </header>
 
-<!-- =====================================================
-     MAIN
-====================================================== -->
-
 <main>
-
-<!-- =====================================================
-     HERO
-====================================================== -->
-
 <section class="hero">
-
     <div class="container hero-grid">
-
         <div class="reveal">
+            <span class="eyebrow"><span class="live-dot"></span> Available for new projects</span>
 
-            <span class="eyebrow">
-                <span class="live-dot"></span>
-                Available for new projects
-            </span>
+            <h1>Technology, creativity &amp; <span class="gradient">real solutions.</span></h1>
 
-            <h1>
-                Technology, creativity &
-                <span class="gradient">real solutions.</span>
-            </h1>
-
-            <div class="hero-title">
-                Digital Solutions Provider • Web Developer • ICT Trainer
-            </div>
+            <div class="hero-title">Digital Solutions Provider • Web Developer • ICT Trainer</div>
 
             <p>
-                I help businesses, schools, organizations and individuals
-                turn ideas into professional digital experiences — from
-                websites and graphic design to branding, printing, ICT
-                training and innovative learning technology.
+                I help businesses, schools, organizations and individuals turn ideas
+                into professional digital experiences — from websites and graphic
+                design to branding, printing, ICT training and innovative learning technology.
             </p>
 
             <div class="actions">
-
                 <a href="contact.html" class="btn btn-primary">
-                    <i class="fa-solid fa-paper-plane"></i>
-                    Start a Project
+                    <i class="fa-solid fa-paper-plane"></i> Start a Project
                 </a>
-
                 <a href="projects.html" class="btn btn-secondary">
-                    <i class="fa-solid fa-briefcase"></i>
-                    View My Work
+                    <i class="fa-solid fa-briefcase"></i> View My Work
                 </a>
-
-              <a href="assets/CV.pdf" target="_blank" rel="noopener noreferrer" class="btn">
-          <i class="fas fa-download"></i> Download My CV
-            </a>
-
+                <a
+                    href="https://wa.me/254740163974?text=Hello%20Victor%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20request%20permission%20to%20access%20your%20CV.%20Kindly%20review%20my%20request."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-secondary"
+                    aria-label="Request permission to access Victor Chitole's CV">
+                    <i class="fa-solid fa-lock"></i> Request Access to CV
+                </a>
             </div>
 
-            <div class="meta">
-
-                <span>
-                    <i class="fa-solid fa-location-dot"></i>
-                    Kenya
-                </span>
-
-                <span>
-                    <i class="fa-solid fa-circle-check"></i>
-                    Client-focused
-                </span>
-
-                <span>
-                    <i class="fa-solid fa-headset"></i>
-                    Support available
-                </span>
-
-            </div>
-
-        </div>
-
-        <!-- PROFILE -->
-
-        <div class="profile-wrap reveal">
-
-            <div class="profile-card">
-
-                <div class="profile-inner">
-
-                    <img
-                        src="assets/images/CEO PIC.jpg"
-                        alt="Victor Chitole"
-                        class="profile-img"
-                    >
-
-                    <div class="profile-info">
-
-                        <div>
-                            <h3>Victor Chitole</h3>
-                            <p>Creative Tech Professional</p>
-                        </div>
-
-                        <span class="available">
-                            ● AVAILABLE
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="tech-pill p1">
-                <i class="fa-solid fa-code"></i>
-                Web Development
-            </div>
-
-            <div class="tech-pill p2">
-                <i class="fa-solid fa-pen-nib"></i>
-                Creative Design
-            </div>
-
-            <div class="tech-pill p3">
-                <i class="fa-solid fa-graduation-cap"></i>
-                ICT Training
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =====================================================
-     STATS
-====================================================== -->
-
-<section class="stats">
-
-    <div class="container stats-grid">
-
-        <div class="stat reveal">
-            <strong>10+</strong>
-            <span>Projects Completed</span>
-        </div>
-
-        <div class="stat reveal">
-            <strong>100+</strong>
-            <span>Happy Clients</span>
-        </div>
-
-        <div class="stat reveal">
-            <strong>3+</strong>
-            <span>Years Experience</span>
-        </div>
-
-        <div class="stat reveal">
-            <strong>24/7</strong>
-            <span>Support Available</span>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =====================================================
-     SERVICES
-====================================================== -->
-
-<section class="section" id="services">
-
-    <div class="container">
-
-        <div class="section-head reveal">
-
-            <div>
-
-                <div class="kicker">
-                    My expertise
-                </div>
-
-                <h2>
-                    Services built around your goals.
-                </h2>
-
-            </div>
-
-            <p>
-                Explore the services I provide. Select a service
-                to see what is included, view project media and
-                discuss your project.
+            <p class="cv-access-note">
+                <i class="fa-solid fa-shield-halved"></i>
+                CV access is available upon request and approval.
             </p>
 
+            <div class="meta">
+                <span><i class="fa-solid fa-location-dot"></i> Kenya</span>
+                <span><i class="fa-solid fa-circle-check"></i> Client-focused</span>
+                <span><i class="fa-solid fa-headset"></i> Support available</span>
+            </div>
+        </div>
+
+        <div class="profile-wrap reveal">
+            <div class="profile-card">
+                <img src="assets/images/CEO PIC.jpg"
+                     alt="Victor Chitole, digital solutions provider"
+                     class="profile-img"
+                     loading="lazy"
+                     onerror="this.style.display='none';this.parentElement.style.minHeight='300px';this.parentElement.style.display='grid';this.parentElement.style.placeItems='center';this.parentElement.insertAdjacentHTML('beforeend','<p style=&quot;color:#a1aaa3;text-align:center;padding:30px&quot;><i class=&quot;fa-solid fa-user fa-3x&quot; style=&quot;color:#22c55e&quot;></i><br><br>Add your profile photo at assets/images/CEO PIC.jpg</p>')">
+
+                <div class="profile-info">
+                    <div>
+                        <h3>Victor Chitole</h3>
+                        <p>Creative Tech Professional</p>
+                    </div>
+                    <span class="available">● AVAILABLE</span>
+                </div>
+            </div>
+
+            <div class="tech-pill p1"><i class="fa-solid fa-code"></i> Web Development</div>
+            <div class="tech-pill p2"><i class="fa-solid fa-pen-nib"></i> Creative Design</div>
+            <div class="tech-pill p3"><i class="fa-solid fa-graduation-cap"></i> ICT Training</div>
+        </div>
+    </div>
+</section>
+
+<section class="stats" aria-label="Professional highlights">
+    <div class="container stats-grid">
+        <div class="stat reveal"><strong>Web</strong><span>Development &amp; Digital Solutions</span></div>
+        <div class="stat reveal"><strong>Design</strong><span>Creative Branding &amp; Printing</span></div>
+        <div class="stat reveal"><strong>ICT</strong><span>Training &amp; Digital Learning</span></div>
+        <div class="stat reveal"><strong>Support</strong><span>Practical Project Guidance</span></div>
+    </div>
+</section>
+
+<section class="section" id="services">
+    <div class="container">
+        <div class="section-head reveal">
+            <div>
+                <div class="kicker">My expertise</div>
+                <h2>Services built around your goals.</h2>
+            </div>
+            <p>Explore the services I provide. Select a service to see what's included, view available project media and discuss your requirements.</p>
         </div>
 
         <div class="service-grid">
-
-            <!-- WEB DEVELOPMENT -->
-
-            <article
-                class="service-card reveal"
-                data-service="web"
-            >
-
-                <div class="icon">
-                    <i class="fa-solid fa-code"></i>
-                </div>
-
-                <h3>
-                    Web Development
-                </h3>
-
-                <p>
-                    Responsive business websites, portfolios
-                    and interactive web applications.
-                </p>
-
-                <span class="learn">
-                    Explore service
-                    <i class="fa-solid fa-arrow-right"></i>
-                </span>
-
+            <article class="service-card reveal" data-service="web" tabindex="0" role="button" aria-label="Explore Web Development">
+                <div class="icon"><i class="fa-solid fa-code"></i></div>
+                <h3>Web Development</h3>
+                <p>Responsive business websites, portfolios and interactive web applications.</p>
+                <span class="learn">Explore service <i class="fa-solid fa-arrow-right"></i></span>
             </article>
 
-            <!-- GRAPHIC DESIGN -->
-
-            <article
-                class="service-card reveal"
-                data-service="graphic"
-            >
-
-                <div class="icon">
-                    <i class="fa-solid fa-pen-nib"></i>
-                </div>
-
-                <h3>
-                    Graphic Design
-                </h3>
-
-                <p>
-                    Posters, flyers, logos, social media graphics
-                    and professional digital artwork.
-                </p>
-
-                <span class="learn">
-                    Explore service
-                    <i class="fa-solid fa-arrow-right"></i>
-                </span>
-
+            <article class="service-card reveal" data-service="graphic" tabindex="0" role="button" aria-label="Explore Graphic Design">
+                <div class="icon"><i class="fa-solid fa-pen-nib"></i></div>
+                <h3>Graphic Design</h3>
+                <p>Posters, flyers, logos, social media graphics and professional digital artwork.</p>
+                <span class="learn">Explore service <i class="fa-solid fa-arrow-right"></i></span>
             </article>
 
-            <!-- BRANDING -->
-
-            <article
-                class="service-card reveal"
-                data-service="branding"
-            >
-
-                <div class="icon">
-                    <i class="fa-solid fa-print"></i>
-                </div>
-
-                <h3>
-                    Branding &amp; Printing
-                </h3>
-
-                <p>
-                    Banners, T-shirts, mugs, stickers, caps
-                    and promotional branding materials.
-                </p>
-
-                <span class="learn">
-                    Explore service
-                    <i class="fa-solid fa-arrow-right"></i>
-                </span>
-
+            <article class="service-card reveal" data-service="branding" tabindex="0" role="button" aria-label="Explore Branding and Printing">
+                <div class="icon"><i class="fa-solid fa-print"></i></div>
+                <h3>Branding &amp; Printing</h3>
+                <p>Roll-up and flex banners, signage, T-shirts, stickers, branded bags and promotional materials.</p>
+                <span class="learn">Explore service <i class="fa-solid fa-arrow-right"></i></span>
             </article>
 
-            <!-- SMARTBOARD -->
-
-            <article
-                class="service-card reveal"
-                data-service="smartboard"
-            >
-
-                <div class="icon">
-                    <i class="fa-solid fa-chalkboard-user"></i>
-                </div>
-
-                <h3>
-                    Smartboard Training
-                </h3>
-
-                <p>
-                    Practical interactive classroom technology
-                    training for educators and schools.
-                </p>
-
-                <span class="learn">
-                    Explore service
-                    <i class="fa-solid fa-arrow-right"></i>
-                </span>
-
+            <article class="service-card reveal" data-service="smartboard" tabindex="0" role="button" aria-label="Explore Smartboard Training">
+                <div class="icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                <h3>Smartboard Teacher Training</h3>
+                <p>Practical training that helps educators use interactive classroom technology.</p>
+                <span class="learn">Explore service <i class="fa-solid fa-arrow-right"></i></span>
             </article>
 
-            <!-- APP -->
-
-            <article
-                class="service-card reveal"
-                data-service="app"
-            >
-
-                <div class="icon">
-                    <i class="fa-solid fa-mobile-screen-button"></i>
-                </div>
-
-                <h3>
-                    App Development
-                </h3>
-
-                <p>
-                    Useful mobile and web applications for
-                    education and practical projects.
-                </p>
-
-                <span class="learn">
-                    Explore service
-                    <i class="fa-solid fa-arrow-right"></i>
-                </span>
-
+            <article class="service-card reveal" data-service="app" tabindex="0" role="button" aria-label="Explore App Development">
+                <div class="icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                <h3>App Development</h3>
+                <p>Practical web applications and digital tools for education and management.</p>
+                <span class="learn">Explore service <i class="fa-solid fa-arrow-right"></i></span>
             </article>
 
-            <!-- INTERACTIVE CONTENT -->
-
-            <article
-                class="service-card reveal"
-                data-service="content"
-            >
-
-                <div class="icon">
-                    <i class="fa-solid fa-photo-film"></i>
-                </div>
-
-                <h3>
-                    Interactive Content
-                </h3>
-
-                <p>
-                    Digital lessons, multimedia resources and
-                    engaging learning experiences.
-                </p>
-
-                <span class="learn">
-                    Explore service
-                    <i class="fa-solid fa-arrow-right"></i>
-                </span>
-
+            <article class="service-card reveal" data-service="content" tabindex="0" role="button" aria-label="Explore Interactive Content">
+                <div class="icon"><i class="fa-solid fa-photo-film"></i></div>
+                <h3>Interactive Content</h3>
+                <p>Digital lessons, multimedia resources and engaging educational experiences.</p>
+                <span class="learn">Explore service <i class="fa-solid fa-arrow-right"></i></span>
             </article>
 
-            <!-- DIGITAL EDUCATION -->
-
-            <article
-                class="service-card reveal"
-                data-service="digital"
-            >
-
-                <div class="icon">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                </div>
-
-                <h3>
-                    Digital Education
-                </h3>
-
-                <p>
-                    Technology solutions that support modern
-                    teaching, learning and digital literacy.
-                </p>
-
-                <span class="learn">
-                    Explore service
-                    <i class="fa-solid fa-arrow-right"></i>
-                </span>
-
+            <article class="service-card reveal" data-service="digital" tabindex="0" role="button" aria-label="Explore Digital Education">
+                <div class="icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3>Digital Education</h3>
+                <p>Technology training and digital learning support for schools and communities.</p>
+                <span class="learn">Explore service <i class="fa-solid fa-arrow-right"></i></span>
             </article>
 
-            <!-- KOLIBRI -->
-
-            <article
-                class="service-card reveal"
-                data-service="kolibri"
-            >
-
-                <div class="icon">
-                    <i class="fa-solid fa-server"></i>
-                </div>
-
-                <h3>
-                    Kolibri &amp; ICT Training
-                </h3>
-
-                <p>
-                    Offline digital learning deployment,
-                    Kolibri setup and practical ICT training.
-                </p>
-
-                <span class="learn">
-                    Explore service
-                    <i class="fa-solid fa-arrow-right"></i>
-                </span>
-
+            <article class="service-card reveal" data-service="kolibri" tabindex="0" role="button" aria-label="Explore Kolibri and ICT Training">
+                <div class="icon"><i class="fa-solid fa-server"></i></div>
+                <h3>Kolibri &amp; ICT Training</h3>
+                <p>Offline digital learning support, Kolibri content organization and educator training.</p>
+                <span class="learn">Explore service <i class="fa-solid fa-arrow-right"></i></span>
             </article>
 
-            <!-- VR -->
-
-            <article
-                class="service-card reveal"
-                data-service="vr"
-            >
-
-                <div class="icon">
-                    <i class="fa-solid fa-vr-cardboard"></i>
-                </div>
-
-                <h3>
-                    Virtual Reality Training
-                </h3>
-
-                <p>
-                    Immersive learning experiences and hands-on
-                    digital technology workshops.
-                </p>
-
-                <span class="learn">
-                    Explore service
-                    <i class="fa-solid fa-arrow-right"></i>
-                </span>
-
+            <article class="service-card reveal" data-service="vr" tabindex="0" role="button" aria-label="Explore Virtual Reality Training">
+                <div class="icon"><i class="fa-solid fa-vr-cardboard"></i></div>
+                <h3>Virtual Reality Training</h3>
+                <p>Immersive learning demonstrations and hands-on digital technology workshops.</p>
+                <span class="learn">Explore service <i class="fa-solid fa-arrow-right"></i></span>
             </article>
-
         </div>
-
     </div>
-
 </section>
 
-<!-- =====================================================
-     PROCESS
-====================================================== -->
-
 <section class="section">
-
     <div class="container">
-
         <div class="section-head reveal">
-
             <div>
-
-                <div class="kicker">
-                    How I work
-                </div>
-
-                <h2>
-                    A simple process. Professional results.
-                </h2>
-
+                <div class="kicker">How I work</div>
+                <h2>A simple process. Professional results.</h2>
             </div>
-
-            <p>
-                From the first conversation to final delivery,
-                every project is handled with clarity and
-                attention to detail.
-            </p>
-
+            <p>From the first conversation to final delivery, every project is handled with clarity and attention to detail.</p>
         </div>
 
         <div class="process">
-
             <div class="step reveal">
-
-                <div class="step-number">
-                    01 / DISCOVER
-                </div>
-
-                <h3>
-                    Understand
-                </h3>
-
-                <p>
-                    We discuss your goals, audience, requirements
-                    and desired outcome.
-                </p>
-
+                <div class="step-number">01 / DISCOVER</div>
+                <h3>Understand</h3>
+                <p>We discuss your goals, audience, requirements and desired outcome.</p>
             </div>
-
             <div class="step reveal">
-
-                <div class="step-number">
-                    02 / PLAN
-                </div>
-
-                <h3>
-                    Plan
-                </h3>
-
-                <p>
-                    I organize the content, visual direction,
-                    technology and project scope.
-                </p>
-
+                <div class="step-number">02 / PLAN</div>
+                <h3>Plan</h3>
+                <p>I organize the content, visual direction, technology and project scope.</p>
             </div>
-
             <div class="step reveal">
-
-                <div class="step-number">
-                    03 / CREATE
-                </div>
-
-                <h3>
-                    Build
-                </h3>
-
-                <p>
-                    The design, website, branding or training
-                    solution is developed and refined.
-                </p>
-
+                <div class="step-number">03 / CREATE</div>
+                <h3>Build</h3>
+                <p>The design, website, branding or training solution is developed and refined.</p>
             </div>
-
             <div class="step reveal">
-
-                <div class="step-number">
-                    04 / DELIVER
-                </div>
-
-                <h3>
-                    Launch
-                </h3>
-
-                <p>
-                    You receive the finished solution plus
-                    guidance and support where needed.
-                </p>
-
+                <div class="step-number">04 / DELIVER</div>
+                <h3>Deliver</h3>
+                <p>You receive the finished solution plus guidance and support where needed.</p>
             </div>
-
         </div>
-
     </div>
-
 </section>
 
-<!-- =====================================================
-     WHY WORK WITH ME
-====================================================== -->
-
 <section class="section">
-
     <div class="container why-grid">
-
         <div class="why-card reveal">
-
-            <div class="kicker">
-                Why work with me
-            </div>
-
-            <h3>
-                Technology should solve problems — not create them.
-            </h3>
-
-            <p>
-                I combine technical skills, creativity and practical
-                training to create solutions that are useful,
-                professional and easy to understand.
-            </p>
-
+            <div class="kicker">Why work with me</div>
+            <h3>Technology should solve problems — not create them.</h3>
+            <p>I combine technical skills, creativity and practical training to create solutions that are useful, professional and easy to understand.</p>
             <div class="actions">
-
-                <a
-                    href="about.html"
-                    class="btn btn-primary"
-                >
-                    More About Me
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
-
+                <a href="about.html" class="btn btn-primary">More About Me <i class="fa-solid fa-arrow-right"></i></a>
             </div>
-
         </div>
 
         <div class="benefits">
-
             <div class="benefit reveal">
-
                 <i class="fa-solid fa-bullseye"></i>
-
-                <div>
-
-                    <h4>
-                        Goal-focused
-                    </h4>
-
-                    <p>
-                        Solutions designed around the actual
-                        purpose of your project.
-                    </p>
-
-                </div>
-
+                <div><h4>Goal-focused</h4><p>Solutions designed around the purpose of your project.</p></div>
             </div>
-
             <div class="benefit reveal">
-
                 <i class="fa-solid fa-mobile-screen"></i>
-
-                <div>
-
-                    <h4>
-                        Mobile-ready
-                    </h4>
-
-                    <p>
-                        Modern responsive experiences that work
-                        across devices.
-                    </p>
-
-                </div>
-
+                <div><h4>Mobile-ready</h4><p>Responsive experiences designed for different devices.</p></div>
             </div>
-
             <div class="benefit reveal">
-
                 <i class="fa-solid fa-wand-magic-sparkles"></i>
-
-                <div>
-
-                    <h4>
-                        Creative
-                    </h4>
-
-                    <p>
-                        Clean visual design that helps your brand
-                        communicate clearly.
-                    </p>
-
-                </div>
-
+                <div><h4>Creative</h4><p>Clear, professional visual design for your brand.</p></div>
             </div>
-
             <div class="benefit reveal">
-
                 <i class="fa-solid fa-headset"></i>
-
-                <div>
-
-                    <h4>
-                        Support
-                    </h4>
-
-                    <p>
-                        Practical guidance and support beyond
-                        the initial delivery.
-                    </p>
-
-                </div>
-
+                <div><h4>Practical support</h4><p>Guidance to help you use your delivered solution.</p></div>
             </div>
-
         </div>
-
     </div>
-
 </section>
-
-<!-- =====================================================
-     CTA
-====================================================== -->
 
 <section class="cta">
-
     <div class="container">
-
         <div class="cta-box reveal">
-
-            <div class="kicker">
-                Ready to build?
-            </div>
-
-            <h2>
-                Let's turn your idea into something professional.
-            </h2>
-
-            <p>
-                Need a website, branding, printing, ICT training
-                or a digital learning solution? Tell me what you
-                are working on and let's create the right solution
-                together.
-            </p>
-
+            <div class="kicker">Ready to build?</div>
+            <h2>Let's turn your idea into something professional.</h2>
+            <p>Need a website, branding, printing, ICT training or a digital learning solution? Tell me what you're working on and let's discuss the right solution.</p>
             <div class="cta-actions">
-
-                <a
-                    href="contact.html"
-                    class="btn btn-primary"
-                >
-                    <i class="fa-solid fa-comments"></i>
-                    Contact Me
-                </a>
-
-                <a
-                    href="https://wa.me/254740163974"
-                    target="_blank"
-                    rel="noopener"
-                    class="btn btn-secondary"
-                >
-                    <i class="fa-brands fa-whatsapp"></i>
-                    WhatsApp
-                </a>
-
-                <a
-                    href="https://drive.google.com/drive/folders/1rT8kJNdXJwoVtBuZJOnbWGT6flK3zGn4?usp=sharing"
-                    target="_blank"
-                    rel="noopener"
-                    class="btn btn-secondary"
-                >
-                    <i class="fa-solid fa-award"></i>
-                    Certificates
-                </a>
-
+                <a href="contact.html" class="btn btn-primary"><i class="fa-solid fa-comments"></i> Contact Me</a>
+                <a href="https://wa.me/254740163974" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://drive.google.com/drive/folders/1rT8kJNdXJwoVtBuZJOnbWGT6flK3zGn4?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fa-solid fa-award"></i> Certificates</a>
             </div>
-
         </div>
-
     </div>
-
 </section>
-
 </main>
 
-<!-- =====================================================
-     FOOTER
-====================================================== -->
-
 <footer>
-
     <div class="container footer-inner">
-
         <div>
-
-            <div class="footer-name">
-                Victor Chitole
-            </div>
-
-            <div>
-                Digital Solutions Provider • Web • Design • ICT • Technology
-            </div>
-
-            <div style="margin-top:5px">
-                © 2026 Victor Chitole. All Rights Reserved.
-            </div>
-
+            <div class="footer-name">Victor Chitole</div>
+            <div>Digital Solutions Provider • Web • Design • ICT • Technology</div>
+            <div class="footer-copy">© <span id="year"></span> Victor Chitole. All Rights Reserved.</div>
         </div>
-
         <div class="socials">
-
-            <a
-                href="mailto:victorchitole@gmail.com"
-                aria-label="Email"
-            >
-                <i class="fa-solid fa-envelope"></i>
-            </a>
-
-            <a
-                href="https://wa.me/254740163974"
-                target="_blank"
-                rel="noopener"
-                aria-label="WhatsApp"
-            >
-                <i class="fa-brands fa-whatsapp"></i>
-            </a>
-
-            <a
-                href="index.html"
-                aria-label="Website"
-            >
-                <i class="fa-solid fa-globe"></i>
-            </a>
-
+            <a href="mailto:mavinstechsolution@gmail.com" aria-label="Email Victor Chitole"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://wa.me/254740163974" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="index.html" aria-label="Portfolio website"><i class="fa-solid fa-globe"></i></a>
         </div>
-
     </div>
-
 </footer>
 
-<!-- =====================================================
-     BACK HOME
-====================================================== -->
+<a href="index.html" class="back-home"><i class="fa-solid fa-arrow-left"></i> Back Home</a>
+<a href="https://wa.me/254740163974" target="_blank" rel="noopener noreferrer" class="whatsapp" aria-label="Chat with Victor on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
 
-<a
-    href="index.html"
-    class="back-home"
->
-    <i class="fa-solid fa-arrow-left"></i>
-    Back Home
-</a>
-
-<!-- =====================================================
-     FLOATING WHATSAPP
-====================================================== -->
-
-<a
-    href="https://wa.me/254740163974"
-    target="_blank"
-    rel="noopener"
-    class="whatsapp"
-    aria-label="Chat on WhatsApp"
->
-    <i class="fa-brands fa-whatsapp"></i>
-</a>
-
-<!-- =====================================================
-     SERVICE MODAL
-====================================================== -->
-
-<div
-    class="modal"
-    id="serviceModal"
-    aria-hidden="true"
->
-
-    <div
-        class="modal-box"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="modalTitle"
-    >
-
+<!-- Service details modal -->
+<div class="modal" id="serviceModal" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
         <div class="modal-head">
-
-            <h3 id="modalTitle">
-                Service
-            </h3>
-
-            <button
-                class="close"
-                id="closeModal"
-                aria-label="Close"
-            >
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
+            <h3 id="modalTitle">Service Details</h3>
+            <button class="close" id="closeModal" type="button" aria-label="Close service details"><i class="fa-solid fa-xmark"></i></button>
         </div>
 
         <div class="modal-body">
-
-            <!-- DESCRIPTION -->
-
-            <div
-                id="modalContent"
-                class="modal-intro"
-            ></div>
-
-            <!-- INCLUDED + TOOLS -->
+            <div id="modalContent" class="modal-intro"></div>
 
             <div class="modal-sections">
-
                 <div class="modal-section">
-
-                    <h4>
-                        <i class="fa-solid fa-circle-check"></i>
-                        What's Included
-                    </h4>
-
+                    <h4><i class="fa-solid fa-circle-check"></i> What's Included</h4>
                     <ul id="modalIncluded"></ul>
-
                 </div>
-
                 <div class="modal-section">
-
-                    <h4>
-                        <i class="fa-solid fa-screwdriver-wrench"></i>
-                        Tools &amp; Technology
-                    </h4>
-
+                    <h4><i class="fa-solid fa-screwdriver-wrench"></i> Tools &amp; Technology</h4>
                     <ul id="modalTools"></ul>
-
                 </div>
-
             </div>
 
-            <!-- VIDEO -->
-
-            <div
-                class="video-wrapper"
-                id="videoWrapper"
-            >
-
-                <div class="video-title">
-                    <i class="fa-solid fa-circle-play"></i>
-                    Project Video
-                </div>
-
-                <video
-                    id="serviceVideo"
-                    class="service-video"
-                    controls
-                    playsinline
-                    preload="metadata"
-                >
+            <div class="video-wrapper" id="videoWrapper">
+                <div class="video-title"><i class="fa-solid fa-circle-play"></i> Project Video</div>
+                <video id="serviceVideo" class="service-video" controls playsinline preload="metadata">
                     Your browser does not support video playback.
                 </video>
-
             </div>
-
-            <!-- GALLERY -->
 
             <div id="galleryWrapper">
-
-                <div class="gallery-title">
-                    <i class="fa-solid fa-images"></i>
-                    Project Examples
-                </div>
-
-                <div
-                    class="gallery"
-                    id="gallery"
-                ></div>
-
+                <div class="gallery-title"><i class="fa-solid fa-images"></i> Project Examples</div>
+                <div class="gallery" id="gallery"></div>
             </div>
-
-            <!-- NOTE -->
 
             <div class="note">
-
                 <i class="fa-solid fa-circle-info"></i>
-
-                Project images and videos are loaded from your
-                portfolio folders. If a media file is not available,
-                it will automatically be hidden from the service
-                window.
-
+                Available images and videos are displayed from your portfolio folders. Missing media files are automatically hidden.
             </div>
-
-            <!-- ACTIONS -->
 
             <div class="modal-actions">
-
-                <a
-                    href="contact.html"
-                    class="btn btn-primary"
-                    id="requestService"
-                >
-                    <i class="fa-solid fa-paper-plane"></i>
-                    Request This Service
-                </a>
-
-                <a
-                    href="https://wa.me/254740163974"
-                    target="_blank"
-                    rel="noopener"
-                    class="btn btn-secondary"
-                    id="whatsappService"
-                >
-                    <i class="fa-brands fa-whatsapp"></i>
-                    Ask on WhatsApp
-                </a>
-
+                <a href="contact.html" class="btn btn-primary" id="requestService"><i class="fa-solid fa-paper-plane"></i> Request This Service</a>
+                <a href="https://wa.me/254740163974" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="whatsappService"><i class="fa-brands fa-whatsapp"></i> Ask on WhatsApp</a>
             </div>
-
         </div>
-
     </div>
-
 </div>
 
-<!-- =====================================================
-     JAVASCRIPT
-====================================================== -->
-
 <script>
-
-/* =========================================================
-   MOBILE NAVIGATION
-========================================================= */
-
+/* Mobile navigation */
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
 function closeMenu() {
-
     navLinks.classList.remove("open");
-
     menuToggle.classList.remove("open");
-
-    menuToggle.setAttribute(
-        "aria-expanded",
-        "false"
-    );
-
+    menuToggle.setAttribute("aria-expanded", "false");
     document.body.classList.remove("menu-open");
 }
 
 menuToggle.addEventListener("click", () => {
-
-    const open =
-        navLinks.classList.toggle("open");
-
-    menuToggle.classList.toggle(
-        "open",
-        open
-    );
-
-    menuToggle.setAttribute(
-        "aria-expanded",
-        open
-    );
-
-    document.body.classList.toggle(
-        "menu-open",
-        open
-    );
-
+    const isOpen = navLinks.classList.toggle("open");
+    menuToggle.classList.toggle("open", isOpen);
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    document.body.classList.toggle("menu-open", isOpen);
 });
 
-document
-    .querySelectorAll(".nav-links a")
-    .forEach(link => {
+navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
 
-        link.addEventListener(
-            "click",
-            closeMenu
-        );
+/* Update copyright year */
+document.getElementById("year").textContent = new Date().getFullYear();
 
-    });
-
-
-/* =========================================================
-   SERVICE DATA
-========================================================= */
-
+/*
+  Update these paths to match the actual filenames in your project.
+  A media file will be hidden automatically if it cannot be loaded.
+*/
 const data = {
-
     web: {
-
         title: "Web Development",
-
-        content: `
-            <p>
-                I create modern, responsive websites and web
-                applications designed around your goals, audience
-                and brand.
-            </p>
-        `,
-
+        content: "I create modern, responsive websites and web applications designed around your goals, audience and brand.",
         included: [
             "Business websites",
             "Personal and professional portfolios",
@@ -2776,735 +1124,288 @@ const data = {
             "Website updates and improvements",
             "Basic deployment support"
         ],
-
-        tools: [
-            "HTML5",
-            "CSS3",
-            "JavaScript",
-            "Tailwind CSS",
-            "Firebase",
-            "GitHub",
-            "Vercel / GitHub Pages"
-        ],
-
-        images: [
-            "images/web1.jpg",
-            "images/web2.jpg",
-            "images/web3.jpg"
-        ],
-
-        video: "videos/web-development.mp4"
-
+        tools: ["HTML5", "CSS3", "JavaScript", "Tailwind CSS", "Firebase", "GitHub", "Vercel / GitHub Pages"],
+        images: ["assets/images/web1.jpg", "assets/images/web2.jpg", "assets/images/web3.jpg"],
+        video: "assets/videos/web-development.mp4"
     },
-
 
     graphic: {
-
         title: "Graphic Design",
-
-        content: `
-            <p>
-                Professional visual communication for businesses,
-                organizations, churches, schools, events and
-                individuals.
-            </p>
-        `,
-
-        included: [
-            "Posters",
-            "Flyers",
-            "Business cards",
-            "Logos",
-            "Social media graphics",
-            "Event artwork",
-            "Digital promotional materials",
-            "Professional document designs"
-        ],
-
-        tools: [
-            "Adobe Photoshop",
-            "Adobe Illustrator",
-            "Canva",
-            "CorelDRAW",
-            "Digital design tools"
-        ],
-
-        images: [
-            "assets/images/poster 23.jpg",
-             "assets/images/graphic2.jpeg",
-            "assets/images/graphic3.jpeg"
-            
-            
-        ],
-
-        video: "videos/graphic-design.mp4"
-
+        content: "I design clear, professional visual materials for businesses, organizations, churches, schools, events and individuals.",
+        included: ["Posters", "Flyers", "Business cards", "Logos", "Social media graphics", "Event artwork", "Digital promotional materials", "Professional document designs"],
+        tools: ["Adobe Photoshop", "Adobe Illustrator", "Canva", "CorelDRAW", "Digital design tools"],
+        images: ["assets/images/poster 23.jpg", "assets/images/graphic2.jpeg", "assets/images/graphic3.jpeg"],
+        video: "assets/videos/graphic-design.mp4"
     },
-
 
     branding: {
-
         title: "Branding & Printing",
-
-        content: `
-            <p>
-                Complete visual branding and printing support for
-                businesses, promotional campaigns, organizations,
-                churches and events.
-            </p>
-        `,
-
-        included: [
-            "Roll-up banners",
-            "Outdoor banners",
-            "Business signage",
-            "T-shirts",
-            "Mugs",
-            "Caps",
-            "Stickers",
-            "Branded bags",
-            "Promotional materials",
-            "Event branding"
+        content: "I provide branding and printing support for businesses, promotional campaigns, organizations, churches and events.",
+        included: ["Roll-up banners", "Flex banners", "Outdoor banners", "Business signage", "Posters", "T-shirts", "Mugs and caps", "Stickers", "Branded bags", "Promotional materials", "Event branding"],
+        tools: ["Graphic design software", "Large-format printing", "Heat press technology", "Sublimation printing", "Vinyl cutting", "Lamination"],
+        images: [
+            "assets/images/Roll-up banner1.jpeg",
+            "assets/images/Roll-up banner2.jpeg",
+            "assets/images/Roll-up banner3.jpeg",
+            "assets/images/Branded bags1.jpeg",
+            "assets/images/Branded bags2.jpeg",
+            "assets/images/T-shirts.jpeg",
+            "assets/images/T-shirts2.jpeg",
+            "assets/images/branding1.jpeg",
+            "assets/images/branding2.jpeg",
+            "assets/images/branding3.jpeg",
+            "assets/images/branding4.jpeg",
+            "assets/images/branding5.jpeg",
+            "assets/images/branding6.jpeg",
+            "assets/images/branding7.jpeg",
+            "assets/images/branding8.jpeg"
         ],
-
-        tools: [
-            "Graphic design software",
-            "Large-format printing",
-            "Heat press technology",
-            "Sublimation printing",
-            "Vinyl cutting",
-            "Lamination"
-        ],
-
-      images: [
-    "assets/images/Roll-up banner1.jpeg",
-    "assets/images/Roll-up banner2.jpeg",
-    "assets/images/Roll-up banner3.jpeg",
-    "assets/images/Branded bags1.jpeg",
-    "assets/images/Branded bags2.jpeg",
-    "assets/images/T-shirts.jpeg",
-     "assets/images/T-shirts2.jpeg",
-    "assets/images/branding1.jpeg",
-    "assets/images/branding2.jpeg",
-    "assets/images/branding3.jpeg",
-     "assets/images/branding4.jpeg",
-    "assets/images/branding5.jpeg",
-    "assets/images/branding6.jpeg",
-    "assets/images/branding7.jpeg",
-    "assets/images/branding8.jpeg"
-],
-
-videos: "assets/videos/PRINT.mp4"
-
+        video: "assets/videos/PRINT.mp4"
     },
-
 
     smartboard: {
-
-        title: "Smartboard Training",
-
-        content: `
-            <p>
-                Hands-on training that helps educators use
-                interactive classroom technology with confidence
-                and creativity.
-            </p>
-        `,
-
-        included: [
-            "Smartboard basic operation",
-            "Interactive lesson delivery",
-            "Digital classroom tools",
-            "Interactive presentations",
-            "Classroom engagement",
-            "Practical demonstrations",
-            "Teacher support and guidance"
-        ],
-
-        tools: [
-            "Interactive Smartboards",
-            "Digital projectors",
-            "Interactive teaching software",
-            "Multimedia resources",
-            "Educational technology tools"
-        ],
-
-        images: [
-            "assets/images/smartboard1.jpeg",
-            "assets/images/smartboard2.jpeg",
-            "assets/images/smartboard3.jpeg"
-        ],
-
-        video: "videos/smartboard-training.mp4"
-
+        title: "Smartboard Teacher Training",
+        content: "I provide practical training to help educators use interactive classroom technology and digital resources with confidence.",
+        included: ["Smartboard basic operation", "Interactive lesson delivery", "Digital classroom tools", "Interactive presentations", "Classroom engagement", "Practical demonstrations", "Teacher guidance"],
+        tools: ["Interactive Smartboards", "Digital projectors", "Interactive teaching software", "Multimedia resources", "Educational technology tools"],
+        images: ["assets/images/smartboard1.jpeg", "assets/images/smartboard2.jpeg", "assets/images/smartboard3.jpeg"],
+        video: "assets/videos/smartboard-training.mp4"
     },
-
 
     app: {
-
         title: "App Development",
-
-        content: `
-            <p>
-                I develop practical mobile and web applications
-                designed to solve real problems in education,
-                management, communication and digital services.
-            </p>
-        `,
-
-        included: [
-            "Web applications",
-            "Educational applications",
-            "Management systems",
-            "Interactive dashboards",
-            "Forms and data collection",
-            "Firebase-based applications",
-            "Application improvements"
-        ],
-
-        tools: [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "Firebase",
-            "Chart.js",
-            "LocalStorage",
-            "Responsive UI frameworks"
-        ],
-
-        images: [
-            "images/app1.jpg",
-            "images/app2.jpg",
-            "images/app3.jpg"
-        ],
-
-        video: "videos/app-development.mp4"
-
+        content: "I develop practical web applications and digital tools designed to solve real problems in education, management and digital services.",
+        included: ["Web applications", "Educational applications", "Management systems", "Interactive dashboards", "Forms and data collection", "Firebase-based applications", "Application improvements"],
+        tools: ["HTML", "CSS", "JavaScript", "Firebase", "Chart.js", "LocalStorage", "Responsive UI frameworks"],
+        images: ["assets/images/app1.jpg", "assets/images/app2.jpg", "assets/images/app3.jpg"],
+        video: "assets/videos/app-development.mp4"
     },
-
 
     content: {
-
         title: "Interactive Content",
-
-        content: `
-            <p>
-                Digital learning resources and multimedia
-                experiences designed to make content more engaging,
-                visual and interactive.
-            </p>
-        `,
-
-        included: [
-            "Digital lessons",
-            "Interactive presentations",
-            "Educational graphics",
-            "Multimedia learning materials",
-            "Digital activities",
-            "Interactive teaching resources",
-            "Visual learning content"
-        ],
-
-        tools: [
-            "HTML5",
-            "CSS",
-            "JavaScript",
-            "Multimedia tools",
-            "Presentation software",
-            "Digital education platforms"
-        ],
-
-        images: [
-            "images/lessons1.jpg",
-            "images/lessons2.jpg",
-            "images/lessons3.jpg"
-        ],
-
-        video: "videos/interactive-content.mp4"
-
+        content: "I create digital learning resources and multimedia experiences designed to make lessons more engaging, visual and interactive.",
+        included: ["Digital lessons", "Interactive presentations", "Educational graphics", "Multimedia learning materials", "Digital activities", "Interactive teaching resources", "Visual learning content"],
+        tools: ["HTML5", "CSS", "JavaScript", "Multimedia tools", "Presentation software", "Digital education platforms"],
+        images: ["assets/images/lessons1.jpg", "assets/images/lessons2.jpg", "assets/images/lessons3.jpg"],
+        video: "assets/videos/interactive-content.mp4"
     },
-
 
     digital: {
-
         title: "Digital Education",
-
-        content: `
-            <p>
-                Technology solutions that support modern teaching,
-                digital literacy and better learning experiences
-                for schools, educators and communities.
-            </p>
-        `,
-
-        included: [
-            "Digital literacy training",
-            "Technology integration",
-            "Digital classroom support",
-            "Educational technology consultation",
-            "Teacher training",
-            "Digital learning resources",
-            "ICT support"
-        ],
-
-        tools: [
-            "Computers",
-            "Smartboards",
-            "Digital learning platforms",
-            "Educational software",
-            "Multimedia tools",
-            "Offline learning systems"
-        ],
-
-        images: [
-            "assets/images/digital1.jpeg",
-            "assets/images/digital2.jpeg",
-            "assets/images/digital3.jpeg"
-        ],
-
-        video: "videos/digital-education.mp4"
-
+        content: "I support modern teaching, digital literacy and better learning experiences for schools, educators and communities.",
+        included: ["Digital literacy training", "Technology integration", "Digital classroom support", "Educational technology consultation", "Teacher training", "Digital learning resources", "ICT support"],
+        tools: ["Computers", "Smartboards", "Digital learning platforms", "Educational software", "Multimedia tools", "Offline learning systems"],
+        images: ["assets/images/digital1.jpeg", "assets/images/digital2.jpeg", "assets/images/digital3.jpeg"],
+        video: "assets/videos/digital-education.mp4"
     },
-
 
     kolibri: {
-
         title: "Kolibri & ICT Training",
-
-        content: `
-            <p>
-                Practical ICT training and offline digital learning
-                support, including Kolibri deployment, content setup,
-                educator training and learner support.
-            </p>
-        `,
-
-        included: [
-            "Kolibri installation",
-            "Offline digital learning setup",
-            "Content organization",
-            "Teacher training",
-            "Learner orientation",
-            "ICT skills training",
-            "Technical support",
-            "Digital education consultation"
-        ],
-
-        tools: [
-            "Kolibri",
-            "Local networks",
-            "Computers",
-            "Android devices",
-            "Offline educational content",
-            "Basic networking tools"
-        ],
-
-        images: [
-            "assets/images/tech1.jpeg",
-            "assets/images/tech 2.jpeg",
-            "assets/images/tech3.jpeg"
-        ],
-
-        video: "videos/kolibri-training.mp4"
-
+        content: "I provide practical ICT training and offline digital learning support, including Kolibri content organization, educator training and learner orientation.",
+        included: ["Kolibri setup support", "Offline digital learning setup", "Content organization", "Teacher training", "Learner orientation", "ICT skills training", "Technical support", "Digital education consultation"],
+        tools: ["Kolibri", "Local networks", "Computers", "Android devices", "Offline educational content", "Basic networking tools"],
+        images: ["assets/images/tech1.jpeg", "assets/images/tech 2.jpeg", "assets/images/tech3.jpeg"],
+        video: "assets/videos/kolibri-training.mp4"
     },
 
-
     vr: {
-
         title: "Virtual Reality Training",
-
-        content: `
-            <p>
-                Immersive technology experiences and hands-on
-                workshops designed to introduce learners and
-                educators to virtual reality and emerging
-                digital technologies.
-            </p>
-        `,
-
-        included: [
-            "VR device orientation",
-            "Hands-on VR experiences",
-            "Educational VR demonstrations",
-            "Digital technology workshops",
-            "Interactive learning activities",
-            "Basic VR support"
-        ],
-
-        tools: [
-            "VR headsets",
-            "Virtual reality applications",
-            "Educational VR content",
-            "Interactive digital tools",
-            "Multimedia technology"
-        ],
-
-        images: [
-            "assets/images/virtual1.jpeg",
-            "assets/images/virtual2.jpeg",
-            "assets/images/virtual3.jpg"
-        ],
-
-        video: "videos/virtual-reality.mp4"
-
+        content: "I introduce learners and educators to immersive learning experiences through practical demonstrations and digital technology workshops.",
+        included: ["VR device orientation", "Hands-on VR experiences", "Educational VR demonstrations", "Digital technology workshops", "Interactive learning activities", "Basic VR guidance"],
+        tools: ["VR headsets", "Virtual reality applications", "Educational VR content", "Interactive digital tools", "Multimedia technology"],
+        images: ["assets/images/virtual1.jpeg", "assets/images/virtual2.jpeg", "assets/images/virtual3.jpg"],
+        video: "assets/videos/virtual-reality.mp4"
     }
-
 };
 
-
-/* =========================================================
-   MODAL ELEMENTS
-========================================================= */
-
-const modal =
-    document.getElementById("serviceModal");
-
-const title =
-    document.getElementById("modalTitle");
-
-const content =
-    document.getElementById("modalContent");
-
-const included =
-    document.getElementById("modalIncluded");
-
-const tools =
-    document.getElementById("modalTools");
-
-const gallery =
-    document.getElementById("gallery");
-
-const galleryWrapper =
-    document.getElementById("galleryWrapper");
-
-const videoWrapper =
-    document.getElementById("videoWrapper");
-
-const serviceVideo =
-    document.getElementById("serviceVideo");
-
-const requestService =
-    document.getElementById("requestService");
-
-const whatsappService =
-    document.getElementById("whatsappService");
-
-
-/* =========================================================
-   OPEN SERVICE MODAL
-========================================================= */
-
-document
-    .querySelectorAll(".service-card")
-    .forEach(card => {
-
-        card.addEventListener("click", () => {
-
-            const item =
-                data[card.dataset.service];
-
-            if (!item) return;
-
-            /* TITLE */
-
-            title.textContent =
-                item.title;
-
-
-            /* DESCRIPTION */
-
-            content.innerHTML =
-                item.content;
-
-
-            /* INCLUDED */
-
-            included.innerHTML = "";
-
-            item.included.forEach(text => {
-
-                const li =
-                    document.createElement("li");
-
-                li.textContent = text;
-
-                included.appendChild(li);
-
-            });
-
-
-            /* TOOLS */
-
-            tools.innerHTML = "";
-
-            item.tools.forEach(text => {
-
-                const li =
-                    document.createElement("li");
-
-                li.textContent = text;
-
-                tools.appendChild(li);
-
-            });
-
-
-            /* GALLERY */
-
-            gallery.innerHTML = "";
-
-            galleryWrapper.style.display = "block";
-
-            let imageCount = 0;
-
-            item.images.forEach(src => {
-
-                const wrapper =
-                    document.createElement("div");
-
-                wrapper.className =
-                    "gallery-item";
-
-                const img =
-                    document.createElement("img");
-
-                img.src = src;
-
-                img.alt =
-                    item.title + " project";
-
-                img.loading = "lazy";
-
-                img.onerror = () => {
-
-                    wrapper.remove();
-
-                    imageCount--;
-
-                    if (imageCount <= 0) {
-                        galleryWrapper.style.display = "none";
-                    }
-
-                };
-
-                wrapper.addEventListener(
-                    "click",
-                    () => {
-
-                        window.open(
-                            src,
-                            "_blank",
-                            "noopener"
-                        );
-
-                    }
-                );
-
-                wrapper.appendChild(img);
-
-                gallery.appendChild(wrapper);
-
-                imageCount++;
-
-            });
-
-
-            if (imageCount === 0) {
-                galleryWrapper.style.display = "none";
-            }
-
-
-            /* VIDEO */
-
-            serviceVideo.pause();
-
-            serviceVideo.removeAttribute("src");
-
-            serviceVideo.load();
-
-            videoWrapper.classList.remove("show");
-
-            if (item.video) {
-
-                serviceVideo.src =
-                    item.video;
-
-                serviceVideo.onerror = () => {
-
-                    videoWrapper.classList.remove("show");
-
-                    serviceVideo.removeAttribute("src");
-
-                    serviceVideo.load();
-
-                };
-
-                serviceVideo.onloadedmetadata = () => {
-
-                    videoWrapper.classList.add("show");
-
-                };
-
-            }
-
-
-            /* CONTACT BUTTON */
-
-            const message =
-                encodeURIComponent(
-                    `Hello Victor, I am interested in your ${item.title} service. I would like to discuss my project with you.`
-                );
-
-            whatsappService.href =
-                `https://wa.me/254740163974?text=${message}`;
-
-
-            requestService.href =
-                `contact.html?service=${encodeURIComponent(item.title)}`;
-
-
-            /* OPEN */
-
-            modal.classList.add("show");
-
-            modal.setAttribute(
-                "aria-hidden",
-                "false"
-            );
-
-            document.body.classList.add(
-                "modal-open"
-            );
-
-        });
-
+/* Modal elements */
+const modal = document.getElementById("serviceModal");
+const modalBox = modal.querySelector(".modal-box");
+const modalTitle = document.getElementById("modalTitle");
+const modalContent = document.getElementById("modalContent");
+const modalIncluded = document.getElementById("modalIncluded");
+const modalTools = document.getElementById("modalTools");
+const gallery = document.getElementById("gallery");
+const galleryWrapper = document.getElementById("galleryWrapper");
+const videoWrapper = document.getElementById("videoWrapper");
+const serviceVideo = document.getElementById("serviceVideo");
+const requestService = document.getElementById("requestService");
+const whatsappService = document.getElementById("whatsappService");
+const closeModalButton = document.getElementById("closeModal");
+
+let lastFocusedElement = null;
+let activeImageCount = 0;
+
+function appendListItems(list, items) {
+    list.replaceChildren();
+    items.forEach(text => {
+        const li = document.createElement("li");
+        li.textContent = text;
+        list.appendChild(li);
     });
-
-
-/* =========================================================
-   CLOSE MODAL
-========================================================= */
-
-function closeModal() {
-
-    modal.classList.remove("show");
-
-    modal.setAttribute(
-        "aria-hidden",
-        "true"
-    );
-
-    document.body.classList.remove(
-        "modal-open"
-    );
-
-    serviceVideo.pause();
-
-    serviceVideo.removeAttribute("src");
-
-    serviceVideo.load();
-
-    videoWrapper.classList.remove("show");
 }
 
-document
-    .getElementById("closeModal")
-    .addEventListener(
-        "click",
-        closeModal
-    );
+function stopVideo() {
+    serviceVideo.pause();
+    serviceVideo.removeAttribute("src");
+    serviceVideo.load();
+    videoWrapper.classList.remove("show");
+    serviceVideo.onerror = null;
+    serviceVideo.onloadedmetadata = null;
+}
 
+function openService(key, trigger) {
+    const item = data[key];
+    if (!item) return;
 
-/* Close when clicking outside */
+    lastFocusedElement = trigger;
+    modalTitle.textContent = item.title;
+    modalContent.textContent = item.content;
 
-modal.addEventListener("click", event => {
+    appendListItems(modalIncluded, item.included);
+    appendListItems(modalTools, item.tools);
 
-    if (event.target === modal) {
+    /* Build gallery and remove unavailable images */
+    gallery.replaceChildren();
+    activeImageCount = 0;
+    galleryWrapper.style.display = "none";
 
-        closeModal();
+    item.images.forEach(src => {
+        const wrapper = document.createElement("a");
+        wrapper.className = "gallery-item";
+        wrapper.href = src;
+        wrapper.target = "_blank";
+        wrapper.rel = "noopener noreferrer";
+        wrapper.setAttribute("aria-label", "Open project image in a new tab");
 
-    }
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = item.title + " project example";
+        img.loading = "lazy";
 
-});
+        img.addEventListener("load", () => {
+            activeImageCount++;
+            galleryWrapper.style.display = "block";
+        }, { once: true });
 
+        img.addEventListener("error", () => {
+            wrapper.remove();
+            if (!gallery.querySelector(".gallery-item")) {
+                galleryWrapper.style.display = "none";
+            }
+        }, { once: true });
 
-/* =========================================================
-   ESCAPE KEY
-========================================================= */
-
-document.addEventListener(
-    "keydown",
-    event => {
-
-        if (event.key === "Escape") {
-
-            closeModal();
-
-            closeMenu();
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
-
-const observer =
-    new IntersectionObserver(
-        entries => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add(
-                        "show"
-                    );
-
-                    observer.unobserve(
-                        entry.target
-                    );
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.12
-        }
-    );
-
-
-document
-    .querySelectorAll(".reveal")
-    .forEach(element => {
-
-        observer.observe(element);
-
+        wrapper.appendChild(img);
+        gallery.appendChild(wrapper);
     });
 
+    /* Load video only if a valid path is configured */
+    stopVideo();
 
-/* =========================================================
-   PREVENT MODAL FROM CLOSING WHEN CLICKING INSIDE BOX
-========================================================= */
+    if (item.video) {
+        serviceVideo.src = item.video;
 
-document
-    .querySelector(".modal-box")
-    .addEventListener(
-        "click",
-        event => {
+        serviceVideo.onloadedmetadata = () => {
+            videoWrapper.classList.add("show");
+        };
 
-            event.stopPropagation();
+        serviceVideo.onerror = () => {
+            videoWrapper.classList.remove("show");
+            serviceVideo.removeAttribute("src");
+            serviceVideo.load();
+        };
 
-        }
+        serviceVideo.load();
+    }
+
+    const message = encodeURIComponent(
+        `Hello Victor, I am interested in your ${item.title} service. I would like to discuss my project with you.`
     );
 
-</script>
+    whatsappService.href = `https://wa.me/254740163974?text=${message}`;
+    requestService.href = `contact.html?service=${encodeURIComponent(item.title)}`;
 
+    modal.classList.add("show");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    closeModalButton.focus();
+}
+
+function closeModal() {
+    if (!modal.classList.contains("show")) return;
+
+    modal.classList.remove("show");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+    stopVideo();
+
+    if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+        lastFocusedElement.focus();
+    }
+}
+
+document.querySelectorAll(".service-card").forEach(card => {
+    card.addEventListener("click", () => openService(card.dataset.service, card));
+
+    card.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openService(card.dataset.service, card);
+        }
+    });
+});
+
+closeModalButton.addEventListener("click", closeModal);
+
+modal.addEventListener("click", event => {
+    if (event.target === modal) closeModal();
+});
+
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+        closeModal();
+        closeMenu();
+    }
+
+    /* Basic keyboard focus containment while modal is open */
+    if (event.key === "Tab" && modal.classList.contains("show")) {
+        const focusable = modal.querySelectorAll(
+            'a[href], button:not([disabled]), [tabindex="0"]'
+        );
+        if (!focusable.length) return;
+
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+        }
+    }
+});
+
+/* Scroll reveal */
+const revealElements = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window &&
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    revealElements.forEach(element => observer.observe(element));
+} else {
+    revealElements.forEach(element => element.classList.add("show"));
+}
+</script>
 </body>
 </html>
