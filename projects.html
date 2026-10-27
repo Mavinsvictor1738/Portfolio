@@ -819,6 +819,73 @@ input:focus-visible {
   align-self: center;
 }
 
+
+/* PROJECT PREVIEW MODAL */
+.project-preview-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  background: rgba(8, 14, 9, .78);
+  backdrop-filter: blur(8px);
+}
+.project-preview-modal.open { display: flex; }
+.preview-dialog {
+  position: relative;
+  width: min(100%, 1050px);
+  max-height: min(90vh, 900px);
+  overflow: auto;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 30px 90px rgba(0,0,0,.35);
+}
+.preview-close {
+  position: sticky;
+  top: 12px;
+  float: right;
+  z-index: 5;
+  width: 42px;
+  height: 42px;
+  margin: 12px 12px -54px 0;
+  border: 0;
+  border-radius: 50%;
+  color: #fff;
+  background: #101510;
+  font-size: 22px;
+}
+.preview-content { padding: 26px; }
+.preview-content h2 {
+  margin: 0 50px 8px 0;
+  font-family: var(--heading);
+  font-size: clamp(24px, 4vw, 36px);
+}
+.preview-content p { color: var(--muted); font-size: 13px; margin: 0 0 20px; }
+.preview-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.preview-gallery img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #f4f6f3;
+  cursor: zoom-in;
+}
+.preview-gallery img:only-child { grid-column: 1 / -1; }
+.preview-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
+.preview-note { margin-top: 12px !important; font-size: 11px !important; }
+@media (max-width: 600px) {
+  .project-preview-modal { padding: 8px; }
+  .preview-content { padding: 18px; }
+  .preview-gallery { grid-template-columns: 1fr; }
+}
+
 /* RESPONSIVE */
 
 @media (max-width: 1000px) {
@@ -1224,9 +1291,8 @@ input:focus-visible {
           <span class="project-badge">DESIGN · PRINT · BRANDING</span>
 
           <div class="project-actions">
-            <a href="https://drive.google.com/drive/folders/1w_s3uTPCyvXPgMgn_NtfFaoAQBfaaaag?usp=sharing"
-              target="_blank" rel="noopener noreferrer">
-              Explore Project <i class="fas fa-arrow-up-right-from-square"></i>
+            <a href="#preview-graphic" class="open-project-preview" data-project="graphic">
+              View Project <i class="fas fa-eye"></i>
             </a>
           </div>
         </div>
@@ -1251,9 +1317,8 @@ input:focus-visible {
               <span class="tag">Branding</span>
             </div>
 
-            <a class="project-link"
-              href="https://drive.google.com/drive/folders/1w_s3uTPCyvXPgMgn_NtfFaoAQBfaaaag?usp=sharing"
-              target="_blank" rel="noopener noreferrer">
+            <a class="project-link open-project-preview"
+              href="#preview-graphic" data-project="graphic">
               View Work <i class="fas fa-arrow-right"></i>
             </a>
           </div>
@@ -1542,6 +1607,22 @@ input:focus-visible {
   </div>
 </footer>
 
+
+<!-- PROJECT PREVIEW MODAL -->
+<div class="project-preview-modal" id="projectPreviewModal" aria-hidden="true">
+  <section class="preview-dialog" role="dialog" aria-modal="true" aria-labelledby="previewTitle">
+    <button class="preview-close" id="previewClose" type="button" aria-label="Close project preview">&times;</button>
+    <div class="preview-content">
+      <span class="section-label">Project Preview</span>
+      <h2 id="previewTitle">Project title</h2>
+      <p id="previewDescription"></p>
+      <div class="preview-gallery" id="previewGallery"></div>
+      <div class="preview-actions" id="previewActions"></div>
+      <p class="preview-note">Tip: Add your project images to the GitHub repository paths listed in the project setup notes.</p>
+    </div>
+  </section>
+</div>
+
 <!-- FLOATING WHATSAPP -->
 <a
   class="whatsapp-float"
@@ -1680,6 +1761,115 @@ listView.addEventListener("click", () => {
   listView.setAttribute("aria-pressed", "true");
   gridView.setAttribute("aria-pressed", "false");
 });
+
+
+/* LOCAL PROJECT PREVIEWS: no Google Docs/Drive required */
+const previewModal = document.getElementById("projectPreviewModal");
+const previewClose = document.getElementById("previewClose");
+const previewTitle = document.getElementById("previewTitle");
+const previewDescription = document.getElementById("previewDescription");
+const previewGallery = document.getElementById("previewGallery");
+const previewActions = document.getElementById("previewActions");
+
+const projectPreviewData = {
+  graphic: {
+    title: "Graphic Design, Printing & Branding",
+    description: "A selection of graphic design, banner, poster, printing and branding work. Add your own images to the GitHub repository and they will appear here.",
+    images: [
+      "assets/images/poster1.jpg",
+      "assets/images/branding1.jpg",
+      "assets/images/branding2.jpg",
+      "assets/images/branding3.jpg",
+      "assets/images/Branded bags1.jpeg",
+      "assets/images/Branded bags2.jpeg",
+      "assets/images/T-shirts.jpeg"
+    ],
+    actionLabel: "Discuss a Design Project",
+    actionUrl: "https://wa.me/254740163974?text=Hello%20Victor%2C%20I%20would%20like%20to%20discuss%20a%20graphic%20design%20or%20branding%20project."
+  },
+  digital: {
+    title: "Digital Learning & Interactive Content",
+    description: "Interactive learning materials and digital curriculum content developed for technology-supported learning.",
+    images: ["assets/images/poster1.jpg"],
+    actionLabel: "Open Learning Project",
+    actionUrl: "https://socio-emotional-12-14-year-1.vercel.app/"
+  },
+  mavinstech: {
+    title: "Mavinstech Solution Website",
+    description: "A business website presenting creative services, ICT solutions, branding and digital capabilities.",
+    images: ["assets/images/web1.jpg"],
+    actionLabel: "Visit Live Website",
+    actionUrl: "https://mavinsvictor1738.github.io/mavinstechsolution/"
+  },
+  techresolute: {
+    title: "Tech Resolute",
+    description: "A collaborative web project focused on responsive layouts and modern frontend development.",
+    images: ["assets/images/web2.jpg"],
+    actionLabel: "Visit Live Website",
+    actionUrl: "https://tech-resolute.vercel.app/"
+  },
+  training: {
+    title: "ICT & Technology Training",
+    description: "Practical digital skills development, Smartboard and Kolibri learning tools, coding and technology-based education.",
+    images: ["assets/images/training1.jpg"],
+    actionLabel: "Enquire on WhatsApp",
+    actionUrl: "https://wa.me/254740163974?text=Hello%20Victor%2C%20I%20would%20like%20to%20enquire%20about%20ICT%20training."
+  }
+};
+
+function openProjectPreview(key) {
+  const data = projectPreviewData[key];
+  if (!data) return;
+  previewTitle.textContent = data.title;
+  previewDescription.textContent = data.description;
+  previewGallery.replaceChildren();
+  data.images.forEach(path => {
+    const image = document.createElement("img");
+    image.src = path;
+    image.alt = data.title + " portfolio image";
+    image.loading = "lazy";
+    image.addEventListener("error", () => image.remove());
+    image.addEventListener("click", () => {
+      window.open(path, "_blank", "noopener,noreferrer");
+    });
+    previewGallery.appendChild(image);
+  });
+  previewActions.replaceChildren();
+  const action = document.createElement("a");
+  action.className = "btn btn-primary";
+  action.href = data.actionUrl;
+  action.target = "_blank";
+  action.rel = "noopener noreferrer";
+  action.textContent = data.actionLabel;
+  previewActions.appendChild(action);
+  previewModal.classList.add("open");
+  previewModal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+  previewClose.focus();
+}
+
+function closeProjectPreview() {
+  previewModal.classList.remove("open");
+  previewModal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+}
+
+document.querySelectorAll(".open-project-preview").forEach(link => {
+  link.addEventListener("click", event => {
+    event.preventDefault();
+    openProjectPreview(link.dataset.project);
+  });
+});
+previewClose.addEventListener("click", closeProjectPreview);
+previewModal.addEventListener("click", event => {
+  if (event.target === previewModal) closeProjectPreview();
+});
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && previewModal.classList.contains("open")) {
+    closeProjectPreview();
+  }
+});
+
 
 /* AUTOMATIC COPYRIGHT YEAR */
 document.getElementById("currentYear").textContent =
