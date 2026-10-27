@@ -1871,7 +1871,7 @@
 
                     <p>
                         <i class="fas fa-circle" style="font-size:7px;" aria-hidden="true"></i>
-                        Ready to help
+                        AI-powered assistant
                     </p>
 
                 </div>
@@ -1898,10 +1898,7 @@
                 <div class="vc-message bot">
                     Hello! 👋 Welcome to Victor Chitole's portfolio.
 
-                    I can tell you about Victor's skills, projects, services,
-                    and how to get in touch.
-
-                    What would you like to know?
+                    Ask me about Victor’s portfolio or ask a general question. I can help with explanations, ideas, writing, coding, learning, and more when the AI service is connected.
                 </div>
 
             </div>
@@ -1944,10 +1941,10 @@
                     type="text"
                     class="vc-chat-input"
                     id="vcChatInput"
-                    placeholder="Type your question..."
+                    placeholder="Ask me anything..."
                     autocomplete="off"
                     aria-label="Type your message"
-                    maxlength="500"
+                    maxlength="2000"
                     required>
 
                 <button
@@ -2221,314 +2218,126 @@
 
 
         /* =========================================
-           6. CHATBOT RESPONSE SYSTEM
+           6. AI CHAT ASSISTANT
+           Configure this URL after deploying server.mjs.
         ========================================= */
-
-        function getBotResponse(rawMessage) {
-
-            const message = rawMessage.toLowerCase().trim();
-
-            /* GREETINGS */
-
-            if (
-                /^(hi|hello|hey|good morning|good afternoon|good evening)\b/.test(message)
-            ) {
-
-                return "Hello! 👋 Welcome to Victor Chitole's portfolio. Ask me about his skills, projects, services, or contact details.";
-
-            }
-
-
-            /* ABOUT VICTOR */
-
-            if (
-                message.includes("who are you") ||
-                message.includes("about victor") ||
-                message.includes("who is victor") ||
-                message.includes("tell me about")
-            ) {
-
-                return "Victor Chitole is a digital solutions provider with skills in web development, graphic design, branding, ICT training, digital content, and technology solutions. He is also the founder of Mavinstech Solution.";
-
-            }
-
-
-            /* SKILLS */
-
-            if (
-                message.includes("skill") ||
-                message.includes("what can you do") ||
-                message.includes("expertise") ||
-                message.includes("qualification")
-            ) {
-
-                return "Victor's skills include:\n\n• HTML, CSS and JavaScript\n• Frontend web development\n• Graphic design and digital media\n• Branding and printing\n• ICT training and technical support\n• Kolibri digital learning systems\n• Smartboard learning support\n• Scratch programming and STEM robotics\n• Digital content creation and digitization.";
-
-            }
-
-
-            /* SERVICES */
-
-            if (
-                message.includes("service") ||
-                message.includes("offer") ||
-                message.includes("provide") ||
-                message.includes("what do you do")
-            ) {
-
-                return "Victor can assist with:\n\n• Website development\n• Graphic design and branding\n• Roll-up banners, flex banners and signage\n• Posters, T-shirt printing and promotional products\n• ICT training and technical support\n• Digital learning content and Kolibri\n• Coding and STEM robotics\n• Digital content creation\n\nContact Victor for a quotation.";
-
-            }
-
-
-            /* PROJECTS */
-
-            if (
-                message.includes("project") ||
-                message.includes("portfolio") ||
-                message.includes("work you've done") ||
-                message.includes("work you have done")
-            ) {
-
-                return "Victor's work includes website development, graphic design, printing and branding, and digital learning content. Visit the Projects page to explore his portfolio: projects.html";
-
-            }
-
-
-            /* WEB DEVELOPMENT */
-
-            if (
-                message.includes("web") ||
-                message.includes("website") ||
-                message.includes("frontend") ||
-                message.includes("development")
-            ) {
-
-                return "Victor uses HTML, CSS and JavaScript to build frontend websites and digital experiences. To discuss a website for your business or organization, visit the Contact page or message him on WhatsApp.";
-
-            }
-
-
-            /* GRAPHIC DESIGN */
-
-            if (
-                message.includes("graphic") ||
-                message.includes("design") ||
-                message.includes("logo") ||
-                message.includes("poster")
-            ) {
-
-                return "Graphic design services include logos, posters, flyers, promotional graphics, and digital materials. Share your requirements with Victor to discuss your project.";
-
-            }
-
-
-            /* PRINTING AND BRANDING */
-
-            if (
-                message.includes("banner") ||
-                message.includes("printing") ||
-                message.includes("print") ||
-                message.includes("t-shirt") ||
-                message.includes("tshirt") ||
-                message.includes("signage")
-            ) {
-
-                return "Printing and branding services include roll-up banners, flex banners, signage, posters, T-shirt printing, branded materials, and promotional designs. Contact Victor for pricing based on your size, quantity, and design requirements.";
-
-            }
-
-
-            /* EDUCATION TECHNOLOGY */
-
-            if (
-                message.includes("kolibri") ||
-                message.includes("smartboard") ||
-                message.includes("curriculum") ||
-                message.includes("digital learning")
-            ) {
-
-                return "Victor supports ICT training and digital learning activities involving Kolibri, smartboards, and digitized educational content. Contact him to discuss training or educational content requirements.";
-
-            }
-
-
-            /* CODING AND ROBOTICS */
-
-            if (
-                message.includes("robotics") ||
-                message.includes("scratch") ||
-                message.includes("coding") ||
-                message.includes("stem")
-            ) {
-
-                return "Victor supports ICT training activities involving Scratch programming, coding, and STEM robotics. Get in touch to discuss training for learners, schools, or organizations.";
-
-            }
-
-
-            /* PRICING */
-
-            if (
-                message.includes("price") ||
-                message.includes("cost") ||
-                message.includes("charge") ||
-                message.includes("quotation") ||
-                message.includes("quote") ||
-                message.includes("how much")
-            ) {
-
-                return "Pricing depends on the service, project size, materials, quantity, and delivery requirements. Tell Victor what you need to receive a suitable quotation.";
-
-            }
-
-
-            /* CONTACT DETAILS */
-
-            if (
-                message.includes("contact") ||
-                message.includes("phone") ||
-                message.includes("email") ||
-                message.includes("reach") ||
-                message.includes("whatsapp") ||
-                message.includes("number")
-            ) {
-
-                return "You can contact Victor Chitole through:\n\nWhatsApp/Phone: +254 740 163 974\nEmail: victorchitole@gmail.com\n\nWhatsApp: https://wa.me/254740163974";
-
-            }
-
-
-            /* BUSINESS INFORMATION */
-
-            if (
-                message.includes("mavinstech") ||
-                message.includes("business") ||
-                message.includes("company")
-            ) {
-
-                return "Mavinstech Solution is Victor Chitole's digital solutions brand, offering creative design, printing, branding, web development, ICT training, and technology-related services.\n\nYour Creative Tech Partner.";
-
-            }
-
-
-            /* LOCATION */
-
-            if (
-                message.includes("location") ||
-                message.includes("where are you") ||
-                message.includes("based")
-            ) {
-
-                return "Victor's business location is listed as Mtondia Sokoni, opposite South Gate School. Contact him to confirm availability or arrange a visit.";
-
-            }
-
-
-            /* HIRING AND COLLABORATION */
-
-            if (
-                message.includes("hire") ||
-                message.includes("work together") ||
-                message.includes("collaborate") ||
-                message.includes("available")
-            ) {
-
-                return "Thank you for considering Victor for your project! Please share what you need and your expected timeline. Contact him directly on WhatsApp: https://wa.me/254740163974";
-
-            }
-
-
-            /* THANK YOU */
-
-            if (message.includes("thank")) {
-
-                return "You're welcome! 😊 Is there anything else you'd like to know about Victor's skills, projects, or services?";
-
-            }
-
-
-            /* HELP */
-
-            if (message.includes("help")) {
-
-                return "I can help you learn about:\n\n• Victor's skills\n• Projects and portfolio\n• Web development\n• Graphic design and printing\n• ICT training and digital learning\n• Pricing enquiries\n• Contact details\n\nChoose a quick button or type your question.";
-
-            }
-
-
-            /* DEFAULT RESPONSE */
-
-            return "Thanks for your question! I may not have that information available yet. You can ask about Victor's skills, projects, services, pricing, or contact details. For other enquiries, contact Victor on WhatsApp: +254 740 163 974.";
-
+        const CHAT_API_URL = "/api/chat";
+        const chatHistory = [];
+        let chatBusy = false;
+
+        function addMessage(message, sender) {
+            const messageElement = document.createElement("div");
+            messageElement.className = "vc-message " + sender;
+            messageElement.textContent = message;
+            chatMessages.appendChild(messageElement);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return messageElement;
         }
 
+        function setChatBusy(busy) {
+            chatBusy = busy;
+            chatInput.disabled = busy;
+            const sendButton = chatForm.querySelector("button[type='submit']");
+            sendButton.disabled = busy;
+            sendButton.style.opacity = busy ? ".6" : "1";
+            sendButton.style.cursor = busy ? "wait" : "pointer";
+        }
 
-        /* =========================================
-           7. SEND CHAT MESSAGE
-        ========================================= */
+        function getLocalFallback(rawMessage) {
+            const text = rawMessage.toLowerCase();
+            if (/^(hi|hello|hey|good morning|good afternoon|good evening)\b/.test(text)) {
+                return "Hello! 👋 I’m Victor’s portfolio AI assistant. Ask me about Victor, his work, web development, design, printing, ICT training, or general questions.";
+            }
+            if (/who are you|who is victor|about victor|tell me about victor/.test(text)) {
+                return "Victor Chitole is a digital solutions provider working in frontend web development, graphic design, branding, printing, ICT training, digital learning content, and technology solutions. He is associated with Mavinstech Solution.";
+            }
+            if (/skill|expertise|qualification/.test(text)) {
+                return "Victor’s skills include HTML, CSS, JavaScript, frontend development, graphic design, branding and printing, digital content creation, ICT training, Kolibri learning systems, smartboard learning support, Scratch programming, and STEM robotics.";
+            }
+            if (/service|offer|what do you do/.test(text)) {
+                return "Victor offers website development, graphic design, branding, roll-up and flex banners, signage, posters, T-shirt printing, ICT training, digital learning content, Kolibri support, coding and STEM robotics activities, and technical support.";
+            }
+            if (/project|portfolio|work/.test(text)) {
+                return "Victor’s portfolio includes web development, graphic design, printing and branding, and digital learning content. Open the Projects page from the navigation to explore available work.";
+            }
+            if (/contact|phone|email|whatsapp|reach/.test(text)) {
+                return "You can contact Victor on WhatsApp/phone at +254 740 163 974 or use https://wa.me/254740163974. Email: victorchitole@gmail.com.";
+            }
+            return "The AI service is not connected yet, so I can only answer a few portfolio questions right now. Connect the secure backend described in README.md to enable AI-powered answers to general questions. You can also contact Victor on WhatsApp: https://wa.me/254740163974.";
+        }
 
-        function sendChatMessage(message) {
+        async function requestAIResponse(message) {
+            const response = await fetch(CHAT_API_URL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message, history: chatHistory.slice(-12) })
+            });
 
-            const cleanMessage = message.trim();
+            if (!response.ok) {
+                let details = "";
+                try {
+                    const data = await response.json();
+                    details = data.error || "";
+                } catch (_) {}
+                throw new Error(details || `AI service returned ${response.status}`);
+            }
 
-            if (!cleanMessage) return;
+            const data = await response.json();
+            if (!data.reply || typeof data.reply !== "string") {
+                throw new Error("The AI service returned an empty response.");
+            }
+            return data.reply;
+        }
 
-            addMessage(cleanMessage, "user");
+        async function sendChatMessage(rawMessage) {
+            const message = String(rawMessage || "").trim();
+            if (!message || chatBusy) return;
 
-            const response = getBotResponse(cleanMessage);
+            addMessage(message, "user");
+            chatInput.value = "";
+            chatQuick.style.display = "none";
+            setChatBusy(true);
 
-            window.setTimeout(function () {
-
-                addMessage(response, "bot");
-
-            }, 250);
-
+            const thinking = addMessage("Thinking…", "bot");
+            try {
+                const reply = await requestAIResponse(message);
+                thinking.textContent = reply;
+                chatHistory.push(
+                    { role: "user", content: message },
+                    { role: "assistant", content: reply }
+                );
+                if (chatHistory.length > 16) chatHistory.splice(0, chatHistory.length - 16);
+            } catch (error) {
+                console.error("Portfolio AI error:", error);
+                thinking.textContent = getLocalFallback(message);
+                if (CHAT_API_URL === "/api/chat") {
+                    const note = document.createElement("small");
+                    note.textContent = "AI connection unavailable. Showing a basic fallback answer.";
+                    note.style.cssText = "display:block;color:#a7b0aa;font-size:10px;margin-top:6px;";
+                    thinking.appendChild(note);
+                }
+            } finally {
+                setChatBusy(false);
+                chatInput.focus();
+            }
         }
 
         chatForm.addEventListener("submit", function (event) {
-
             event.preventDefault();
-
-            const message = chatInput.value;
-
-            if (!message.trim()) return;
-
-            chatInput.value = "";
-
-            sendChatMessage(message);
-
+            sendChatMessage(chatInput.value);
         });
 
-
-        /* =========================================
-           8. CHATBOT QUICK REPLIES
-        ========================================= */
-
         chatQuick.querySelectorAll("[data-question]").forEach(function (button) {
-
             button.addEventListener("click", function () {
-
                 const question = button.getAttribute("data-question");
-
                 const quickQuestions = {
-
                     skills: "What skills does Victor have?",
-
-                    projects: "Tell me about your projects",
-
-                    services: "What services do you offer?",
-
+                    projects: "Tell me about Victor's projects",
+                    services: "What services does Victor offer?",
                     contact: "How can I contact Victor?"
-
                 };
-
-                sendChatMessage(
-                    quickQuestions[question] || question
-                );
-
+                sendChatMessage(quickQuestions[question] || question);
             });
-
         });
 
     </script>
