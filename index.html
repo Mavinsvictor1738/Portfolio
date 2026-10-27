@@ -1,129 +1,191 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Victor Chitole | Digital Solutions Provider</title>
 
-    <meta name="description"
-          content="Victor Chitole - Web Developer, Graphic Designer, Branding Specialist, ICT Trainer and Tech Consultant.">
+    <meta name="description" content="Explore Victor Chitole's portfolio featuring web development, graphic design, branding, printing, ICT training, digital learning and technology solutions.">
 
-    <!-- Google Font -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
+    <meta name="theme-color" content="#0b0f0d">
+    <meta name="author" content="Victor Chitole">
 
-    <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
     <style>
+        /* =========================================
+           1. PROFESSIONAL BRAND COLOURS
+        ========================================= */
 
-        /* =========================================================
-           GLOBAL
-        ========================================================= */
+        :root {
+            --black: #0b0f0d;
+            --dark: #101713;
+            --card: #141d17;
+            --card-light: #1b2820;
+
+            --green: #10b981;
+            --green-light: #6ee7b7;
+            --green-dark: #047857;
+
+            --white: #ffffff;
+            --text: #e5ede7;
+            --muted: #a7b0aa;
+
+            --border: rgba(110, 231, 183, 0.15);
+            --shadow: 0 20px 50px rgba(0, 0, 0, 0.30);
+            --glow: rgba(16, 185, 129, 0.14);
+
+            --radius-sm: 12px;
+            --radius-md: 18px;
+            --radius-lg: 26px;
+
+            --transition: 0.3s ease;
+        }
+
+        /* =========================================
+           2. GLOBAL STYLES
+        ========================================= */
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
         }
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 90px;
         }
 
         body {
-            background: #0f172a;
-            color: #ffffff;
-            overflow-x: hidden;
             min-height: 100vh;
+            overflow-x: hidden;
+
+            background:
+                radial-gradient(
+                    ellipse at 12% 15%,
+                    rgba(16, 185, 129, 0.09),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    ellipse at 90% 65%,
+                    rgba(16, 185, 129, 0.045),
+                    transparent 32%
+                ),
+                var(--black);
+
+            color: var(--white);
+            line-height: 1.7;
         }
 
         a {
+            color: inherit;
             -webkit-tap-highlight-color: transparent;
         }
 
+        button {
+            -webkit-tap-highlight-color: transparent;
+        }
 
-        /* =========================================================
-           BACKGROUND ANIMATION
-        ========================================================= */
+        button,
+        input {
+            font: inherit;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        ::selection {
+            background: var(--green);
+            color: #07110b;
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible {
+            outline: 2px solid var(--green-light);
+            outline-offset: 4px;
+        }
+
+        /* =========================================
+           3. BACKGROUND PARTICLES
+        ========================================= */
 
         .particles {
             position: fixed;
             inset: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
             overflow: hidden;
             pointer-events: none;
+            z-index: -1;
         }
 
         .particles i {
             position: absolute;
             bottom: -150px;
-            font-size: 100px;
-            color: rgba(56, 189, 248, 0.08);
-            text-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
-            animation: particlesFloat 20s linear infinite;
+            font-size: 90px;
+            color: rgba(16, 185, 129, 0.045);
+            text-shadow: 0 0 25px rgba(16, 185, 129, 0.08);
+            animation: particlesFloat 24s linear infinite;
         }
 
         .particles i:nth-child(1) {
-            left: 10%;
-            animation-delay: 0s;
+            left: 8%;
         }
 
         .particles i:nth-child(2) {
-            left: 25%;
-            animation-delay: 2s;
+            left: 22%;
+            animation-delay: 3s;
         }
 
         .particles i:nth-child(3) {
-            left: 40%;
-            animation-delay: 4s;
+            left: 38%;
+            animation-delay: 6s;
         }
 
         .particles i:nth-child(4) {
-            left: 55%;
-            animation-delay: 6s;
+            left: 54%;
+            animation-delay: 9s;
         }
 
         .particles i:nth-child(5) {
             left: 70%;
-            animation-delay: 8s;
+            animation-delay: 12s;
         }
 
         .particles i:nth-child(6) {
             left: 85%;
-            animation-delay: 10s;
+            animation-delay: 15s;
         }
 
         .particles i:nth-child(7) {
-            left: 35%;
-            animation-delay: 12s;
+            left: 31%;
+            animation-delay: 18s;
         }
 
         .particles i:nth-child(8) {
-            left: 65%;
-            animation-delay: 14s;
+            left: 64%;
+            animation-delay: 20s;
         }
 
         @keyframes particlesFloat {
-
             0% {
-                transform: translateY(0) scale(0.3);
+                transform: translateY(0) scale(.4);
                 opacity: 0;
             }
 
             20% {
-                opacity: 1;
+                opacity: .7;
             }
 
             100% {
@@ -132,67 +194,51 @@
             }
         }
 
-
-        /* =========================================================
-           NAVBAR
-        ========================================================= */
+        /* =========================================
+           4. NAVIGATION
+        ========================================= */
 
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-
-            padding: 18px 8%;
+            padding: 18px 7%;
 
             display: flex;
             justify-content: space-between;
             align-items: center;
 
-            background: rgba(15, 23, 42, 0.86);
+            background: rgba(11, 15, 13, 0.88);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
 
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(110, 231, 183, 0.10);
 
             z-index: 1000;
 
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            transition:
+                padding var(--transition),
+                background var(--transition);
         }
-
-
-        /* =========================================================
-           LOGO
-        ========================================================= */
 
         .logo {
-            font-size: 28px;
+            font-size: 25px;
             font-weight: 800;
-            color: #38bdf8;
-
             letter-spacing: -1px;
-
-            cursor: pointer;
-
-            transition: 0.3s;
-
+            color: var(--white);
             text-decoration: none;
+            white-space: nowrap;
         }
 
-        .logo:hover {
-            transform: scale(1.04);
+        .logo span {
+            color: var(--green);
         }
-
-
-        /* =========================================================
-           DESKTOP NAVIGATION
-        ========================================================= */
 
         .nav-links {
             display: flex;
             align-items: center;
-
             gap: 30px;
-
             list-style: none;
         }
 
@@ -202,240 +248,244 @@
 
         .nav-links a {
             position: relative;
-
-            text-decoration: none;
-
-            color: #ffffff;
-
-            font-weight: 500;
-
+            display: inline-block;
             padding: 8px 0;
 
-            transition: 0.3s;
+            color: #c6d0c9;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+
+            transition: color var(--transition);
         }
 
         .nav-links a::after {
             content: "";
-
             position: absolute;
-
             left: 0;
             bottom: 0;
 
             width: 0;
             height: 2px;
 
-            background: #38bdf8;
+            border-radius: 5px;
+            background: var(--green);
 
-            transition: 0.3s ease;
+            transition: width var(--transition);
         }
 
         .nav-links a:hover {
-            color: #38bdf8;
+            color: var(--green-light);
         }
 
         .nav-links a:hover::after {
             width: 100%;
         }
 
+        .nav-links a[aria-current="page"] {
+            color: var(--green-light);
+        }
 
-        /* =========================================================
-           HAMBURGER
-        ========================================================= */
+        .nav-links a[aria-current="page"]::after {
+            width: 100%;
+        }
+
+        /* =========================================
+           5. MOBILE MENU
+        ========================================= */
 
         .menu-toggle {
             display: none;
 
-            width: 45px;
-            height: 45px;
+            width: 44px;
+            height: 44px;
 
-            border: none;
-
+            border: 1px solid var(--border);
             border-radius: 12px;
 
-            background: rgba(56, 189, 248, 0.10);
+            background: rgba(16, 185, 129, 0.07);
 
             cursor: pointer;
 
             align-items: center;
             justify-content: center;
-
             flex-direction: column;
-
             gap: 5px;
-
-            transition: 0.3s;
-
-            z-index: 1100;
         }
 
         .menu-toggle span {
-            width: 25px;
-            height: 3px;
+            display: block;
+            width: 22px;
+            height: 2px;
 
-            border-radius: 10px;
+            border-radius: 5px;
+            background: var(--green-light);
 
-            background: #38bdf8;
-
-            transition: 0.35s ease;
+            transition: var(--transition);
         }
 
-        .menu-toggle:hover {
-            background: rgba(56, 189, 248, 0.20);
-            transform: scale(1.05);
-        }
-
-
-        /* =========================================================
-           HERO
-        ========================================================= */
+        /* =========================================
+           6. HERO SECTION
+        ========================================= */
 
         .hero {
+            position: relative;
+
             min-height: 100vh;
+            min-height: 100svh;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
 
-            padding: 130px 8% 80px;
-
-            flex-wrap: wrap;
-
-            gap: 50px;
-
-            position: relative;
+            padding: 135px 7% 95px;
+            gap: 55px;
         }
-
-
-        /* =========================================================
-           HERO TEXT
-        ========================================================= */
 
         .hero-text {
             flex: 1;
-            min-width: 320px;
+            min-width: 0;
+            max-width: 690px;
+            position: relative;
+            z-index: 2;
         }
 
         .tag {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
 
-            padding: 10px 18px;
+            padding: 9px 15px;
+            margin-bottom: 25px;
 
-            background: #1e293b;
+            border: 1px solid var(--border);
+            border-radius: 50px;
 
-            border-radius: 30px;
+            background: rgba(16, 185, 129, 0.07);
 
-            margin-bottom: 20px;
+            color: var(--green-light);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+        }
 
-            font-size: 14px;
+        .tag i {
+            color: var(--green);
+            font-size: 8px;
+            animation: statusPulse 2s infinite;
+        }
 
-            border: 1px solid rgba(56, 189, 248, 0.15);
-
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        @keyframes statusPulse {
+            50% {
+                opacity: .4;
+            }
         }
 
         .hero-text h1 {
-            font-size: 65px;
-
+            font-size: clamp(45px, 5.4vw, 76px);
             font-weight: 800;
+            line-height: 1.08;
+            letter-spacing: -3px;
 
-            margin-bottom: 15px;
+            color: var(--white);
 
-            letter-spacing: -2px;
-
-            line-height: 1.05;
+            margin-bottom: 18px;
         }
 
         .hero-text h2 {
-            font-size: 30px;
+            font-size: clamp(23px, 2.5vw, 32px);
+            font-weight: 600;
+            line-height: 1.4;
 
-            color: #38bdf8;
+            color: var(--text);
 
-            margin-bottom: 20px;
-
-            line-height: 1.3;
+            margin-bottom: 22px;
+            min-height: 1.4em;
         }
 
         #typing {
-            color: #38bdf8;
+            color: var(--green-light);
         }
 
         .hero-text p {
-            line-height: 1.8;
+            max-width: 610px;
 
-            color: #cbd5e1;
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.95;
 
-            margin-bottom: 30px;
-
-            max-width: 650px;
+            margin-bottom: 32px;
         }
 
-
-        /* =========================================================
-           BUTTONS
-        ========================================================= */
+        /* =========================================
+           7. BUTTONS
+        ========================================= */
 
         .buttons {
             display: flex;
-
-            gap: 15px;
-
+            align-items: center;
+            gap: 14px;
             flex-wrap: wrap;
         }
 
         .btn,
         .btn-outline {
-            display: inline-block;
+            min-height: 52px;
+            padding: 14px 26px;
 
-            padding: 15px 35px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
 
-            border-radius: 50px;
+            border-radius: 12px;
 
-            font-weight: 600;
-
+            font-size: 14px;
+            font-weight: 700;
             text-decoration: none;
 
-            transition: 0.35s ease;
+            transition:
+                background var(--transition),
+                border-color var(--transition),
+                color var(--transition),
+                transform var(--transition),
+                box-shadow var(--transition);
         }
 
         .btn {
-            background: linear-gradient(
-                135deg,
-                #38bdf8,
-                #2563eb
-            );
+            color: #06140d;
+            background: var(--green);
+            border: 1px solid var(--green);
 
-            color: #ffffff;
-
-            box-shadow:
-                0 10px 25px rgba(56, 189, 248, 0.25);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.15);
         }
 
         .btn:hover {
-            transform: translateY(-4px);
+            background: var(--green-light);
+            border-color: var(--green-light);
 
-            box-shadow:
-                0 15px 35px rgba(56, 189, 248, 0.4);
+            transform: translateY(-3px);
+
+            box-shadow: 0 12px 30px rgba(16, 185, 129, 0.20);
         }
 
         .btn-outline {
-            border: 2px solid #38bdf8;
-
-            color: #38bdf8;
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid #405247;
         }
 
         .btn-outline:hover {
-            background: #38bdf8;
+            color: var(--green-light);
+            background: rgba(16, 185, 129, 0.08);
+            border-color: var(--green);
 
-            color: #0f172a;
-
-            transform: translateY(-4px);
+            transform: translateY(-3px);
         }
 
-
-        /* =========================================================
-           HERO IMAGE
-        ========================================================= */
+        /* =========================================
+           8. PROFILE IMAGE
+        ========================================= */
 
         .hero-image {
             position: relative;
@@ -444,387 +494,760 @@
             height: 450px;
 
             display: flex;
-
             align-items: center;
             justify-content: center;
 
             flex-shrink: 0;
+            isolation: isolate;
+        }
+
+        .hero-image::before {
+            content: "";
+            position: absolute;
+
+            width: 280px;
+            height: 280px;
+
+            border-radius: 50%;
+            background: rgba(16, 185, 129, 0.13);
+
+            filter: blur(75px);
+            z-index: -1;
         }
 
         .hero-image img {
-            width: 320px;
-            height: 320px;
+            width: 310px;
+            height: 310px;
 
             object-fit: cover;
+            object-position: center;
 
             border-radius: 50%;
-
-            border: 8px solid #1e293b;
-
-            z-index: 10;
+            border: 5px solid #1b2820;
 
             box-shadow:
-                0 0 40px rgba(56, 189, 248, 0.5);
+                0 0 0 1px rgba(16, 185, 129, 0.40),
+                0 0 45px rgba(16, 185, 129, 0.13);
 
-            animation:
-                profileFloat 5s ease-in-out infinite;
+            position: relative;
+            z-index: 10;
+
+            animation: profileFloat 6s ease-in-out infinite;
         }
 
         @keyframes profileFloat {
-
             0%,
             100% {
                 transform: translateY(0);
             }
 
             50% {
-                transform: translateY(-12px);
+                transform: translateY(-10px);
             }
         }
 
-
-        /* =========================================================
-           ROTATING RINGS
-        ========================================================= */
+        /* =========================================
+           9. ANIMATED RINGS
+        ========================================= */
 
         .ring {
             position: absolute;
-
             border-radius: 50%;
-
             pointer-events: none;
         }
 
         .ring1 {
-            width: 360px;
-            height: 360px;
+            width: 355px;
+            height: 355px;
 
-            border: 3px dashed #38bdf8;
+            border: 1px solid rgba(16, 185, 129, 0.55);
 
-            animation:
-                rotate 15s linear infinite;
+            border-top-color: var(--green-light);
+            border-right-color: transparent;
+
+            animation: rotate 22s linear infinite;
         }
 
         .ring2 {
-            width: 420px;
-            height: 420px;
+            width: 410px;
+            height: 410px;
 
-            border: 2px dashed #22c55e;
+            border: 1px dashed rgba(110, 231, 183, 0.22);
 
-            animation:
-                rotateReverse 20s linear infinite;
+            animation: rotateReverse 32s linear infinite;
         }
 
         .ring3 {
-            width: 470px;
-            height: 470px;
+            width: 445px;
+            height: 445px;
 
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.055);
 
-            animation:
-                ringPulse 4s infinite;
+            animation: ringPulse 6s ease-in-out infinite;
         }
 
         @keyframes rotate {
-
-            100% {
+            to {
                 transform: rotate(360deg);
             }
         }
 
         @keyframes rotateReverse {
-
-            100% {
+            to {
                 transform: rotate(-360deg);
             }
         }
 
         @keyframes ringPulse {
-
             50% {
-                transform: scale(1.04);
+                transform: scale(1.025);
+                opacity: .65;
             }
         }
 
-
-        /* =========================================================
-           FLOATING TECH ICONS
-        ========================================================= */
+        /* =========================================
+           10. TECHNOLOGY ICONS
+        ========================================= */
 
         .tech {
             position: absolute;
 
-            width: 55px;
-            height: 55px;
+            width: 51px;
+            height: 51px;
 
-            background: #1e293b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
             border-radius: 50%;
 
-            display: flex;
+            background: #17231b;
+            border: 1px solid rgba(110, 231, 183, 0.20);
 
-            justify-content: center;
-            align-items: center;
+            color: var(--green-light);
+            font-size: 22px;
 
-            font-size: 24px;
-
-            color: #38bdf8;
-
-            box-shadow:
-                0 0 20px rgba(56, 189, 248, 0.3);
-
-            animation:
-                float 4s infinite ease-in-out;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.30);
 
             z-index: 15;
+
+            animation: techFloat 5s ease-in-out infinite;
         }
 
         .html {
-            top: 40px;
-            left: 40px;
+            top: 43px;
+            left: 37px;
         }
 
         .css {
-            top: 70px;
-            right: 20px;
+            top: 62px;
+            right: 25px;
+            animation-delay: .8s;
         }
 
         .js {
-            bottom: 70px;
-            left: 10px;
+            bottom: 65px;
+            left: 18px;
+            animation-delay: 1.4s;
         }
 
         .code {
-            bottom: 30px;
-            right: 40px;
+            bottom: 37px;
+            right: 39px;
+            animation-delay: 2s;
         }
 
-        @keyframes float {
-
+        @keyframes techFloat {
             50% {
-                transform: translateY(-15px);
+                transform: translateY(-10px);
             }
         }
 
-
-        /* =========================================================
-           STATS
-        ========================================================= */
+        /* =========================================
+           11. STATISTICS
+        ========================================= */
 
         .stats {
-            padding: 80px 8%;
+            position: relative;
+
+            padding: 35px 7% 90px;
 
             display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(220px, 1fr));
-
-            gap: 25px;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 20px;
         }
 
         .stat {
-            background:
-                linear-gradient(
-                    145deg,
-                    #1e293b,
-                    #172033
-                );
+            position: relative;
+            overflow: hidden;
 
-            padding: 30px;
+            padding: 28px 20px;
 
-            border-radius: 20px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+
+            background: linear-gradient(
+                145deg,
+                rgba(27, 40, 32, 0.90),
+                rgba(20, 29, 23, 0.90)
+            );
 
             text-align: center;
 
-            border:
-                1px solid rgba(255, 255, 255, 0.06);
+            transition:
+                transform var(--transition),
+                border-color var(--transition),
+                box-shadow var(--transition);
+        }
 
-            transition: 0.4s;
+        .stat::before {
+            content: "";
+            position: absolute;
+
+            width: 90px;
+            height: 90px;
+
+            right: -45px;
+            top: -45px;
+
+            background: rgba(16, 185, 129, 0.10);
+            border-radius: 50%;
+            filter: blur(15px);
         }
 
         .stat:hover {
-            transform: translateY(-10px);
+            transform: translateY(-6px);
 
-            box-shadow:
-                0 20px 40px rgba(0, 0, 0, 0.2);
+            border-color: rgba(16, 185, 129, 0.45);
+            box-shadow: var(--shadow);
         }
 
         .stat h2 {
-            font-size: 45px;
+            position: relative;
 
-            color: #38bdf8;
+            color: var(--green-light);
+            font-size: 38px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            line-height: 1.3;
         }
 
         .stat p {
-            margin-top: 10px;
+            margin-top: 9px;
 
-            color: #cbd5e1;
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 500;
         }
 
-
-        /* =========================================================
-           SCROLL
-        ========================================================= */
+        /* =========================================
+           12. SCROLL INDICATOR
+        ========================================= */
 
         .scroll {
             position: absolute;
-
-            bottom: 20px;
-
+            bottom: 22px;
             left: 50%;
 
             transform: translateX(-50%);
 
-            font-size: 30px;
+            color: var(--green-light);
+            font-size: 24px;
 
-            color: #38bdf8;
-
-            animation:
-                bounce 2s infinite;
+            animation: bounce 2s infinite;
         }
 
         @keyframes bounce {
-
             50% {
-                transform:
-                    translate(-50%, -10px);
+                transform: translate(-50%, -8px);
             }
         }
 
-
-        /* =========================================================
-           WHATSAPP
-        ========================================================= */
+        /* =========================================
+           13. WHATSAPP BUTTON
+        ========================================= */
 
         .whatsapp {
             position: fixed;
 
-            bottom: 25px;
             right: 25px;
+            bottom: 25px;
 
-            width: 65px;
-            height: 65px;
-
-            background: #25D366;
-
-            border-radius: 50%;
+            width: 58px;
+            height: 58px;
 
             display: flex;
-
             align-items: center;
             justify-content: center;
 
-            font-size: 32px;
-
+            background: #25d366;
             color: #ffffff;
 
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+
+            font-size: 29px;
             text-decoration: none;
 
-            z-index: 999;
+            z-index: 1500;
 
-            box-shadow:
-                0 10px 30px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.20);
 
-            animation:
-                whatsappPulse 2s infinite;
-
-            transition: 0.3s;
+            transition:
+                transform var(--transition),
+                box-shadow var(--transition);
         }
 
         .whatsapp:hover {
-            transform: scale(1.1);
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 14px 35px rgba(37, 211, 102, 0.30);
         }
 
-        @keyframes whatsappPulse {
+        /* =========================================
+           14. CHATBOT BUTTON
+        ========================================= */
 
-            0% {
-                box-shadow:
-                    0 0 0 0 rgba(37, 211, 102, 0.5);
+        .vc-chatbot {
+            position: fixed;
+            left: 24px;
+            bottom: 24px;
+            z-index: 2000;
+        }
+
+        .vc-chat-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            padding: 14px 19px;
+
+            border: 1px solid rgba(110, 231, 183, 0.25);
+            border-radius: 50px;
+
+            background: var(--green);
+            color: #06140d;
+
+            font-size: 13px;
+            font-weight: 800;
+
+            cursor: pointer;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+            transition:
+                background var(--transition),
+                transform var(--transition),
+                box-shadow var(--transition);
+        }
+
+        .vc-chat-toggle:hover {
+            background: var(--green-light);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(16, 185, 129, 0.18);
+        }
+
+        .vc-chat-toggle .chat-icon {
+            font-size: 18px;
+        }
+
+        /* =========================================
+           15. CHATBOT WINDOW
+        ========================================= */
+
+        .vc-chat-panel {
+            position: absolute;
+            left: 0;
+            bottom: 70px;
+
+            width: 365px;
+            max-width: calc(100vw - 30px);
+
+            height: 490px;
+            max-height: calc(100dvh - 115px);
+
+            display: none;
+            flex-direction: column;
+
+            overflow: hidden;
+
+            background: #101713;
+
+            border: 1px solid rgba(110, 231, 183, 0.22);
+            border-radius: 20px;
+
+            box-shadow: 0 22px 65px rgba(0, 0, 0, 0.60);
+        }
+
+        .vc-chat-panel.open {
+            display: flex;
+            animation: chatAppear .22s ease-out;
+        }
+
+        @keyframes chatAppear {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
             }
 
-            70% {
-                box-shadow:
-                    0 0 0 15px rgba(37, 211, 102, 0);
-            }
-
-            100% {
-                box-shadow:
-                    0 0 0 0 rgba(37, 211, 102, 0);
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
+        .vc-chat-header {
+            display: flex;
+            align-items: center;
+            gap: 11px;
 
-        /* =========================================================
-           TABLETS & MOBILE
-        ========================================================= */
+            padding: 15px;
+
+            background: linear-gradient(
+                135deg,
+                #152219,
+                #1b2820
+            );
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .vc-chat-avatar {
+            width: 43px;
+            height: 43px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+
+            border-radius: 50%;
+
+            background: var(--green);
+            color: #06140d;
+
+            font-size: 19px;
+        }
+
+        .vc-chat-heading {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .vc-chat-heading h3 {
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        .vc-chat-heading p {
+            color: var(--green-light);
+            font-size: 11px;
+        }
+
+        .vc-chat-close {
+            width: 34px;
+            height: 34px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: none;
+            border-radius: 50%;
+
+            background: transparent;
+            color: var(--muted);
+
+            font-size: 19px;
+
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .vc-chat-close:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--green-light);
+        }
+
+        /* =========================================
+           16. CHAT MESSAGES
+        ========================================= */
+
+        .vc-chat-messages {
+            flex: 1;
+            min-height: 0;
+
+            overflow-y: auto;
+
+            padding: 15px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            scroll-behavior: smooth;
+        }
+
+        .vc-message {
+            max-width: 90%;
+
+            padding: 11px 13px;
+
+            border-radius: 13px;
+
+            font-size: 12px;
+            line-height: 1.7;
+
+            white-space: pre-line;
+            overflow-wrap: anywhere;
+        }
+
+        .vc-message.bot {
+            align-self: flex-start;
+
+            background: #1b2820;
+            color: var(--text);
+
+            border: 1px solid rgba(255, 255, 255, 0.035);
+            border-bottom-left-radius: 4px;
+        }
+
+        .vc-message.user {
+            align-self: flex-end;
+
+            background: #087f5b;
+            color: #ffffff;
+
+            border-bottom-right-radius: 4px;
+        }
+
+        /* =========================================
+           17. CHATBOT QUICK REPLIES
+        ========================================= */
+
+        .vc-chat-quick {
+            padding: 0 13px 12px;
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .vc-quick-btn {
+            padding: 7px 10px;
+
+            background: transparent;
+            color: var(--green-light);
+
+            border: 1px solid rgba(110, 231, 183, 0.28);
+            border-radius: 20px;
+
+            font-size: 10px;
+            font-weight: 600;
+
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .vc-quick-btn:hover {
+            background: rgba(16, 185, 129, 0.10);
+            border-color: var(--green);
+        }
+
+        /* =========================================
+           18. CHATBOT INPUT
+        ========================================= */
+
+        .vc-chat-form {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 11px;
+
+            border-top: 1px solid var(--border);
+            background: #0b100d;
+        }
+
+        .vc-chat-input {
+            flex: 1;
+            min-width: 0;
+            min-height: 43px;
+
+            padding: 11px 14px;
+
+            border: 1px solid #34443a;
+            border-radius: 25px;
+
+            background: #18231b;
+            color: var(--white);
+
+            outline: none;
+            font-size: 12px;
+        }
+
+        .vc-chat-input:focus {
+            border-color: var(--green);
+        }
+
+        .vc-chat-input::placeholder {
+            color: #89968d;
+        }
+
+        .vc-chat-send {
+            width: 43px;
+            height: 43px;
+
+            flex-shrink: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: none;
+            border-radius: 50%;
+
+            background: var(--green);
+            color: #06140d;
+
+            font-size: 15px;
+
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .vc-chat-send:hover {
+            background: var(--green-light);
+            transform: scale(1.04);
+        }
+
+        .vc-chat-footer {
+            padding: 0 10px 10px;
+
+            background: #0b100d;
+
+            color: #89968d;
+            font-size: 10px;
+            text-align: center;
+        }
+
+        .vc-chat-footer a {
+            color: var(--green-light);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .vc-chat-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* =========================================
+           19. TABLETS AND SMALL LAPTOPS
+        ========================================= */
+
+        @media (max-width: 1100px) {
+            .navbar {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .hero {
+                padding-left: 5%;
+                padding-right: 5%;
+                gap: 30px;
+            }
+
+            .hero-image {
+                width: 390px;
+                height: 420px;
+            }
+
+            .hero-image img {
+                width: 280px;
+                height: 280px;
+            }
+
+            .ring1 {
+                width: 320px;
+                height: 320px;
+            }
+
+            .ring2 {
+                width: 365px;
+                height: 365px;
+            }
+
+            .ring3 {
+                width: 390px;
+                height: 390px;
+            }
+
+            .stats {
+                padding-left: 5%;
+                padding-right: 5%;
+                gap: 15px;
+            }
+        }
+
+        /* =========================================
+           20. MOBILE NAVIGATION AND LAYOUT
+        ========================================= */
 
         @media (max-width: 900px) {
-
             .navbar {
-                padding: 15px 6%;
+                padding: 14px 6%;
             }
 
             .logo {
-                font-size: 24px;
+                font-size: 23px;
             }
-
-
-            /* HAMBURGER */
 
             .menu-toggle {
                 display: flex;
             }
 
-
-            /* MOBILE MENU */
-
             .nav-links {
                 position: absolute;
-
                 top: 100%;
                 left: 0;
 
                 width: 100%;
 
-                padding: 15px 6% 25px;
+                padding: 14px 6% 22px;
 
-                background:
-                    rgba(15, 23, 42, 0.98);
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 4px;
+
+                background: rgba(11, 15, 13, 0.98);
 
                 backdrop-filter: blur(20px);
                 -webkit-backdrop-filter: blur(20px);
 
-                display: flex;
+                border-bottom: 1px solid var(--border);
 
-                flex-direction: column;
-
-                align-items: stretch;
-
-                gap: 5px;
+                box-shadow: var(--shadow);
 
                 opacity: 0;
-
                 visibility: hidden;
+                pointer-events: none;
 
-                transform: translateY(-15px);
+                transform: translateY(-10px);
 
                 transition:
-                    opacity 0.3s ease,
-                    transform 0.3s ease,
-                    visibility 0.3s ease;
-
-                border-bottom:
-                    1px solid rgba(255, 255, 255, 0.1);
-
-                box-shadow:
-                    0 20px 40px rgba(0, 0, 0, 0.3);
+                    opacity var(--transition),
+                    transform var(--transition),
+                    visibility var(--transition);
             }
 
             .nav-links.active {
                 opacity: 1;
-
                 visibility: visible;
-
+                pointer-events: auto;
                 transform: translateY(0);
             }
 
@@ -834,34 +1257,27 @@
 
             .nav-links a {
                 display: block;
-
                 width: 100%;
 
-                padding: 14px 16px;
+                padding: 12px 14px;
 
-                border-radius: 10px;
+                border-radius: 9px;
 
-                font-size: 16px;
+                font-size: 14px;
             }
 
-            .nav-links a:hover {
-                background:
-                    rgba(56, 189, 248, 0.1);
-
-                padding-left: 20px;
+            .nav-links a:hover,
+            .nav-links a[aria-current="page"] {
+                background: rgba(16, 185, 129, 0.07);
+                padding-left: 19px;
             }
 
             .nav-links a::after {
                 display: none;
             }
 
-
-            /* HAMBURGER → X */
-
             .menu-toggle.active span:nth-child(1) {
-                transform:
-                    translateY(8px)
-                    rotate(45deg);
+                transform: translateY(7px) rotate(45deg);
             }
 
             .menu-toggle.active span:nth-child(2) {
@@ -869,144 +1285,90 @@
             }
 
             .menu-toggle.active span:nth-child(3) {
-                transform:
-                    translateY(-8px)
-                    rotate(-45deg);
+                transform: translateY(-7px) rotate(-45deg);
             }
-
-
-            /* HERO */
 
             .hero {
                 min-height: auto;
 
-                padding:
-                    120px 25px 80px;
-
-                display: flex;
+                padding: 125px 6% 75px;
 
                 flex-direction: column;
-
                 justify-content: center;
-
                 align-items: center;
 
+                gap: 45px;
                 text-align: center;
-
-                gap: 70px;
             }
-
-
-            /* HERO TEXT */
 
             .hero-text {
                 width: 100%;
-
-                min-width: 0;
+                max-width: 700px;
             }
 
             .tag {
-                font-size: 12px;
-
-                padding:
-                    9px 15px;
-
-                margin-bottom: 18px;
+                font-size: 11px;
+                margin-bottom: 20px;
             }
 
             .hero-text h1 {
-                font-size:
-                    clamp(38px, 9vw, 52px);
-
-                line-height: 1.1;
-
-                letter-spacing: -1.5px;
+                font-size: clamp(42px, 8vw, 60px);
+                letter-spacing: -2px;
             }
 
             .hero-text h2 {
-                font-size:
-                    clamp(21px, 5vw, 27px);
-
-                line-height: 1.3;
+                font-size: clamp(22px, 4vw, 29px);
+                min-height: 1.5em;
             }
 
             .hero-text p {
                 max-width: 600px;
+                margin: 0 auto 28px;
 
-                margin:
-                    0 auto 28px;
-
-                font-size: 15px;
-
-                line-height: 1.7;
+                font-size: 14px;
+                line-height: 1.9;
             }
-
-
-            /* BUTTONS */
 
             .buttons {
                 justify-content: center;
-
-                align-items: center;
-
-                gap: 12px;
             }
 
             .btn,
             .btn-outline {
-                padding:
-                    13px 25px;
-
-                font-size: 14px;
+                padding: 13px 22px;
+                font-size: 13px;
             }
 
-
-            /* HERO IMAGE */
-
             .hero-image {
-                width: 300px;
-                height: 300px;
-
-                flex-shrink: 0;
+                width: 320px;
+                height: 320px;
             }
 
             .hero-image img {
-                width: 190px;
-                height: 190px;
-
-                border-width: 6px;
+                width: 205px;
+                height: 205px;
+                border-width: 5px;
             }
 
-
-            /* RINGS */
-
             .ring1 {
-                width: 220px;
-                height: 220px;
-
-                border-width: 2px;
+                width: 235px;
+                height: 235px;
             }
 
             .ring2 {
-                width: 260px;
-                height: 260px;
-
-                border-width: 2px;
+                width: 275px;
+                height: 275px;
             }
 
             .ring3 {
-                width: 290px;
-                height: 290px;
+                width: 305px;
+                height: 305px;
             }
 
-
-            /* TECH ICONS */
-
             .tech {
-                width: 45px;
-                height: 45px;
-
-                font-size: 19px;
+                width: 43px;
+                height: 43px;
+                font-size: 18px;
             }
 
             .html {
@@ -1015,156 +1377,127 @@
             }
 
             .css {
-                top: 30px;
-                right: 15px;
+                top: 27px;
+                right: 14px;
             }
 
             .js {
-                bottom: 30px;
-                left: 15px;
+                bottom: 28px;
+                left: 14px;
             }
 
             .code {
-                bottom: 20px;
-                right: 25px;
+                bottom: 19px;
+                right: 23px;
             }
 
-
-            /* STATS */
-
             .stats {
-                padding:
-                    50px 25px;
-
-                grid-template-columns:
-                    repeat(2, 1fr);
-
+                padding: 35px 6% 65px;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
                 gap: 15px;
             }
 
             .stat {
-                padding:
-                    22px 15px;
-
-                border-radius: 16px;
+                padding: 23px 15px;
             }
 
             .stat h2 {
-                font-size: 32px;
+                font-size: 33px;
             }
 
             .stat p {
-                font-size: 13px;
-
-                line-height: 1.4;
+                font-size: 12px;
             }
-
-
-            /* HIDE SCROLL ON MOBILE */
 
             .scroll {
                 display: none;
             }
 
-
-            /* WHATSAPP */
-
             .whatsapp {
-                width: 58px;
-                height: 58px;
+                right: 16px;
+                bottom: 16px;
 
-                right: 18px;
-                bottom: 18px;
+                width: 52px;
+                height: 52px;
 
-                font-size: 27px;
+                font-size: 25px;
+            }
+
+            .vc-chatbot {
+                left: 15px;
+                bottom: 15px;
+            }
+
+            .vc-chat-toggle {
+                padding: 12px 15px;
+            }
+
+            .vc-chat-panel {
+                bottom: 64px;
             }
         }
 
-
-        /* =========================================================
-           SMALL PHONES
-        ========================================================= */
+        /* =========================================
+           21. SMALL PHONES
+        ========================================= */
 
         @media (max-width: 480px) {
-
             .navbar {
-                padding:
-                    14px 5%;
+                padding: 12px 5%;
             }
 
             .logo {
                 font-size: 21px;
             }
 
-
-            /* HERO */
-
-            .hero {
-                padding:
-                    105px 18px 65px;
-
-                gap: 55px;
+            .menu-toggle {
+                width: 41px;
+                height: 41px;
             }
 
-
-            /* TEXT */
+            .hero {
+                padding: 110px 20px 65px;
+                gap: 35px;
+            }
 
             .hero-text h1 {
-                font-size: 36px;
-
-                line-height: 1.1;
+                font-size: clamp(34px, 9vw, 42px);
+                letter-spacing: -1.5px;
             }
 
             .hero-text h2 {
                 font-size: 20px;
-
-                line-height: 1.35;
             }
 
             .hero-text p {
-                font-size: 14px;
-
-                line-height: 1.7;
+                font-size: 13px;
+                line-height: 1.85;
             }
-
-
-            /* BUTTONS */
 
             .buttons {
                 flex-direction: column;
-
+                align-items: center;
                 width: 100%;
+                gap: 11px;
             }
 
             .btn,
             .btn-outline {
                 width: 100%;
-
-                max-width: 280px;
-
-                text-align: center;
-
-                padding:
-                    13px 20px;
+                max-width: 290px;
+                min-height: 48px;
             }
 
-
-            /* IMAGE */
-
             .hero-image {
-                width: 260px;
-                height: 260px;
+                width: 265px;
+                height: 265px;
             }
 
             .hero-image img {
-                width: 165px;
-                height: 165px;
-
-                border-width: 5px;
+                width: 170px;
+                height: 170px;
+                border-width: 4px;
             }
-
-
-            /* RINGS */
 
             .ring1 {
                 width: 195px;
@@ -1177,89 +1510,93 @@
             }
 
             .ring3 {
-                width: 255px;
-                height: 255px;
+                width: 250px;
+                height: 250px;
             }
 
-
-            /* TECH ICONS */
-
             .tech {
-                width: 40px;
-                height: 40px;
-
-                font-size: 17px;
+                width: 38px;
+                height: 38px;
+                font-size: 16px;
             }
 
             .html {
-                top: 15px;
+                top: 14px;
                 left: 15px;
             }
 
             .css {
-                top: 25px;
-                right: 10px;
+                top: 22px;
+                right: 9px;
             }
 
             .js {
-                bottom: 25px;
-                left: 10px;
+                bottom: 22px;
+                left: 9px;
             }
 
             .code {
-                bottom: 15px;
+                bottom: 13px;
                 right: 15px;
             }
 
-
-            /* STATS */
-
             .stats {
-                padding:
-                    40px 18px;
-
-                grid-template-columns:
-                    1fr;
-
+                padding: 25px 18px 50px;
                 gap: 12px;
             }
 
             .stat {
-                padding: 20px;
+                padding: 19px 10px;
+                border-radius: 15px;
             }
 
             .stat h2 {
-                font-size: 30px;
+                font-size: 29px;
             }
 
+            .stat p {
+                font-size: 11px;
+                line-height: 1.5;
+            }
 
-            /* WHATSAPP */
+            .vc-chatbot {
+                left: 10px;
+                bottom: 12px;
+            }
+
+            .vc-chat-toggle {
+                padding: 11px 12px;
+                gap: 7px;
+                font-size: 11px;
+            }
+
+            .vc-chat-toggle .chat-icon {
+                font-size: 16px;
+            }
+
+            .vc-chat-panel {
+                left: 0;
+                bottom: 60px;
+
+                width: min(365px, calc(100vw - 20px));
+                height: min(480px, calc(100dvh - 95px));
+                max-height: calc(100dvh - 95px);
+            }
 
             .whatsapp {
-                width: 54px;
-                height: 54px;
+                right: 11px;
+                bottom: 12px;
 
-                right: 15px;
-                bottom: 15px;
+                width: 46px;
+                height: 46px;
 
-                font-size: 25px;
+                font-size: 22px;
             }
         }
 
-
-        /* =========================================================
-           VERY SMALL PHONES
-        ========================================================= */
-
         @media (max-width: 360px) {
-
             .logo {
                 font-size: 19px;
-            }
-
-            .menu-toggle {
-                width: 42px;
-                height: 42px;
             }
 
             .hero {
@@ -1276,22 +1613,26 @@
             }
 
             .hero-image {
-                transform: scale(0.92);
+                transform: scale(.94);
+                margin: -8px 0;
             }
 
             .stats {
-                padding-left: 15px;
-                padding-right: 15px;
+                padding-left: 12px;
+                padding-right: 12px;
+                gap: 9px;
+            }
+
+            .vc-chat-toggle {
+                padding: 10px 11px;
             }
         }
 
-
-        /* =========================================================
-           REDUCE MOTION FOR USERS WHO PREFER IT
-        ========================================================= */
+        /* =========================================
+           22. REDUCED MOTION ACCESSIBILITY
+        ========================================= */
 
         @media (prefers-reduced-motion: reduce) {
-
             *,
             *::before,
             *::after {
@@ -1301,60 +1642,39 @@
                 transition-duration: 0.01ms !important;
             }
         }
-
     </style>
-
 </head>
-
 
 <body>
 
+    <!-- BACKGROUND PARTICLES -->
 
-    <!-- =========================================================
-         FLOATING BACKGROUND ICONS
-    ========================================================= -->
-
-    <div class="particles">
-
+    <div class="particles" aria-hidden="true">
         <i class="fab fa-html5"></i>
-
         <i class="fab fa-css3-alt"></i>
-
         <i class="fab fa-js"></i>
-
         <i class="fab fa-react"></i>
-
         <i class="fab fa-node-js"></i>
-
         <i class="fab fa-github"></i>
-
         <i class="fas fa-database"></i>
-
         <i class="fas fa-laptop-code"></i>
-
     </div>
 
+    <!-- NAVIGATION -->
 
-    <!-- =========================================================
-         NAVBAR
-    ========================================================= -->
+    <nav class="navbar" aria-label="Main navigation">
 
-    <nav class="navbar">
-
-        <a href="index.html" class="logo">
-            My Portfolio
+        <a href="index.html" class="logo" aria-label="Victor Chitole home">
+            Victor<span>.</span>
         </a>
-
-
-        <!-- HAMBURGER BUTTON -->
 
         <button
             class="menu-toggle"
             id="menuToggle"
             aria-label="Open navigation menu"
             aria-expanded="false"
-            type="button"
-        >
+            aria-controls="navLinks"
+            type="button">
 
             <span></span>
             <span></span>
@@ -1362,103 +1682,72 @@
 
         </button>
 
-
-        <!-- NAVIGATION -->
-
         <ul class="nav-links" id="navLinks">
 
             <li>
-                <a href="index.html">
-                    Home
-                </a>
+                <a href="index.html" aria-current="page">Home</a>
             </li>
 
             <li>
-                <a href="about.html">
-                    About
-                </a>
+                <a href="about.html">About</a>
             </li>
 
             <li>
-                <a href="services.html">
-                    Services
-                </a>
+                <a href="services.html">Services</a>
             </li>
 
             <li>
-                <a href="projects.html">
-                    Projects
-                </a>
+                <a href="projects.html">Projects</a>
             </li>
 
             <li>
-                <a href="contact.html">
-                    Contact
-                </a>
+                <a href="contact.html">Contact</a>
             </li>
 
         </ul>
 
     </nav>
 
-
-    <!-- =========================================================
-         HERO
-    ========================================================= -->
+    <!-- MAIN CONTENT -->
 
     <main>
 
-        <section class="hero">
+        <!-- HERO SECTION -->
 
-            <!-- HERO TEXT -->
+        <section class="hero" id="home">
 
             <div class="hero-text">
 
                 <div class="tag">
-                    <i class="fas fa-circle"
-                       style="font-size:8px;color:#22c55e;margin-right:6px;">
-                    </i>
-
+                    <i class="fas fa-circle" aria-hidden="true"></i>
                     Available for New Projects
                 </div>
-
 
                 <h1>
                     Victor Chitole
                 </h1>
 
-
                 <h2>
-                    I'm a
-                    <span id="typing"></span>
+                    I'm a <span id="typing">Digital Solutions Provider</span>
                 </h2>
-
 
                 <p>
                     Transforming ideas into powerful digital experiences.
-                    I specialize in web development, graphic design,
-                    branding, IT support, and technology solutions that
-                    help businesses stand out, operate efficiently,
-                    and grow with confidence.
+                    I combine web development, graphic design, branding,
+                    printing, ICT training, and innovative technology
+                    solutions to help businesses, individuals, and
+                    educational institutions grow and succeed.
                 </p>
-
 
                 <div class="buttons">
 
-                    <a
-                        href="contact.html"
-                        class="btn"
-                    >
-                        <i class="fas fa-paper-plane"></i>
+                    <a href="contact.html" class="btn">
+                        <i class="fas fa-paper-plane" aria-hidden="true"></i>
                         Hire Me
                     </a>
 
-
-                    <a
-                        href="projects.html"
-                        class="btn-outline"
-                    >
-                        <i class="fas fa-folder-open"></i>
+                    <a href="projects.html" class="btn-outline">
+                        <i class="fas fa-folder-open" aria-hidden="true"></i>
                         View Projects
                     </a>
 
@@ -1466,402 +1755,781 @@
 
             </div>
 
+            <!-- PROFILE IMAGE -->
 
-            <!-- HERO IMAGE -->
+            <div class="hero-image" aria-label="Victor Chitole profile">
 
-            <div class="hero-image">
+                <div class="ring ring1" aria-hidden="true"></div>
+                <div class="ring ring2" aria-hidden="true"></div>
+                <div class="ring ring3" aria-hidden="true"></div>
 
-                <div class="ring ring1"></div>
-
-                <div class="ring ring2"></div>
-
-                <div class="ring ring3"></div>
-
-
-                <!-- HTML -->
-
-                <div class="tech html">
-
+                <div class="tech html" aria-hidden="true">
                     <i class="fab fa-html5"></i>
-
                 </div>
 
-
-                <!-- CSS -->
-
-                <div class="tech css">
-
+                <div class="tech css" aria-hidden="true">
                     <i class="fab fa-css3-alt"></i>
-
                 </div>
 
-
-                <!-- JAVASCRIPT -->
-
-                <div class="tech js">
-
+                <div class="tech js" aria-hidden="true">
                     <i class="fab fa-js"></i>
-
                 </div>
 
-
-                <!-- CODE -->
-
-                <div class="tech code">
-
+                <div class="tech code" aria-hidden="true">
                     <i class="fas fa-code"></i>
-
                 </div>
-
-
-                <!-- PROFILE IMAGE -->
 
                 <img
                     src="assets/images/CEO PIC.jpg"
-                    alt="Victor Chitole - Digital Solutions Provider"
-                >
+                    alt="Victor Chitole, digital solutions provider"
+                    width="310"
+                    height="310"
+                    fetchpriority="high">
 
             </div>
 
-
-            <!-- SCROLL -->
-
-            <div class="scroll">
-
-                <i class="fas fa-angle-down"></i>
-
+            <div class="scroll" aria-hidden="true">
+                <i class="fas fa-chevron-down"></i>
             </div>
 
         </section>
 
+        <!-- STATISTICS -->
 
-        <!-- =====================================================
-             STATS
-        ====================================================== -->
-
-        <section class="stats">
+        <section class="stats" aria-label="Portfolio statistics">
 
             <div class="stat">
-
-                <h2>
-                   10+
-                </h2>
-
-                <p>
-                    Projects Completed
-                </p>
-
+                <h2>10+</h2>
+                <p>Projects Completed</p>
             </div>
 
-
             <div class="stat">
-
-                <h2>
-                  50+
-                </h2>
-
-                <p>
-                    Happy Clients
-                </p>
-
+                <h2>50+</h2>
+                <p>Happy Clients</p>
             </div>
 
-
             <div class="stat">
-
-                <h2>
-                    3+
-                </h2>
-
-                <p>
-                    Years Experience
-                </p>
-
+                <h2>3+</h2>
+                <p>Years Experience</p>
             </div>
 
-
             <div class="stat">
-
-                <h2>
-                    24/7
-                </h2>
-
-                <p>
-                    Support Available
-                </p>
-
+                <h2>24/7</h2>
+                <p>Support Available</p>
             </div>
 
         </section>
 
     </main>
 
-
-    <!-- =========================================================
-         WHATSAPP
-    ========================================================= -->
+    <!-- WHATSAPP BUTTON -->
 
     <a
         href="https://wa.me/254740163974"
         class="whatsapp"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat with Victor on WhatsApp"
-    >
+        aria-label="Chat with Victor on WhatsApp">
 
-        <i class="fab fa-whatsapp"></i>
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
 
     </a>
 
+    <!-- PORTFOLIO CHATBOT -->
 
-    <!-- =========================================================
-         JAVASCRIPT
-    ========================================================= -->
+    <div class="vc-chatbot">
+
+        <button
+            type="button"
+            class="vc-chat-toggle"
+            id="vcChatToggle"
+            aria-expanded="false"
+            aria-controls="vcChatPanel">
+
+            <i class="fas fa-comments chat-icon" aria-hidden="true"></i>
+
+            <span>Ask My Assistant</span>
+
+        </button>
+
+        <section
+            class="vc-chat-panel"
+            id="vcChatPanel"
+            aria-label="Victor's Portfolio Assistant"
+            aria-hidden="true"
+            inert>
+
+            <header class="vc-chat-header">
+
+                <div class="vc-chat-avatar" aria-hidden="true">
+                    <i class="fas fa-robot"></i>
+                </div>
+
+                <div class="vc-chat-heading">
+
+                    <h3>Victor's Portfolio Assistant</h3>
+
+                    <p>
+                        <i class="fas fa-circle" style="font-size:7px;" aria-hidden="true"></i>
+                        Ready to help
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="vc-chat-close"
+                    id="vcChatClose"
+                    aria-label="Close chatbot">
+
+                    <i class="fas fa-times" aria-hidden="true"></i>
+
+                </button>
+
+            </header>
+
+            <div
+                class="vc-chat-messages"
+                id="vcChatMessages"
+                role="log"
+                aria-live="polite"
+                aria-relevant="additions">
+
+                <div class="vc-message bot">
+                    Hello! 👋 Welcome to Victor Chitole's portfolio.
+
+                    I can tell you about Victor's skills, projects, services,
+                    and how to get in touch.
+
+                    What would you like to know?
+                </div>
+
+            </div>
+
+            <div class="vc-chat-quick" id="vcChatQuick">
+
+                <button
+                    type="button"
+                    class="vc-quick-btn"
+                    data-question="skills">
+                    My Skills
+                </button>
+
+                <button
+                    type="button"
+                    class="vc-quick-btn"
+                    data-question="projects">
+                    Projects
+                </button>
+
+                <button
+                    type="button"
+                    class="vc-quick-btn"
+                    data-question="services">
+                    Services
+                </button>
+
+                <button
+                    type="button"
+                    class="vc-quick-btn"
+                    data-question="contact">
+                    Contact Me
+                </button>
+
+            </div>
+
+            <form class="vc-chat-form" id="vcChatForm">
+
+                <input
+                    type="text"
+                    class="vc-chat-input"
+                    id="vcChatInput"
+                    placeholder="Type your question..."
+                    autocomplete="off"
+                    aria-label="Type your message"
+                    maxlength="500"
+                    required>
+
+                <button
+                    type="submit"
+                    class="vc-chat-send"
+                    aria-label="Send message">
+
+                    <i class="fas fa-paper-plane" aria-hidden="true"></i>
+
+                </button>
+
+            </form>
+
+            <div class="vc-chat-footer">
+
+                Want to speak directly?
+
+                <a
+                    href="https://wa.me/254740163974"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Chat on WhatsApp
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
 
     <script>
-
-        /* =====================================================
-           TYPING EFFECT
-        ===================================================== */
+        /* =========================================
+           1. ANIMATED TYPING EFFECT
+        ========================================= */
 
         const words = [
-
             "Digital Solutions Provider",
-
-            "Web Developer",
-
+            "Frontend Developer",
             "Graphic Designer",
-
             "Branding Specialist",
-
             "ICT Trainer",
-
-            "Tech Consultant"
-
+            "Technology Consultant"
         ];
 
+        const typingElement = document.getElementById("typing");
+
+        const reducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
 
         let wordIndex = 0;
-
         let charIndex = 0;
-
         let deleting = false;
-
+        let typingTimer;
 
         function type() {
+            if (!typingElement) return;
 
-            const typingElement =
-                document.getElementById("typing");
-
-            const currentWord =
-                words[wordIndex];
-
+            const currentWord = words[wordIndex];
 
             if (!deleting) {
 
-                typingElement.textContent =
-                    currentWord.substring(
-                        0,
-                        charIndex + 1
-                    );
-
                 charIndex++;
 
+                typingElement.textContent =
+                    currentWord.substring(0, charIndex);
 
-                if (
-                    charIndex ===
-                    currentWord.length
-                ) {
+                if (charIndex >= currentWord.length) {
 
                     deleting = true;
 
-                    setTimeout(type, 1500);
+                    typingTimer = setTimeout(
+                        type,
+                        reducedMotion ? 3000 : 1800
+                    );
 
                     return;
                 }
 
             } else {
 
-                typingElement.textContent =
-                    currentWord.substring(
-                        0,
-                        charIndex - 1
-                    );
-
                 charIndex--;
 
+                typingElement.textContent =
+                    currentWord.substring(0, charIndex);
 
-                if (charIndex === 0) {
+                if (charIndex <= 0) {
 
                     deleting = false;
 
-                    wordIndex =
-                        (wordIndex + 1) %
-                        words.length;
+                    wordIndex = (wordIndex + 1) % words.length;
                 }
             }
 
+            typingTimer = setTimeout(
+                type,
+                reducedMotion ? 250 : (deleting ? 40 : 85)
+            );
+        }
 
-            const speed =
-                deleting ? 50 : 100;
-
-
-            setTimeout(type, speed);
+        if (reducedMotion) {
+            typingElement.textContent = words[0];
+        } else {
+            typingTimer = setTimeout(type, 500);
         }
 
 
-        type();
+        /* =========================================
+           2. MOBILE NAVIGATION
+        ========================================= */
+
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        function closeMobileMenu() {
+
+            menuToggle.classList.remove("active");
+            navLinks.classList.remove("active");
+
+            menuToggle.setAttribute("aria-expanded", "false");
+
+            menuToggle.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
+        }
+
+        menuToggle.addEventListener("click", function () {
+
+            const isOpen = !navLinks.classList.contains("active");
+
+            navLinks.classList.toggle("active", isOpen);
+            menuToggle.classList.toggle("active", isOpen);
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen
+                    ? "Close navigation menu"
+                    : "Open navigation menu"
+            );
+
+        });
+
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+
+            link.addEventListener("click", closeMobileMenu);
+
+        });
+
+        document.addEventListener("click", function (event) {
+
+            if (
+                !menuToggle.contains(event.target) &&
+                !navLinks.contains(event.target)
+            ) {
+                closeMobileMenu();
+            }
+
+        });
+
+        window.addEventListener("resize", function () {
+
+            if (window.innerWidth > 900) {
+                closeMobileMenu();
+            }
+
+        });
 
 
-        /* =====================================================
-           MOBILE MENU
-        ===================================================== */
+        /* =========================================
+           3. CHATBOT ELEMENTS
+        ========================================= */
 
-        const menuToggle =
-            document.getElementById("menuToggle");
+        const chatToggle = document.getElementById("vcChatToggle");
+        const chatPanel = document.getElementById("vcChatPanel");
+        const chatClose = document.getElementById("vcChatClose");
 
-        const navLinks =
-            document.getElementById("navLinks");
+        const chatMessages = document.getElementById("vcChatMessages");
+        const chatForm = document.getElementById("vcChatForm");
+        const chatInput = document.getElementById("vcChatInput");
+        const chatQuick = document.getElementById("vcChatQuick");
 
 
-        /* OPEN / CLOSE MENU */
+        /* =========================================
+           4. OPEN AND CLOSE CHATBOT
+        ========================================= */
 
-        menuToggle.addEventListener(
-            "click",
-            function () {
+        function openChatbot() {
 
-                const isOpen =
-                    menuToggle.classList.toggle("active");
+            chatPanel.classList.add("open");
 
-                navLinks.classList.toggle("active");
+            chatPanel.setAttribute("aria-hidden", "false");
+            chatPanel.inert = false;
 
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    isOpen
-                );
+            chatToggle.setAttribute("aria-expanded", "true");
+
+            chatToggle.querySelector("span").textContent =
+                "Chat Assistant";
+
+            chatInput.focus();
+
+        }
+
+        function closeChatbot() {
+
+            chatPanel.classList.remove("open");
+
+            chatPanel.setAttribute("aria-hidden", "true");
+            chatPanel.inert = true;
+
+            chatToggle.setAttribute("aria-expanded", "false");
+
+            chatToggle.querySelector("span").textContent =
+                "Ask My Assistant";
+
+        }
+
+        chatToggle.addEventListener("click", function () {
+
+            if (chatPanel.classList.contains("open")) {
+
+                closeChatbot();
+
+            } else {
+
+                openChatbot();
 
             }
-        );
+
+        });
+
+        chatClose.addEventListener("click", closeChatbot);
+
+        document.addEventListener("keydown", function (event) {
+
+            if (event.key === "Escape") {
+
+                closeMobileMenu();
+                closeChatbot();
+
+            }
+
+        });
 
 
-        /* =====================================================
-           CLOSE MENU AFTER CLICKING LINK
-        ===================================================== */
+        /* =========================================
+           5. DISPLAY CHAT MESSAGES
+        ========================================= */
 
-        document
-            .querySelectorAll(".nav-links a")
-            .forEach(function (link) {
+        function addMessage(message, sender) {
 
-                link.addEventListener(
-                    "click",
-                    function () {
+            const messageElement = document.createElement("div");
 
-                        menuToggle.classList.remove(
-                            "active"
-                        );
+            messageElement.className = "vc-message " + sender;
 
-                        navLinks.classList.remove(
-                            "active"
-                        );
+            /* Use textContent to prevent HTML injection. */
+            messageElement.textContent = message;
 
-                        menuToggle.setAttribute(
-                            "aria-expanded",
-                            "false"
-                        );
+            chatMessages.appendChild(messageElement);
 
-                    }
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+        }
+
+
+        /* =========================================
+           6. CHATBOT RESPONSE SYSTEM
+        ========================================= */
+
+        function getBotResponse(rawMessage) {
+
+            const message = rawMessage.toLowerCase().trim();
+
+            /* GREETINGS */
+
+            if (
+                /^(hi|hello|hey|good morning|good afternoon|good evening)\b/.test(message)
+            ) {
+
+                return "Hello! 👋 Welcome to Victor Chitole's portfolio. Ask me about his skills, projects, services, or contact details.";
+
+            }
+
+
+            /* ABOUT VICTOR */
+
+            if (
+                message.includes("who are you") ||
+                message.includes("about victor") ||
+                message.includes("who is victor") ||
+                message.includes("tell me about")
+            ) {
+
+                return "Victor Chitole is a digital solutions provider with skills in web development, graphic design, branding, ICT training, digital content, and technology solutions. He is also the founder of Mavinstech Solution.";
+
+            }
+
+
+            /* SKILLS */
+
+            if (
+                message.includes("skill") ||
+                message.includes("what can you do") ||
+                message.includes("expertise") ||
+                message.includes("qualification")
+            ) {
+
+                return "Victor's skills include:\n\n• HTML, CSS and JavaScript\n• Frontend web development\n• Graphic design and digital media\n• Branding and printing\n• ICT training and technical support\n• Kolibri digital learning systems\n• Smartboard learning support\n• Scratch programming and STEM robotics\n• Digital content creation and digitization.";
+
+            }
+
+
+            /* SERVICES */
+
+            if (
+                message.includes("service") ||
+                message.includes("offer") ||
+                message.includes("provide") ||
+                message.includes("what do you do")
+            ) {
+
+                return "Victor can assist with:\n\n• Website development\n• Graphic design and branding\n• Roll-up banners, flex banners and signage\n• Posters, T-shirt printing and promotional products\n• ICT training and technical support\n• Digital learning content and Kolibri\n• Coding and STEM robotics\n• Digital content creation\n\nContact Victor for a quotation.";
+
+            }
+
+
+            /* PROJECTS */
+
+            if (
+                message.includes("project") ||
+                message.includes("portfolio") ||
+                message.includes("work you've done") ||
+                message.includes("work you have done")
+            ) {
+
+                return "Victor's work includes website development, graphic design, printing and branding, and digital learning content. Visit the Projects page to explore his portfolio: projects.html";
+
+            }
+
+
+            /* WEB DEVELOPMENT */
+
+            if (
+                message.includes("web") ||
+                message.includes("website") ||
+                message.includes("frontend") ||
+                message.includes("development")
+            ) {
+
+                return "Victor uses HTML, CSS and JavaScript to build frontend websites and digital experiences. To discuss a website for your business or organization, visit the Contact page or message him on WhatsApp.";
+
+            }
+
+
+            /* GRAPHIC DESIGN */
+
+            if (
+                message.includes("graphic") ||
+                message.includes("design") ||
+                message.includes("logo") ||
+                message.includes("poster")
+            ) {
+
+                return "Graphic design services include logos, posters, flyers, promotional graphics, and digital materials. Share your requirements with Victor to discuss your project.";
+
+            }
+
+
+            /* PRINTING AND BRANDING */
+
+            if (
+                message.includes("banner") ||
+                message.includes("printing") ||
+                message.includes("print") ||
+                message.includes("t-shirt") ||
+                message.includes("tshirt") ||
+                message.includes("signage")
+            ) {
+
+                return "Printing and branding services include roll-up banners, flex banners, signage, posters, T-shirt printing, branded materials, and promotional designs. Contact Victor for pricing based on your size, quantity, and design requirements.";
+
+            }
+
+
+            /* EDUCATION TECHNOLOGY */
+
+            if (
+                message.includes("kolibri") ||
+                message.includes("smartboard") ||
+                message.includes("curriculum") ||
+                message.includes("digital learning")
+            ) {
+
+                return "Victor supports ICT training and digital learning activities involving Kolibri, smartboards, and digitized educational content. Contact him to discuss training or educational content requirements.";
+
+            }
+
+
+            /* CODING AND ROBOTICS */
+
+            if (
+                message.includes("robotics") ||
+                message.includes("scratch") ||
+                message.includes("coding") ||
+                message.includes("stem")
+            ) {
+
+                return "Victor supports ICT training activities involving Scratch programming, coding, and STEM robotics. Get in touch to discuss training for learners, schools, or organizations.";
+
+            }
+
+
+            /* PRICING */
+
+            if (
+                message.includes("price") ||
+                message.includes("cost") ||
+                message.includes("charge") ||
+                message.includes("quotation") ||
+                message.includes("quote") ||
+                message.includes("how much")
+            ) {
+
+                return "Pricing depends on the service, project size, materials, quantity, and delivery requirements. Tell Victor what you need to receive a suitable quotation.";
+
+            }
+
+
+            /* CONTACT DETAILS */
+
+            if (
+                message.includes("contact") ||
+                message.includes("phone") ||
+                message.includes("email") ||
+                message.includes("reach") ||
+                message.includes("whatsapp") ||
+                message.includes("number")
+            ) {
+
+                return "You can contact Victor Chitole through:\n\nWhatsApp/Phone: +254 740 163 974\nEmail: victorchitole@gmail.com\n\nWhatsApp: https://wa.me/254740163974";
+
+            }
+
+
+            /* BUSINESS INFORMATION */
+
+            if (
+                message.includes("mavinstech") ||
+                message.includes("business") ||
+                message.includes("company")
+            ) {
+
+                return "Mavinstech Solution is Victor Chitole's digital solutions brand, offering creative design, printing, branding, web development, ICT training, and technology-related services.\n\nYour Creative Tech Partner.";
+
+            }
+
+
+            /* LOCATION */
+
+            if (
+                message.includes("location") ||
+                message.includes("where are you") ||
+                message.includes("based")
+            ) {
+
+                return "Victor's business location is listed as Mtondia Sokoni, opposite South Gate School. Contact him to confirm availability or arrange a visit.";
+
+            }
+
+
+            /* HIRING AND COLLABORATION */
+
+            if (
+                message.includes("hire") ||
+                message.includes("work together") ||
+                message.includes("collaborate") ||
+                message.includes("available")
+            ) {
+
+                return "Thank you for considering Victor for your project! Please share what you need and your expected timeline. Contact him directly on WhatsApp: https://wa.me/254740163974";
+
+            }
+
+
+            /* THANK YOU */
+
+            if (message.includes("thank")) {
+
+                return "You're welcome! 😊 Is there anything else you'd like to know about Victor's skills, projects, or services?";
+
+            }
+
+
+            /* HELP */
+
+            if (message.includes("help")) {
+
+                return "I can help you learn about:\n\n• Victor's skills\n• Projects and portfolio\n• Web development\n• Graphic design and printing\n• ICT training and digital learning\n• Pricing enquiries\n• Contact details\n\nChoose a quick button or type your question.";
+
+            }
+
+
+            /* DEFAULT RESPONSE */
+
+            return "Thanks for your question! I may not have that information available yet. You can ask about Victor's skills, projects, services, pricing, or contact details. For other enquiries, contact Victor on WhatsApp: +254 740 163 974.";
+
+        }
+
+
+        /* =========================================
+           7. SEND CHAT MESSAGE
+        ========================================= */
+
+        function sendChatMessage(message) {
+
+            const cleanMessage = message.trim();
+
+            if (!cleanMessage) return;
+
+            addMessage(cleanMessage, "user");
+
+            const response = getBotResponse(cleanMessage);
+
+            window.setTimeout(function () {
+
+                addMessage(response, "bot");
+
+            }, 250);
+
+        }
+
+        chatForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const message = chatInput.value;
+
+            if (!message.trim()) return;
+
+            chatInput.value = "";
+
+            sendChatMessage(message);
+
+        });
+
+
+        /* =========================================
+           8. CHATBOT QUICK REPLIES
+        ========================================= */
+
+        chatQuick.querySelectorAll("[data-question]").forEach(function (button) {
+
+            button.addEventListener("click", function () {
+
+                const question = button.getAttribute("data-question");
+
+                const quickQuestions = {
+
+                    skills: "What skills does Victor have?",
+
+                    projects: "Tell me about your projects",
+
+                    services: "What services do you offer?",
+
+                    contact: "How can I contact Victor?"
+
+                };
+
+                sendChatMessage(
+                    quickQuestions[question] || question
                 );
 
             });
 
-
-        /* =====================================================
-           CLOSE MENU WHEN CLICKING OUTSIDE
-        ===================================================== */
-
-        document.addEventListener(
-            "click",
-            function (event) {
-
-                if (
-                    !menuToggle.contains(event.target) &&
-                    !navLinks.contains(event.target)
-                ) {
-
-                    menuToggle.classList.remove(
-                        "active"
-                    );
-
-                    navLinks.classList.remove(
-                        "active"
-                    );
-
-                    menuToggle.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-                }
-
-            }
-        );
-
-
-        /* =====================================================
-           CLOSE MENU WITH ESCAPE KEY
-        ===================================================== */
-
-        document.addEventListener(
-            "keydown",
-            function (event) {
-
-                if (event.key === "Escape") {
-
-                    menuToggle.classList.remove(
-                        "active"
-                    );
-
-                    navLinks.classList.remove(
-                        "active"
-                    );
-
-                    menuToggle.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-                }
-
-            }
-        );
-
-
-        /* =====================================================
-           PREVENT MOBILE MENU FROM STAYING OPEN
-           WHEN SCREEN IS RESIZED
-        ===================================================== */
-
-        window.addEventListener(
-            "resize",
-            function () {
-
-                if (window.innerWidth > 900) {
-
-                    menuToggle.classList.remove(
-                        "active"
-                    );
-
-                    navLinks.classList.remove(
-                        "active"
-                    );
-
-                    menuToggle.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-                }
-
-            }
-        );
+        });
 
     </script>
 
